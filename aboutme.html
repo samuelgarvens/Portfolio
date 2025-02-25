@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me - Samuel Garvens</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="mediaqueries.css">
+    </head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Samuel Garvens</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <nav id="hamburger-nav">
+        <div class="logo">Samuel Garvens</div>  
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>   
+                <span></span>   
+                <span></span>   
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="aboutme.html" class="about-me-link" onclick="toggleMenu()">About Me</a></li>
+            </div> 
+        </div>
+    </nav>
+
+    <section id="about" class="profile-section">
+        <div class="about__pic-container">
+            <img src="./assets/meSB.jpg" alt="Samuel Garvens" class="aboutme__image">
+            <div class="aboutme__text">
+                <p class="about__text">I'm Samuel Garvens, a UX designer and illustrator. I enjoy crafting meaningful user-centric stories.</p>
+                <!-- Add more content about yourself here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <hr class="footer__line">
+        <p class="footer__letsconnect">Let's Connect</p>
+        <a href="mailto:samuelgarvens@gmail.com" target="_blank">
+            <p class="footer__email">samuelgarvens@gmail.com</p>
+        </a>
+        <div class="footer__logos">
+            <a href="https://www.instagram.com/samuelgarvens/" target="_blank">
+                <img src="./assets/ig.png" alt="Instagram logo" class="footer__logo">
+            </a>
+            <a href="https://www.linkedin.com/in/samuelgarvens" target="_blank">
+                <img src="./assets/linkedin.png" alt="LinkedIn logo" class="footer__logo">
+            </a>
+        </div>
+        <p class="rights">©2025 Samuel Garvens. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
