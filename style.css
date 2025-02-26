@@ -477,7 +477,7 @@ nav.scrolled .logo.hamburger-open {
   cursor: pointer;
   opacity: 0.7; /* Set the opacity value */
 }
-/*RESUME SECTION*/
+/*RESUME SECTIONNOT IN USE RN*/ 
 .cv-illustration-content {
   display: flex;
   flex-direction: column; /* Stack buttons vertically */
@@ -514,7 +514,7 @@ nav.scrolled .logo.hamburger-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3vw;
+  margin-top: 60px;
   margin-bottom: .6vw;
   color: black;
   font-family: "Raleway", serif;
@@ -547,11 +547,10 @@ nav.scrolled .logo.hamburger-open {
 } 
 
 .footer__line {
-  width: calc(100% - 50px); /* Adjust the width to account for the padding */
+  width: calc(100% - 60px); /* Adjust the width to account for the padding */
   border: none; /* Remove default border */
-  border-top: 1.43px solid #b8b8b8; /* Add a thin top border */
-  margin: 20px auto; /* Center the line and add vertical margin */
-  margin-bottom: 40px;
+  border-top: 1.53px solid #b8b8b8; /* Add a thin top border */
+  margin: 40px auto; /* Center the line and add vertical margin */
 }
 
 .rights {

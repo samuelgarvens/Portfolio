@@ -37,8 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
+    const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
+    const multiplier = isMobile ? 0.08 : 0.28; // Use 0.08 for mobile, 0.3 for desktop
+
     if (scrollPosition > 0) {
-      profilePic.style.transform = `translateY(${scrollPosition * 0.08}px)`; // Adjust the multiplier as needed
+      profilePic.style.transform = `translateY(${scrollPosition * multiplier}px)`; // Apply the appropriate multiplier
     } else {
       profilePic.style.transform = 'translateY(0)'; // Reset the transformation when scroll is less than or equal to 20
     }
