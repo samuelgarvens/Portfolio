@@ -388,15 +388,14 @@ nav.scrolled .logo.hamburger-open {
   justify-content: center;
   align-items: center;
   background-color: white; /* Optional: Set a background color */
-  padding: px; /* Adjust the padding as needed */
 }
 
 .cases__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 5vw; /* Adjust the gap between images as needed */
-  width: 80%; /* Adjust the width as needed */
-  max-width: 1300px;
+  gap: 20px; /* Adjust the gap between images as needed */
+  width: 90%; /* Adjust the width as needed */
+  max-width: 1200px; /* Optional: Set a maximum width for the grid */
   margin-bottom: 40px;
   margin-top: 30px;
 }
@@ -404,8 +403,13 @@ nav.scrolled .logo.hamburger-open {
 .cases__image-container {
   position: relative;
   width: 100%;
-  height: 28vw; /* Set a fixed height for the container */
   overflow: hidden; /* Hide overflow to keep the container size constant */
+  max-height: 360px;
+  max-width: 600px;
+  min-height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cases__image {
@@ -413,60 +417,57 @@ nav.scrolled .logo.hamburger-open {
   height: 100%; /* Ensure the image covers the container */
   object-fit: cover; /* Ensure the image covers the container */
   transition: transform 0.4s ease-in-out, filter 0.35s ease-in-out; /* Add transition for smooth animation */
+  filter: brightness(70%);
 }
 
 .cases__image-container:hover .cases__image {
   transform: scale(1.10); /* Slightly zoom in the image */
-  filter: brightness(70%);
+  filter: brightness(40%);
   cursor: pointer;
 }
 
 .cases__text {
   position: absolute;
-  top: 2vw; /* Adjust the position as needed */
-  left: 2vw; /* Adjust the position as needed */
+  top: 30px; /* Adjust the position as needed */
+  left: 20px; /* Adjust the position as needed */
   color: white; /* Adjust the text color as needed */
   padding: 5px 10px; /* Adjust the padding as needed */
-  border-radius: 5px; /* Optional: Add border radius for rounded corners */
 }
 
 .cases__logo {
-  max-width: 15vw; /* Adjust the size of the logo as needed */
+  max-width: 150px; /* Adjust the size of the logo as needed */
   height: auto;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 }
 
 .cases__logo-BS {
-  max-width: 13vw; /* Adjust the size of the logo as needed */
+  max-width: 150px; /* Adjust the size of the logo as needed */
   height: auto;
   -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
   filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
 }
 
 .cases__text-position {
+  width: 200%;
   position: absolute;
-  top: 3.7vw; /* Adjust the position as needed */
-  left: 1vw; /* Adjust the position as needed */
+  top: 50px; /* Adjust the position as needed */
   color: white; /* Adjust the text color as needed */
-  padding: 5px; /* Adjust the padding as needed */
   border-radius: 5px; /* Optional: Add border radius for rounded corners */
-  font-size: 1.05vw;
+  font-size: 12px;
   font-weight: 250;
+  opacity: 70%;
 }
 
 .cases__text-title {
   position: absolute;
-  top: 7.4vw; /* Adjust the position as needed */
-  left: .6vw; /* Adjust the position as needed */
+  top: 100px; /* Adjust the position as needed */
   color: white; /* Adjust the text color as needed */
-  padding: 5px 10px; /* Adjust the padding as needed */
-  border-radius: 5px; /* Optional: Add border radius for rounded corners */
-  width: 130%; /* Adjust the width as needed */
-  font-size: 3vw;
+  font-size: 35px;
   font-family: "Raleway", serif;
   font-weight: 700;
   line-height: 100%;
+  width: 130%;
 }
 
 .cases__text-title {

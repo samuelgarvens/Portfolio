@@ -11,56 +11,12 @@
 }
 
 /* Media query for smaller screens */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 760px) {
     .cases__container {
         grid-template-columns: 1fr; /* Change to a single column layout */
-        gap: 10vw; /* Adjust the gap between images as needed */
+        gap: 20px; /* Adjust the gap between images as needed */
         margin-bottom:4vw;
-        max-width: 60vw;
+        width: 40%;
+        min-width: 400px;
       }
-    .cases__image-container {
-      height: auto; /* Adjust height as needed for smaller screens */
     }
-    .cases__logo {
-        max-width: 25vw; /* Adjust the size of the logo as needed */
-        height: auto;
-        -webkit-filter: drop-shadow(5px 5px 5px #222);
-        filter: drop-shadow(5px 5px 5px #222);
-      }
-      .cases__logo-BS {
-        max-width: 23vw; /* Adjust the size of the logo as needed */
-        height: auto;
-        -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
-        filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
-      }
-      .cases__text-position {
-        position: absolute;
-        top: 6vw; /* Adjust the position as needed */
-        left: 1.5vw; /* Adjust the position as needed */
-        color: white; /* Adjust the text color as needed */
-        padding: 5px; /* Adjust the padding as needed */
-        border-radius: 5px; /* Optional: Add border radius for rounded corners */
-        font-size: 1.9vw;
-        font-weight: 250;
-      }
-      
-      .cases__text-title {
-        position: absolute;
-        top: 12vw; /* Adjust the position as needed */
-        left: .6vw; /* Adjust the position as needed */
-        color: white; /* Adjust the text color as needed */
-        width: 140%; /* Adjust the width as needed */
-        font-size: 30px;
-        text-align: left;
-        font-family: "Raleway", serif;
-        font-weight: 760;
-      }
-      .cv-illustration-content {
-        margin-top: 70px;
-        margin-bottom: 80px;
-      }
-      
-  }
-
-
-  
