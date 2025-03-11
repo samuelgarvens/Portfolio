@@ -14,9 +14,9 @@
 @media screen and (max-width: 760px) {
     .cases__container {
         grid-template-columns: 1fr; /* Change to a single column layout */
-        gap: 20px; /* Adjust the gap between images as needed */
+        gap: 15px; /* Adjust the gap between images as needed */
         margin-bottom:4vw;
-        width: 40%;
-        min-width: 70vw;
+        width: 60%;
+        min-width: 79vw;
       }
     }

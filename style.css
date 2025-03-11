@@ -393,7 +393,7 @@ nav.scrolled .logo.hamburger-open {
 .cases__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 20px; /* Adjust the gap between images as needed */
+  gap: 15px; /* Adjust the gap between images as needed */
   width: 90%; /* Adjust the width as needed */
   max-width: 1200px; /* Optional: Set a maximum width for the grid */
   margin-bottom: 40px;
