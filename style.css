@@ -293,7 +293,6 @@ nav.scrolled .logo.hamburger-open {
   max-width: 1000px;
   text-align: center;
 }
-
 #profile .section__text__p1 {
   line-height: 1.1;
   margin-bottom: 5vw;
@@ -305,7 +304,7 @@ nav.scrolled .logo.hamburger-open {
   font-size: clamp(12px, 1.7vw, 26px);
   margin-bottom: 25px;
   margin-top: 40px;
-  font-weight: 400;
+  font-weight: 350;
 }
 
 #profile .section__text__p1,
@@ -393,24 +392,25 @@ nav.scrolled .logo.hamburger-open {
 .cases__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 15px; /* Adjust the gap between images as needed */
+  gap: 20px; /* Adjust the gap between images as needed */
   width: 90%; /* Adjust the width as needed */
   max-width: 1200px; /* Optional: Set a maximum width for the grid */
-  margin-bottom: 40px;
-  margin-top: 30px;
+  margin-bottom: 90px;
+  margin-top: 40px;
 }
 
 .cases__image-container {
   position: relative;
   width: 100%;
   overflow: hidden; /* Hide overflow to keep the container size constant */
-  max-height: 360px;
-  max-width: 600px;
-  min-height: 360px;
+  max-height: 330px;
+  max-width: 650px;
+  min-height: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .cases__image {
   width: 100%; /* Make the image take up the full width of the container */
@@ -442,7 +442,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .cases__logo-BS {
-  max-width: 150px; /* Adjust the size of the logo as needed */
+  max-width: 139px; /* Adjust the size of the logo as needed */
   height: auto;
   -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
   filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
@@ -451,7 +451,7 @@ nav.scrolled .logo.hamburger-open {
 .cases__text-position {
   width: 200%;
   position: absolute;
-  top: 50px; /* Adjust the position as needed */
+  top: 48px; /* Adjust the position as needed */
   color: white; /* Adjust the text color as needed */
   border-radius: 5px; /* Optional: Add border radius for rounded corners */
   font-size: 12px;
@@ -466,7 +466,7 @@ nav.scrolled .logo.hamburger-open {
   font-size: 35px;
   font-family: "Raleway", serif;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 95%;
   width: 130%;
 }
 
@@ -478,6 +478,7 @@ nav.scrolled .logo.hamburger-open {
   cursor: pointer;
   opacity: 0.7; /* Set the opacity value */
 }
+
 /*RESUME SECTIONNOT IN USE RN*/ 
 .cv-illustration-content {
   display: flex;
@@ -599,3 +600,198 @@ nav.scrolled .logo.hamburger-open {
   text-align: left;
   margin-right: 4vw;
 }
+
+/* ILLUSTRATION SECTION*/
+.illustrations__text-container {
+  text-align: left;
+  padding-top: 100px;
+  padding-left: 40px;
+  padding-right: 50px;
+  margin-top: 30px; /* Adjust the margin as needed */
+}
+
+.illustration__text_title {
+  font-size: 2.5rem; /* Adjust the font size as needed */
+  color: black; /* Set the text color to black */
+  line-height: 95%;
+  margin: 0;
+}
+
+.illustration__text_sub {
+  font-size: 1rem; /* Adjust the font size as needed */
+  color: black; /* Set the text color to black */
+  margin: 0;
+  margin-top: 15px; /* Adjust the margin as needed */
+  font-weight: 300;
+}
+
+.illustration__art {
+  font-size: 1.05rem; /* Adjust the font size as needed */
+  color: black; /* Set the text color to black */
+  margin: 0;
+  margin-top: 80px; /* Adjust the margin as needed */
+  font-weight: 400;
+}
+.illustration__tools {
+  font-size: .85rem; /* Adjust the font size as needed */
+  color: grey; /* Set the text color to black */
+  margin: 0;
+  margin-top: 4px; /* Adjust the margin as needed */
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+/*SIDE MENU*/
+/***************/
+.illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Increase the minimum size */
+  grid-auto-rows: 220px; /* Increase the row height */
+  gap: 5px; /* Set the gap to 0 to remove spacing between grid items */
+  padding: 20px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-item:hover img {
+  cursor: zoom-in;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  display: flex; /* Use Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px; /* Add padding to ensure content does not touch the edges */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.modal-content {
+  display: block;
+  width: auto; /* Allow the width to adjust based on the image size */
+  max-width: 80%; /* Ensure the image fits within the screen */
+  max-height: 90vh; /* Ensure the image fits within the screen */
+  margin: 0 auto; /* Center the content */
+  padding: 0; /* Remove padding to ensure equal spacing */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  overflow: auto; /* Make the content scrollable if necessary */
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image scales uniformly */
+}
+
+.caption {
+  display: none; /* Hide the caption by default */
+  color: white;
+  text-align: center;
+  font-size: .9rem;
+  font-weight: 300;
+  margin-top: 20px; /* Add some space above the caption */
+  opacity: 60%;
+}
+
+.modal.show .caption {
+  display: block; /* Show the caption when the modal is displayed */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 1001; /* Ensure arrows are above the modal content */
+}
+
+.prev {
+  left: 20px; /* Adjust to ensure it does not overlap with the content */
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 20px; /* Adjust to ensure it does not overlap with the content */
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+  text-decoration: none;
+}
+
+.illustrations__text-container2 {
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 30px; /* Adjust the margin as needed */
+}
+
+.illustration-grid,
+.illustration__text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.illustration-grid.animate,
+.illustration__text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*black text section*/
+.black-header .logo,
+.black-header .nav-links a,
+.black-header .hamburger-icon span,
+.black-header .menu-links a {
+  color: black; /* Set the text color to black */
+}
+
+.black-header .hamburger-icon span {
+  background-color: black; /* Set the hamburger icon lines to black */
+}
+
+
