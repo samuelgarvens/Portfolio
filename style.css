@@ -604,8 +604,7 @@ nav.scrolled .logo.hamburger-open {
 /* ILLUSTRATION SECTION*/
 .illustrations__text-container {
   text-align: left;
-  padding-top: 100px;
-  padding-left: 40px;
+  padding-left: 80px;
   padding-right: 50px;
   margin-top: 30px; /* Adjust the margin as needed */
 }
@@ -647,7 +646,9 @@ nav.scrolled .logo.hamburger-open {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Increase the minimum size */
   grid-auto-rows: 220px; /* Increase the row height */
   gap: 5px; /* Set the gap to 0 to remove spacing between grid items */
-  padding: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
 }
 
 .grid-item {
@@ -772,7 +773,7 @@ nav.scrolled .logo.hamburger-open {
 .illustration-grid,
 .illustration__text {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(80px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
