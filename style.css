@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -34,27 +35,28 @@ nav,
 
 nav {
   display: flex;
-  justify-content: space-between; /* Distribute space between logo and nav links */
-  align-items: center; /* Center items vertically */
-  position:absolute; /* Position the nav fixed at the top */
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* Ensure the background is transparent */
-  z-index: 1000; /* Ensure the nav is above other elements */
-  transition: background-color 0.2s ease-in-out; /* Smooth transition for the background color */
+  background: transparent;
+  z-index: 1000;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: 300;
 }
 
 nav.scrolled {
-  background-color: white; /* Change the background color to white */
+  background-color: white;
 }
 
 nav.scrolled a {
-  color: black; /* Change the text color to black */
+  color: black;
 }
 
 nav.scrolled .logo {
-  color: black; /* Change the logo color to black */
+  color: black;
 }
 
 .nav-links {
@@ -62,7 +64,7 @@ nav.scrolled .logo {
   gap: 2rem;
   list-style: none;
   font-size: 1rem;
-  margin-right: 35px; /* Align the nav links 50px from the right */
+  margin-right: 35px;
 }
 
 a {
@@ -71,21 +73,23 @@ a {
   text-decoration-color: white;
 }
 
+
 a:hover {
   color: grey;
-  text-decoration: underline;
   text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
-  margin-left: 35px; /* Align the logo 50px from the left */
+  margin-left: 35px;
   margin-top: 30px;
   margin-bottom: 30px;
   color: white;
 }
 
 .logo:hover {
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 /* HAMBURGER MENU */
@@ -93,24 +97,24 @@ a:hover {
 #hamburger-nav {
   display: none;
   align-items: center;
-  background: transparent; /* Ensure the background is transparent */
-  transition: background-color 0.2s ease-in-out; /* Smooth transition for the background color */
+  background: transparent;
+  transition: background-color 0.2s ease-in-out;
 }
 
 #hamburger-nav.scrolled {
-  background-color: white; /* Change the background color to white */
+  background-color: white;
 }
 
 #hamburger-nav.scrolled a {
-  color: black; /* Change the text color to black */
+  color: black;
 }
 
 #hamburger-nav.scrolled .logo {
-  color: black; /* Change the logo color to black */
+  color: black;
 }
 
 nav.scrolled .hamburger-icon span {
-  background-color: black; /* Change the hamburger icon color to black */
+  background-color: black;
 }
 
 
@@ -125,8 +129,8 @@ nav.scrolled .hamburger-icon span {
   color: black;
   flex-direction: column;
   justify-content: space-between;
-  height: 24px;
-  width: 30px;
+  height: 18px;
+  width: 24px;
   cursor: pointer;
 }
 
@@ -134,7 +138,7 @@ nav.scrolled .hamburger-icon span {
   width: 90%;
   height: 3px;
   background-color: white;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
@@ -149,20 +153,20 @@ nav.scrolled .hamburger-icon span {
 
 .menu-links a {
   display: block;
-  padding: 5px 10px; /* Adjust the padding as needed */
+  padding: 5px 10px;
   text-align: left;
   color: white;
   text-decoration: none;
 }
+
 .menu-links a:hover {
   color: grey;
-  text-decoration: underline;
   text-decoration-color: rgb(181, 181, 181);
 }
 
 .menu-links li {
   list-style: none;
-  margin: 0; /* Remove margin to reduce gap */
+  margin: 0;
 }
 
 .menu-links.open {
@@ -170,11 +174,11 @@ nav.scrolled .hamburger-icon span {
 }
 
 .menu-links.open a {
-  padding: 2px 10px; /* Adjust the padding as needed */
+  padding: 2px 10px;
 }
 
 .hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
+  transform: rotate(45deg) translate(5px, 6px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -182,7 +186,7 @@ nav.scrolled .hamburger-icon span {
 }
 
 .hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 .hamburger-icon span:first-child {
@@ -217,11 +221,11 @@ nav.scrolled .hamburger-icon span {
 }
 
 nav.scrolled .logo.hamburger-open {
-  margin-bottom: 60px !important; /* Use !important to override other styles if necessary */
+  margin-bottom: 60px !important;
 }
 
 .profile-section {
-  transition: margin-top 0.4s ease-in-out; /* Add transition for margin-top */
+  transition: margin-top 0.4s ease-in-out;
 }
 
 
@@ -230,44 +234,43 @@ nav.scrolled .logo.hamburger-open {
 
 /*PROFILE STUFF*/
 #profile .section__pic-container {
-  
   display: flex;
   top: -20px;
   transform-origin: top;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide any overflow content */
+  overflow: hidden;
   margin-bottom: 2vw;
 }
 
 #profile .section__pic-container img {
-  width: 100%; /* Ensure the image spans the full width */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100%;
+  height: auto;
   filter: brightness(50%);
 
 }
 
 .section__pic-container {
-  width: 100%; /* Ensure the container spans the full width */
-  overflow: hidden; /* Hide any overflow content */
-  transform-origin: center; /* Default transform origin */
-  
+  width: 100%;
+  overflow: hidden;
+  transform-origin: center;
+
 }
 
 .section__pic-container img {
-  width: 100%; /* Ensure the image spans the full width */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100%;
+  height: auto;
   min-height: 720px;
   max-height: 1100px;
   object-fit: cover;
-  
+
 }
 
 .section__pic-container {
-  transform-origin: top; /* Ensure the origin point is set to the top */
-  display: flex; /* Use flexbox to center content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  transform-origin: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.05s ease;
 }
 
@@ -278,9 +281,9 @@ nav.scrolled .logo.hamburger-open {
 
 #profile .section__pic-container {
   position: relative;
-  display: flex; /* Use flexbox to center content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #profile .section__text {
@@ -288,17 +291,19 @@ nav.scrolled .logo.hamburger-open {
   top: 46.5%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* This should apply to all text within this container */
+  color: white;
   width: 75%;
   max-width: 1000px;
   text-align: center;
 }
+
 #profile .section__text__p1 {
   line-height: 1.1;
   margin-bottom: 5vw;
   font-size: clamp(33px, 4.5vw, 70px);
-  
+
 }
+
 
 #profile .section__text__p2 {
   font-size: clamp(12px, 1.7vw, 26px);
@@ -315,57 +320,62 @@ nav.scrolled .logo.hamburger-open {
 
 #profile .section__companies {
   position: absolute;
-  /* Adjust the top value to move the images down */
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin-top: 2.5vw;
-  gap: 1.6vw; /* Adjust the gap between images as needed */
+  gap: 1.6vw;
 }
 
 
 #profile .section__companies img:hover {
-  opacity: 0.6; /* Set the opacity to 80% on hover */
+  opacity: 0.6;
   cursor: pointer;
 }
 
 @keyframes jiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(3deg);
   }
+
   50% {
     transform: rotate(-3deg);
   }
+
   75% {
     transform: rotate(3deg);
   }
 }
 
 #profile .section__companies img:hover {
-  animation: jiggle 0.7s cubic-bezier(0.42, 0, 0.58, 1); /* Refined easing for smoother animation */
+  animation: jiggle 0.7s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 #profile .section__companies .logo-large {
-  width: 10vw; /* Adjust the size of the larger logos as needed */
+  width: 10vw;
   min-width: 95px;
   max-width: 150px;
 }
 
 #profile .section__companies .logo-small {
-  width: 6vw; /* Adjust the size of the smaller logos as needed */
+  width: 6vw;
   min-width: 60px;
   max-width: 110px;
 }
 
 #profile .section__companies .logo-tiny {
   width: 4vw;
- min-width: 40px;
- max-width: 70px;
+  min-width: 40px;
+  max-width: 70px;
 }
+
 #profile .section__companies img {
   object-fit: contain;
 }
@@ -386,74 +396,84 @@ nav.scrolled .logo.hamburger-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white; /* Optional: Set a background color */
+  background-color: white;
 }
 
 .cases__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 20px; /* Adjust the gap between images as needed */
-  width: 90%; /* Adjust the width as needed */
-  max-width: 1200px; /* Optional: Set a maximum width for the grid */
-  margin-bottom: 90px;
-  margin-top: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 80%;
+  max-width: 1000px;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
 .cases__image-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Hide overflow to keep the container size constant */
+  overflow: hidden;
   max-height: 330px;
-  max-width: 650px;
   min-height: 330px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.cases__image-container {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+.cases__image-container.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .cases__image {
-  width: 100%; /* Make the image take up the full width of the container */
-  height: 100%; /* Ensure the image covers the container */
-  object-fit: cover; /* Ensure the image covers the container */
-  transition: transform 0.4s ease-in-out, filter 0.35s ease-in-out; /* Add transition for smooth animation */
-  filter: brightness(70%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out, filter 0.35s ease-in-out;
+  filter: brightness(60%);
 }
 
 .cases__image-container:hover .cases__image {
-  transform: scale(1.10); /* Slightly zoom in the image */
-  filter: brightness(40%);
+  transform: scale(1.08);
+  filter: brightness(36%);
   cursor: pointer;
 }
 
 .cases__text {
   position: absolute;
-  top: 30px; /* Adjust the position as needed */
-  left: 20px; /* Adjust the position as needed */
-  color: white; /* Adjust the text color as needed */
-  padding: 5px 10px; /* Adjust the padding as needed */
+  top: 30px;
+  left: 20px;
+  color: white;
+  padding: 5px 10px;
 }
 
 .cases__logo {
-  max-width: 150px; /* Adjust the size of the logo as needed */
+  max-width: 150px;
   height: auto;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 }
 
 .cases__logo-BS {
-  max-width: 139px; /* Adjust the size of the logo as needed */
+  max-width: 139px;
   height: auto;
-  -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
-  filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5)); /* Adjusted drop shadow */
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.5));
 }
 
 .cases__text-position {
   width: 200%;
   position: absolute;
-  top: 48px; /* Adjust the position as needed */
-  color: white; /* Adjust the text color as needed */
-  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  top: 48px;
+  color: white;
+  border-radius: 5px;
   font-size: 12px;
   font-weight: 250;
   opacity: 70%;
@@ -461,8 +481,8 @@ nav.scrolled .logo.hamburger-open {
 
 .cases__text-title {
   position: absolute;
-  top: 100px; /* Adjust the position as needed */
-  color: white; /* Adjust the text color as needed */
+  top: 100px;
+  color: white;
   font-size: 35px;
   font-family: "Raleway", serif;
   font-weight: 700;
@@ -471,41 +491,76 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .cases__text-title {
-  transition: opacity 0.2s ease-in-out; /* Add transition for smooth animation */
+  transition: opacity 0.2s ease-in-out;
 }
 
 .cases__text-title:hover {
   cursor: pointer;
-  opacity: 0.7; /* Set the opacity value */
+  opacity: 0.7;
 }
 
-/*RESUME SECTIONNOT IN USE RN*/ 
+#cases2 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(246, 246, 246);
+  height: 520px;
+}
+#cases2-title-container {
+  background-color: rgb(246, 246, 246);
+}
+
+#cases2-title-container {
+  text-align: left;
+  padding-left: 80px;
+  padding-right: 50px;
+  margin-top: 30px;
+  background-color: rgb(246, 246, 246);
+  height: 70px;
+  padding: 0; 
+ 
+}
+
+.cases2-title-text {
+  font-size: 1.85rem;
+  color: rgb(140, 140, 140);
+  line-height: 100%;
+  margin: 0;
+  padding: 0; 
+  padding-top: 55px;
+  text-align: center;
+  font-weight: 330;
+  font-family: "Raleway", sans-serif;
+}
+
+/*RESUME SECTIONNOT IN USE RN*/
 .cv-illustration-content {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  align-items: center; /* Center buttons horizontally */
-  gap: 16px; /* Adjust the gap between buttons as needed */
-  margin-top: 8vw; /* Adjust the margin as needed */
-  margin-bottom: 80px; /* Adjust the margin as needed */
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8vw;
+  margin-bottom: 80px;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 20px; /* Adjust padding as needed */
-  font-size: 16px; /* Adjust font size as needed */
-  color: black; /* Adjust text color as needed */
-  background-color: white; /* Adjust background color as needed */
-  text-decoration: none; /* Remove underline */
-  border: 2px solid black; /* Add black outline */
-  border-radius: 5px; /* Optional: Add border radius for rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-  background-color: black; /* Adjust hover background color as needed */
-  color: white; /* Adjust hover text color as needed */
+  background-color: black;
+  color: white;
 }
+
 /*FOOTER*/
+
 .footer__logos {
   display: flex;
   justify-content: center;
@@ -537,22 +592,22 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .footer__email:hover {
-  color: #0e5aab; /* Ensure the text color remains the same on hover */
-  text-decoration: underline; /* Ensure the underline remains on hover */
-  text-decoration-color: #0e5aab; /* Match underline color to text color on hover */
+  color: #0e5aab;
+  text-decoration: underline;
+  text-decoration-color: #0e5aab;
 }
 
 .footer__logo {
-  width: 23px; /* Set the width of the logos */
-  margin:10px; /* Add horizontal margin for spacing */
+  width: 23px;
+  margin: 10px;
   margin-bottom: 40px;
-} 
+}
 
 .footer__line {
-  width: calc(100% - 60px); /* Adjust the width to account for the padding */
-  border: none; /* Remove default border */
-  border-top: 1.53px solid #b8b8b8; /* Add a thin top border */
-  margin: 40px auto; /* Center the line and add vertical margin */
+  width: calc(100% - 60px);
+  border: none;
+  border-top: 1.53px solid #b8b8b8;
+  margin: 40px auto;
 }
 
 .rights {
@@ -574,78 +629,183 @@ nav.scrolled .logo.hamburger-open {
 
 
 
-/*ABOUT ME SECTION*/
-.about__pic-container {
-  margin-top: 50px; /* Adjust the margin as needed to move the picture down */
-  position: relative;
-  display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Space items evenly */
-  overflow: hidden; /* Hide any overflow content */
-  width: 100%; /* Ensure the container spans the full width */
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
 
-.aboutme__image {
-  width: 50%; /* Set the width to 50% to take up half the container */
-  height: auto;
-  display: block;
-  padding: 4vw;
-  margin-left: 4vw; /* Remove auto margin to align with the container */
+
+
+
+
+
+
+
+/*ABOUT ME SECTION*/
+
+.aboutme__container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  max-width: 800px;
+  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aboutme__text {
-  width: 50%; /* Set the width to 50% to take up half the container */
-  color: black;
   text-align: left;
-  margin-right: 4vw;
+  font-size: 1rem;
+  width: auto;
+  line-height: 140%;
+  padding-right: 80px;
 }
 
-/* ILLUSTRATION SECTION*/
+.aboutme__text_header {
+  font-size: 2.5rem;
+  color: black;
+  line-height: 100%;
+  margin-bottom: 20px;
+}
+
+.aboutme__text_bio {
+  font-size: .95rem;
+  color: rgb(94, 94, 94);
+  margin: 0;
+  margin-top: 25px;
+  font-weight: 300;
+}
+
+.about__pic-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  transition: transform 0.3s ease;
+  max-width: 350px;
+}
+
+.brushieslink {
+  color: rgb(57, 71, 174);
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.brushieslink:hover {
+  color: rgb(135, 152, 201);
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.about__pic-container img {
+  width: 140px;
+  height: auto;
+  margin-bottom: -20px;
+  margin-top: 10px;
+  transform: rotate(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.about__pic-container img:nth-child(2) {
+  transform: rotate(5deg);
+  margin-left: 20px;
+  width: 160px;
+  margin-bottom: -6px;
+  z-index: 1003;
+}
+
+.about__pic-container img:nth-child(3) {
+  transform: rotate(-10deg);
+  margin-left: -10px;
+  width: 180px;
+  margin-bottom: 30px;
+  z-index: 1002;
+}
+
+.about__pic-container img:hover {
+  transform: scale(1.5);
+  z-index: 1004;
+}
+
+.aboutme__text,
+.about__pic-container {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aboutme__text.animate,
+.about__pic-container.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ILLUSTRATION SECTION*/
+
 .illustrations__text-container {
   text-align: left;
   padding-left: 80px;
   padding-right: 50px;
-  margin-top: 30px; /* Adjust the margin as needed */
+  margin-top: 30px;
 }
 
 .illustration__text_title {
-  font-size: 2.5rem; /* Adjust the font size as needed */
-  color: black; /* Set the text color to black */
+  font-size: 2.5rem;
+  color: black;
   line-height: 95%;
   margin: 0;
 }
 
 .illustration__text_sub {
-  font-size: 1rem; /* Adjust the font size as needed */
-  color: black; /* Set the text color to black */
+  font-size: .95rem;
+  color: rgb(94, 94, 94);
   margin: 0;
-  margin-top: 15px; /* Adjust the margin as needed */
+  margin-top: 17px;
   font-weight: 300;
+  line-height: 140%;
 }
 
 .illustration__art {
-  font-size: 1.05rem; /* Adjust the font size as needed */
-  color: black; /* Set the text color to black */
+  font-size: 1.05rem;
+  color: black;
   margin: 0;
-  margin-top: 80px; /* Adjust the margin as needed */
+  margin-top: 80px;
   font-weight: 400;
 }
+
 .illustration__tools {
-  font-size: .85rem; /* Adjust the font size as needed */
-  color: grey; /* Set the text color to black */
+  font-size: .85rem;
+  color: grey;
   margin: 0;
-  margin-top: 4px; /* Adjust the margin as needed */
+  margin-top: 4px;
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 /*SIDE MENU*/
-/***************/
+
 .illustration-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Increase the minimum size */
-  grid-auto-rows: 220px; /* Increase the row height */
-  gap: 5px; /* Set the gap to 0 to remove spacing between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 220px;
   padding-left: 70px;
   padding-right: 70px;
   padding-top: 20px;
@@ -667,53 +827,53 @@ nav.scrolled .logo.hamburger-open {
   cursor: zoom-in;
 }
 
-/* Modal styles */
+/*ILLUSTRATION MODAL*/
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  display: flex; /* Use Flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  padding: 20px; /* Add padding to ensure content does not touch the edges */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
-  flex-direction: column; /* Stack items vertically */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
 }
 
 .modal-content {
   display: block;
-  width: auto; /* Allow the width to adjust based on the image size */
-  max-width: 80%; /* Ensure the image fits within the screen */
-  max-height: 90vh; /* Ensure the image fits within the screen */
-  margin: 0 auto; /* Center the content */
-  padding: 0; /* Remove padding to ensure equal spacing */
-  box-sizing: border-box; /* Include padding in the element's total width */
-  overflow: auto; /* Make the content scrollable if necessary */
+  width: auto;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
 }
 
 .modal-content img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure the image scales uniformly */
+  height: auto;
+  object-fit: contain;
 }
 
 .caption {
-  display: none; /* Hide the caption by default */
+  display: none;
   color: white;
   text-align: center;
   font-size: .9rem;
   font-weight: 300;
-  margin-top: 20px; /* Add some space above the caption */
+  margin-top: 20px;
   opacity: 60%;
 }
 
 .modal.show .caption {
-  display: block; /* Show the caption when the modal is displayed */
+  display: block;
 }
 
 .close {
@@ -745,16 +905,16 @@ nav.scrolled .logo.hamburger-open {
   font-size: 20px;
   transition: 0.3s ease;
   user-select: none;
-  z-index: 1001; /* Ensure arrows are above the modal content */
+  z-index: 1001;
 }
 
 .prev {
-  left: 20px; /* Adjust to ensure it does not overlap with the content */
+  left: 20px;
   border-radius: 3px 0 0 3px;
 }
 
 .next {
-  right: 20px; /* Adjust to ensure it does not overlap with the content */
+  right: 20px;
   border-radius: 0 3px 3px 0;
 }
 
@@ -767,7 +927,7 @@ nav.scrolled .logo.hamburger-open {
   text-align: left;
   padding-left: 50px;
   padding-right: 50px;
-  margin-top: 30px; /* Adjust the margin as needed */
+  margin-top: 30px;
 }
 
 .illustration-grid,
@@ -783,16 +943,31 @@ nav.scrolled .logo.hamburger-open {
   transform: translateY(0);
 }
 
-/*black text section*/
+
+
+
+
+
+
+
+
+
+
+/*ADDED STYLING FOR BLACK HEADING*/
+
 .black-header .logo,
 .black-header .nav-links a,
 .black-header .hamburger-icon span,
 .black-header .menu-links a {
-  color: black; /* Set the text color to black */
+  color: black;
 }
 
 .black-header .hamburger-icon span {
-  background-color: black; /* Set the hamburger icon lines to black */
+  background-color: black;
 }
 
+.black-header .menu-links a:hover,
+.black-header .nav-links a:hover {
+  color: rgb(156, 156, 156);
+}
 
