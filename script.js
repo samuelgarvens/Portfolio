@@ -123,7 +123,7 @@ document.addEventListener("visibilitychange", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const elementsToAnimate = document.querySelectorAll(
-    '.aboutme__text, .about__pic-container, .illustration-grid, .illustration__text, .cases__image-container'
+    '.aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container'
   );
 
   console.log('Elements to animate:', elementsToAnimate);
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const observerOptions = {
     root: null, 
     rootMargin: '0px',
-    threshold: 0.1 
+    threshold: 0.02 
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -154,6 +154,38 @@ document.addEventListener("DOMContentLoaded", function() {
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       element.classList.add('animate');
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cases = document.querySelectorAll('.cases__image-container');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const index = Array.from(cases).indexOf(entry.target);
+
+        // Add the 'animate' class to the current element
+        entry.target.classList.add('animate');
+
+        // If the current element is the second child, trigger the third and fourth children
+        if (index === 1) {
+          setTimeout(() => {
+            cases[2].classList.add('animate'); // Trigger the third child
+          }, 200); // Delay matches the animation duration of the second child
+
+          setTimeout(() => {
+            cases[3].classList.add('animate'); // Trigger the fourth child
+          }, 400); // Delay for the fourth child (after the third)
+        }
+
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  });
+
+  cases.forEach((caseItem) => {
+    observer.observe(caseItem);
   });
 });
 

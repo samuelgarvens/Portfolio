@@ -261,7 +261,7 @@ nav.scrolled .logo.hamburger-open {
   width: 100%;
   height: auto;
   min-height: 720px;
-  max-height: 1100px;
+  max-height: 1000px;
   object-fit: cover;
 
 }
@@ -288,7 +288,7 @@ nav.scrolled .logo.hamburger-open {
 
 #profile .section__text {
   position: absolute;
-  top: 46.5%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -421,10 +421,25 @@ nav.scrolled .logo.hamburger-open {
 
 .cases__image-container {
   opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease-out, transform 0.6s ease-out;
 }
 
+.cases__image-container:nth-child(1) {
+  transition-delay: 0.2s; /* First case animates after 0.2s */
+}
+
+.cases__image-container:nth-child(2) {
+  transition-delay: 0.4s; /* Second case animates after 0.4s */
+}
+
+.cases__image-container:nth-child(3) {
+  transition-delay: 0.5s; /* Third case animates after 0.6s */
+}
+
+.cases__image-container:nth-child(4) {
+  transition-delay: 0.7s; /* Fourth case animates after 0.8s */
+}
 
 .cases__image-container.animate {
   opacity: 1;
@@ -475,7 +490,7 @@ nav.scrolled .logo.hamburger-open {
   color: white;
   border-radius: 5px;
   font-size: 12px;
-  font-weight: 250;
+  font-weight: 300;
   opacity: 70%;
 }
 
@@ -485,9 +500,9 @@ nav.scrolled .logo.hamburger-open {
   color: white;
   font-size: 35px;
   font-family: "Raleway", serif;
-  font-weight: 700;
-  line-height: 95%;
-  width: 130%;
+  font-weight: 660;
+  line-height: 98%;
+  width: 150%;
 }
 
 .cases__text-title {
@@ -503,7 +518,7 @@ nav.scrolled .logo.hamburger-open {
   display: flex;
   justify-content: center;
   background-color: rgb(246, 246, 246);
-  height: 520px;
+  height: 480px;
 }
 #cases2-title-container {
   background-color: rgb(246, 246, 246);
@@ -521,7 +536,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .cases2-title-text {
-  font-size: 1.85rem;
+  font-size: 1.8rem;
   color: rgb(140, 140, 140);
   line-height: 100%;
   margin: 0;
@@ -723,23 +738,37 @@ nav.scrolled .logo.hamburger-open {
   z-index: 1002;
 }
 
+
+
 .about__pic-container img:hover {
   transform: scale(1.5);
   z-index: 1004;
 }
 
-.aboutme__text,
+.aboutme__text_header,
+.aboutme__text_bio,
 .about__pic-container {
   opacity: 0;
   transform: translateY(80px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.aboutme__text.animate,
+.aboutme__text_bio.animate{
+  transition-delay: .2s
+}
+
+.about__pic-container {
+  transition-delay: .5s; /* Add a 1-second delay for the pic container */
+}
+
+.aboutme__text_header.animate,
+.aboutme__text_bio.animate,
 .about__pic-container.animate {
   opacity: 1;
   transform: translateY(0);
 }
+
+
 
 
 
@@ -808,6 +837,7 @@ nav.scrolled .logo.hamburger-open {
   grid-auto-rows: 220px;
   padding-left: 70px;
   padding-right: 70px;
+  gap: 9px;
   padding-top: 20px;
 }
 
@@ -931,14 +961,34 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .illustration-grid,
-.illustration__text {
+.illustration__text_title,
+.illustration__text_sub,
+.illustration__art,
+.illustration__tools {
   opacity: 0;
   transform: translateY(80px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.illustration__text_sub.animate{
+  transition-delay: .2s
+}
+.illustration__art.animate {
+  transition-delay: .4s
+}
+.illustration__tools.animate{
+  transition-delay: .5s
+}
+.illustration-grid.animate{
+  transition-delay: .6s
+}
+
+
 .illustration-grid.animate,
-.illustration__text.animate {
+.illustration__text_title.animate,
+.illustration__text_sub.animate,
+.illustration__art.animate,
+.illustration__tools.animate {
   opacity: 1;
   transform: translateY(0);
 }
