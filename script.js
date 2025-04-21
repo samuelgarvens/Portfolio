@@ -123,7 +123,7 @@ document.addEventListener("visibilitychange", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const elementsToAnimate = document.querySelectorAll(
-    '.aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container'
+    '.aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container, .hero, .casestudy_section, .casestudy_section1, .casestudy__steptitle, .casestudy__middletextbox'
   );
 
   console.log('Elements to animate:', elementsToAnimate);
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const observerOptions = {
     root: null, 
     rootMargin: '0px',
-    threshold: 0.02 
+    threshold: 0.04
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -187,5 +187,71 @@ document.addEventListener("DOMContentLoaded", function () {
   cases.forEach((caseItem) => {
     observer.observe(caseItem);
   });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const riotLogo = document.getElementById("riot-logo");
+
+  riotLogo.addEventListener("click", function () {
+    const password = prompt("Please enter the password to access this content:");
+
+    if (password === "tunafish5") { // Replace 'yourpassword' with the actual password
+      alert("Access granted!");
+      window.location.href = "./riotgames.html"; // Redirect to the desired page
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const riotLogo = document.getElementById("riot-logo2");
+
+  riotLogo.addEventListener("click", function () {
+    const password = prompt("Please enter the password to access this content:");
+
+    if (password === "tunafish5") { // Replace 'yourpassword' with the actual password
+      alert("Access granted!");
+      window.location.href = "./riotgames.html"; // Redirect to the desired page
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const containers = document.querySelectorAll(".casestudy__container");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const leftBox = entry.target.querySelector(".casestudy__leftbox img");
+          const rightBox = entry.target.querySelector(".casestudy__rightbox img");
+
+          if (leftBox) {
+            // If an image is in the leftbox, animate from the left
+            entry.target.classList.add("animate-left");
+          } else if (rightBox) {
+            // If an image is in the rightbox, animate from the right
+            entry.target.classList.add("animate-right");
+          } else {
+            // If no image is found, animate from below
+            entry.target.classList.add("animate-below");
+          }
+
+          // Stop observing once the animation is applied
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: .33, // Trigger when 30% of the element is visible
+    }
+  );
+
+  containers.forEach((container) => observer.observe(container));
 });
 
