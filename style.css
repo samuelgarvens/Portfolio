@@ -1141,7 +1141,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__smalltitle2 {
- color: rgb(169, 169, 169);
+ color: rgb(158, 158, 158);
  font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
@@ -1168,6 +1168,14 @@ nav.scrolled .logo.hamburger-open {
   margin-bottom: 25px;
   font-weight: 280;
 }
+.casestudy__mediumtextw2 {
+  font-size: 1.3rem;
+  color: white;
+  line-height: 130%;
+  margin-bottom: 25px;
+  font-weight: 280;
+  font-style: italic;
+}
 
 .casestudy__smalltext {
   font-size: .9rem;
@@ -1189,6 +1197,11 @@ nav.scrolled .logo.hamburger-open {
 .casestudy__leftboxl {
   margin-bottom: 90px; /* Keep the existing margin */
   margin-top: 25px;
+  text-align: left;
+}
+.casestudy__leftboxl2 {
+  margin-bottom: 100px; /* Keep the existing margin */
+  margin-top: -25px;
   text-align: left;
 }
 
@@ -1244,6 +1257,38 @@ nav.scrolled .logo.hamburger-open {
   object-fit: cover; /* Ensure the image scales properly */
 }
 
+.finding {
+  height: auto; /* Maintain the aspect ratio */
+  width: 90%;
+  max-width: 800px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Ensure the image scales properly */
+  margin-bottom: 120px;
+
+}
+
+.mockup {
+  height: auto; /* Maintain the aspect ratio */
+  width: 120%;
+  max-width: 1200px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+.proto {
+  height: auto; /* Maintain the aspect ratio */
+  width: 120%;
+  max-width: 1200px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+.usabilitynotes {
+  height: auto; /* Maintain the aspect ratio */
+  width: 110%;
+  max-width: 1000px; /* Limit the maximum width of the image */
+  margin-top: 60px;
+  object-fit: cover; /* Ensure the image scales properly */
+  margin-bottom: -35px ;
+}
+
 .affinity {
   height: auto; /* Maintain the aspect ratio */
   width: 110%;
@@ -1268,9 +1313,41 @@ nav.scrolled .logo.hamburger-open {
   display: flex; /* Use Flexbox to center the image */
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
-  margin-bottom: 40px; /* Keep the existing margin */
   text-align: left;
   translate: 0px -40px;
+}
+
+
+.casestudy__mockupbox {
+  grid-column: 1 / -1; /* Make the middlebox span both columns */
+  display: flex; /* Use Flexbox to center the image */
+  flex-direction: column;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  text-align: left;
+  translate: 0px -40px;
+}
+
+.casestudy__protobox {
+  grid-column: 1 / -1; /* Make the middlebox span both columns */
+  display: flex; /* Use Flexbox to center the image */
+  flex-direction: column;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  text-align: left;
+  translate: 0px -80px;
+  margin-bottom: -130px;
+}
+
+.casestudy__protobox2 {
+  grid-column: 1 / -1; /* Make the middlebox span both columns */
+  display: flex; /* Use Flexbox to center the image */
+  flex-direction: column;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  text-align: left;
+  translate: 0px -145px;
+  margin-bottom: -50px;
 }
 
 .casestudy__userjourneybox {
@@ -1289,9 +1366,16 @@ nav.scrolled .logo.hamburger-open {
   display: flex; /* Use Flexbox to center the image */
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
-  margin-bottom: 100px; /* Keep the existing margin */
   text-align: left;
   translate: 0px -100px;
+}
+
+.casestudy__findingbox {
+  grid-column: 1 / -1; /* Make the middlebox span both columns */
+  display: flex; /* Use Flexbox to center the image */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  text-align: left;
 }
 
 .casestudy__middletextbox {
@@ -1327,6 +1411,14 @@ nav.scrolled .logo.hamburger-open {
   font-weight: 300;
   line-height: 170%;
   margin-bottom: 80px;
+  z-index: 1001;
+}
+.casestudy__smalltextw2 {
+  color: white;
+  font-size: .9rem;
+  font-weight: 300;
+  line-height: 170%;
+  margin-bottom: 55px;
   z-index: 1001;
 }
 
@@ -1392,9 +1484,14 @@ nav.scrolled .logo.hamburger-open {
 
 
 .highlight {
-  font-weight: 480;
+  font-weight: 430;
   color: rgba(0, 0, 0, 0.9);
 }
+.highlightw {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 
 
 
@@ -1494,4 +1591,53 @@ nav.scrolled .logo.hamburger-open {
   color: rgb(68, 68, 68);
 }
 
+
+
+
+.vertical-nav {
+  position: fixed;
+  top: 40%;
+  left: 20px;
+  width: auto;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-nav li {
+  margin-bottom: 8px;
+}
+
+.vertical-nav a {
+  text-decoration: none;
+  color: #8e8e8e;
+  font-size: .95rem;
+  font-weight: 250;
+}
+
+.vertical-nav a:hover {
+  color: #5c5c5c; /* Change color on hover */
+}
+
+.vertical-nav a.active {
+  font-weight: 400 !important;;
+  color: #5c5c5c !important; /* Force override */
+}
+
+.vertical-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.vertical-nav.visible {
+  opacity: 1;
+  visibility: visible;
+}
 

@@ -254,4 +254,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
   containers.forEach((container) => observer.observe(container));
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all sections with an id
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+  const navLinks = document.querySelectorAll(".vertical-nav a");
 
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio >= 0.1) {
+          // Remove 'active' from all nav links
+          navLinks.forEach(link => link.classList.remove("active"));
+          // Add 'active' to the nav link matching this section's id
+          const activeLink = document.querySelector(
+            `.vertical-nav a[href="#${entry.target.id}"]`
+          );
+          if (activeLink) activeLink.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  sections.forEach(section => observer.observe(section));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const verticalNav = document.querySelector(".vertical-nav");
+  const triggerSection = document.querySelector(".casestudy__backgroundheader"); // Adjust this to the section where the nav should appear
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          verticalNav.classList.remove("visible"); // Hide the nav when the trigger section is visible
+        } else {
+          verticalNav.classList.add("visible"); // Show the nav when the trigger section is not visible
+        }
+      });
+    },
+    { threshold: 0.2 } // Trigger when 10% of the section is visible
+  );
+
+  if (triggerSection) {
+    observer.observe(triggerSection);
+  }
+});
