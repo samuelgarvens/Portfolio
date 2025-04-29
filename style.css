@@ -27,7 +27,7 @@ p {
 
 a,
 .btn {
-  transition: all 300ms ease;
+  transition: all 200ms ease;
 }
 
 /* DESKTOP NAV */
@@ -122,7 +122,7 @@ nav.scrolled .hamburger-icon span {
 }
 
 .casestudy__columnbox {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .hamburger-menu {
   position: relative;
@@ -1046,6 +1046,7 @@ nav.scrolled .logo.hamburger-open {
   display: inline-block;
   margin-left: 100px;
   margin-right: 50px;
+  margin-bottom: -10px;
 }
  .caseblack__logo {
   margin-top: 70px;
@@ -1121,7 +1122,7 @@ nav.scrolled .logo.hamburger-open {
 
 .casestudy__step1 {
   margin-left: 100px;
-  translate: 0 80px;
+  translate: 0 85px;
 }
 .casestudy__steptitle {
   font-size: 2.8rem;
@@ -1150,6 +1151,7 @@ nav.scrolled .logo.hamburger-open {
 .casestudy__smalltitle2w {
   color: white;
   font-weight: 550;
+  margin-top: 10px;
    margin-bottom: 25px;
    font-size: 1.03rem;
  }
@@ -1263,7 +1265,16 @@ nav.scrolled .logo.hamburger-open {
   max-width: 800px; /* Limit the maximum width of the image */
   object-fit: cover; /* Ensure the image scales properly */
   margin-bottom: 120px;
+  margin-top: -15px;
+}
 
+.finding2 {
+  height: auto; /* Maintain the aspect ratio */
+  width: 100%;
+  translate: 0px -80px;
+  max-width: 1000px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Ensure the image scales properly */
+  margin-bottom: -105px;
 }
 
 .mockup {
@@ -1278,6 +1289,8 @@ nav.scrolled .logo.hamburger-open {
   width: 120%;
   max-width: 1200px; /* Limit the maximum width of the image */
   object-fit: cover; /* Ensure the image scales properly */
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 
 .usabilitynotes {
@@ -1295,6 +1308,15 @@ nav.scrolled .logo.hamburger-open {
   translate: 0px -40px;
   max-width: 1000px; /* Limit the maximum width of the image */
   object-fit: cover; /* Ensure the image scales properly */
+}
+
+.steps {
+  height: auto; /* Maintain the aspect ratio */
+  width: 100%;
+  translate: 0px -60px;
+  max-width: 1000px; /* Limit the maximum width of the image */
+  object-fit: cover; /* Ensure the image scales properly */
+  margin-bottom: -90px;
 }
 
 
@@ -1335,8 +1357,8 @@ nav.scrolled .logo.hamburger-open {
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
   text-align: left;
-  translate: 0px -80px;
-  margin-bottom: -130px;
+  translate: 0px -90px;
+  margin-bottom: -145px;
 }
 
 .casestudy__protobox2 {
@@ -1346,8 +1368,8 @@ nav.scrolled .logo.hamburger-open {
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
   text-align: left;
-  translate: 0px -145px;
-  margin-bottom: -50px;
+  translate: 0px -135px;
+  margin-bottom: -80px;
 }
 
 .casestudy__userjourneybox {
@@ -1368,6 +1390,7 @@ nav.scrolled .logo.hamburger-open {
   align-items: center; /* Vertically center the image */
   text-align: left;
   translate: 0px -100px;
+  margin-bottom: -20px;
 }
 
 .casestudy__findingbox {
@@ -1457,7 +1480,7 @@ nav.scrolled .logo.hamburger-open {
 .casestudy__middletextbox {
   opacity: 0;
   transform: translateY(80px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 .hero.animate,
 .casestudy_section.animate,
@@ -1484,7 +1507,7 @@ nav.scrolled .logo.hamburger-open {
 
 
 .highlight {
-  font-weight: 430;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.9);
 }
 .highlightw {
@@ -1492,7 +1515,24 @@ nav.scrolled .logo.hamburger-open {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.caseresearch-button {
+  display: inline-block;
+  background-color: #6a6a6a;
+  color: #fff;
+  padding: 25px 38px;
+  border: none;
+  text-decoration: none;
+  font-size: .94rem;
+  font-weight: 250;
+  cursor: pointer;
+  translate: 0 -45px;
+  margin-bottom: -20px;
+}
 
+.caseresearch-button:hover {
+  background-color: #3f3f3f;
+  color: #e1e1e1;
+}
 
 
 /* Initial state (hidden and off-screen) */

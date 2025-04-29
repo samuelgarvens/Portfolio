@@ -123,7 +123,7 @@ document.addEventListener("visibilitychange", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const elementsToAnimate = document.querySelectorAll(
-    '.aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container, .hero, .casestudy_section, .casestudy_section1, .casestudy__steptitle, .casestudy__middletextbox'
+    '.aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container, .hero, .casestudy_section, .casestudy_section1, .casestudy_section2, .casestudy_section2_1, .casestudy__steptitle, .casestudy__middletextbox'
   );
 
   console.log('Elements to animate:', elementsToAnimate);
