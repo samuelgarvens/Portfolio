@@ -1160,7 +1160,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__smalltitle2 {
- color: rgb(158, 158, 158);
+ color: rgb(141, 141, 141);
  font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
@@ -1415,7 +1415,7 @@ nav.scrolled .logo.hamburger-open {
   justify-content: center; /* Horizontally center the image */
   align-items: center; /* Vertically center the image */
   text-align: left;
-  translate: 0px -125px;
+  translate: 0px -135px;
   margin-bottom: -70px;
 }
 
@@ -1637,7 +1637,15 @@ nav.scrolled .logo.hamburger-open {
 }
 
 
-
+.casestudy__photodescription {
+  font-weight: 200;
+  font-size: .8rem;
+  color: rgb(113, 113, 113);
+  margin-top: -110px;
+  width: 10000%;
+  left: 0;
+  z-index: 1005;
+}
 
 
 
