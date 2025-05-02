@@ -300,3 +300,12 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(triggerSection);
   }
 });
+
+window.addEventListener('scroll', function() {
+  const topnav = document.querySelector('.casestudy__topnav');
+  if (window.scrollY > 0) {
+    topnav.classList.add('faded');
+  } else {
+    topnav.classList.remove('faded');
+  }
+});
