@@ -973,7 +973,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .illustration-grid,
-.illustration__text_title,
+.illustration__text_title,N
 .illustration__text_sub,
 .illustration__art,
 .illustration__tools {
@@ -1146,6 +1146,14 @@ nav.scrolled .logo.hamburger-open {
   font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
+}
+
+.casestudy__smalltitle4 {
+  color: rgb(61, 110, 177);
+  font-weight: 550;
+  margin-bottom: 25px;
+  font-size: 1.03rem;
+  margin-top: -25px;
 }
 .casestudy__smalltitle2 {
   color: rgb(153, 153, 153);
