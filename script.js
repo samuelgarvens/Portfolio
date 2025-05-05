@@ -192,31 +192,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const riotLogo = document.getElementById("riot-logo");
+  const ids = ["riot-logo", "riot-logo2", "bluesky-logo", "bluesky-logo2"];
 
-  riotLogo.addEventListener("click", function () {
-    const password = prompt("Please enter the password to access this content:");
-
-    if (password === "tunafish5") { // Replace 'yourpassword' with the actual password
-      alert("Access granted!");
-      window.location.href = "./riotgames.html"; // Redirect to the desired page
-    } else {
-      alert("Incorrect password. Please try again.");
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const riotLogo = document.getElementById("riot-logo2");
-
-  riotLogo.addEventListener("click", function () {
-    const password = prompt("Please enter the password to access this content:");
-
-    if (password === "tunafish5") { // Replace 'yourpassword' with the actual password
-      alert("Access granted!");
-      window.location.href = "./riotgames.html"; // Redirect to the desired page
-    } else {
-      alert("Incorrect password. Please try again.");
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("click", function () {
+        const password = prompt("Please enter the password to access this content:");
+        if (password === "tunafish5") {
+          alert("Access granted!");
+          window.location.href = "./riotgames.html";
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      });
     }
   });
 });
