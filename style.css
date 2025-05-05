@@ -956,9 +956,6 @@ nav.scrolled .logo.hamburger-open {
   margin-top: 30px;
 }
 
-.illustration__text_sub.animate {
-  transition-delay: 0s;
-}
 
 .illustration__art.animate {
   transition-delay: 0.2s;
@@ -973,7 +970,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .illustration-grid,
-.illustration__text_title,N
+.illustration__text_title,
 .illustration__text_sub,
 .illustration__art,
 .illustration__tools {
