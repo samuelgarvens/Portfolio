@@ -644,6 +644,12 @@ nav.scrolled .logo.hamburger-open {
   margin: 10px;
   margin-bottom: 40px;
 }
+.footer__logo2 {
+  width: 28px;
+  margin: 10px;
+  translate: 3px 0px;
+  margin-bottom: 40px;
+}
 
 .footer__line {
   width: calc(100% - 60px);
