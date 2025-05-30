@@ -331,6 +331,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 @keyframes jiggle {
+
   0%,
   100% {
     transform: rotate(0deg);
@@ -644,6 +645,7 @@ nav.scrolled .logo.hamburger-open {
   margin: 10px;
   margin-bottom: 40px;
 }
+
 .footer__logo2 {
   width: 28px;
   margin: 10px;
@@ -716,20 +718,27 @@ nav.scrolled .logo.hamburger-open {
   max-width: 350px;
 }
 
-.brushieslink {
+.casestudylink {
   color: rgb(57, 71, 174);
   font-weight: 400;
   font-style: italic;
 }
 
-.brushieslink2 {
+.casestudylink2 {
   color: rgb(86, 98, 192);
   font-weight: 400;
   font-style: italic;
 }
 
-.brushieslink:hover,
-.brushieslink2:hover {
+.casestudylink3 {
+  color: rgb(57, 71, 174);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.casestudylink:hover,
+.casetudylink2:hover,
+.casestudylink3:hover {
   color: rgb(135, 152, 201);
   font-weight: 400;
   font-style: italic;
@@ -1050,6 +1059,15 @@ nav.scrolled .logo.hamburger-open {
   translate: 0 12px;
 }
 
+.caseblack__logo2 {
+  margin-top: 70px;
+  color: black;
+  width: 180px;
+  font-weight: 200;
+  display: inline-block;
+  translate: 0 10px;
+}
+
 .casestudy__title2 {
   color: black;
   font-size: 2.1rem;
@@ -1073,9 +1091,16 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__backgroundheader {
-  font-weight: 500;
+  font-weight: 450;
   font-size: 1rem;
-  color: black;
+  color: rgb(0, 0, 0);
+  margin-top: 18px;
+}
+
+.casestudy__backgroundheader2 {
+  font-weight: 450;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
   margin-top: 18px;
 }
 
@@ -1101,7 +1126,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__bold {
-  font-weight: 500;
+  font-weight: 450;
   font-size: 0.9rem;
   color: black;
 }
@@ -1151,6 +1176,14 @@ nav.scrolled .logo.hamburger-open {
   font-size: 1.03rem;
 }
 
+.casestudy__smalltitle3 {
+  color: rgb(92, 92, 92);
+  font-weight: 550;
+  margin-bottom: 25px;
+  font-size: 1.03rem;
+}
+
+
 .casestudy__smalltitle4 {
   color: rgb(61, 110, 177);
   font-weight: 550;
@@ -1158,6 +1191,7 @@ nav.scrolled .logo.hamburger-open {
   font-size: 1.03rem;
   margin-top: -25px;
 }
+
 .casestudy__smalltitle2 {
   color: rgb(153, 153, 153);
   font-weight: 550;
@@ -1193,7 +1227,7 @@ nav.scrolled .logo.hamburger-open {
   color: black;
   line-height: 130%;
   margin-bottom: 25px;
-  font-weight: 280;
+  font-weight: 230;
 }
 
 .casestudy__mediumtextdesign {
@@ -1201,7 +1235,7 @@ nav.scrolled .logo.hamburger-open {
   color: black;
   line-height: 130%;
   margin-bottom: -30px;
-  font-weight: 280;
+  font-weight: 230;
 }
 
 .casestudy__mediumtextw {
@@ -1209,7 +1243,7 @@ nav.scrolled .logo.hamburger-open {
   color: white;
   line-height: 130%;
   margin-bottom: 25px;
-  font-weight: 280;
+  font-weight: 230;
 }
 
 .casestudy__mediumtextw2 {
@@ -1217,7 +1251,7 @@ nav.scrolled .logo.hamburger-open {
   color: white;
   line-height: 130%;
   margin-bottom: 25px;
-  font-weight: 280;
+  font-weight: 230;
   font-style: italic;
 }
 
@@ -1326,9 +1360,11 @@ nav.scrolled .logo.hamburger-open {
   margin-bottom: 40px;
 }
 
+
+
 .persona {
   height: auto;
-  width: 100%;
+  width: 110%;
   max-width: 1000px;
   object-fit: cover;
 }
@@ -1336,6 +1372,23 @@ nav.scrolled .logo.hamburger-open {
 .usability {
   height: auto;
   width: 110%;
+  max-width: 1000px;
+  object-fit: cover;
+}
+
+.ideations {
+  height: auto;
+  width: 110%;
+  max-width: 1000px;
+  object-fit: cover;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.socials {
+  height: auto;
+  margin-top: -25px;
+  width: 90%;
   max-width: 1000px;
   object-fit: cover;
 }
@@ -1360,14 +1413,14 @@ nav.scrolled .logo.hamburger-open {
 
 .mockup {
   height: auto;
-  width: 120%;
+  width: 110%;
   max-width: 1200px;
   object-fit: cover;
 }
 
 .proto {
   height: auto;
-  width: 120%;
+  width: 110%;
   max-width: 1200px;
   object-fit: cover;
   margin-top: 10px;
@@ -1381,6 +1434,15 @@ nav.scrolled .logo.hamburger-open {
   margin-top: 60px;
   object-fit: cover;
   margin-bottom: -35px;
+}
+
+.usabilitynotes2 {
+  height: auto;
+  width: 110%;
+  max-width: 1000px;
+  margin-top: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .affinity {
@@ -1408,6 +1470,16 @@ nav.scrolled .logo.hamburger-open {
   margin-bottom: 100px;
   text-align: left;
 }
+
+.casestudy__middlebox3 {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  text-align: left;
+}
+
 
 .casestudy__middlebox2 {
   grid-column: 1 / -1;
@@ -1480,6 +1552,54 @@ nav.scrolled .logo.hamburger-open {
   margin-bottom: -20px;
 }
 
+.redesignbox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #ededed;
+  width: 110%;
+  padding: 24px 0;
+  margin-top: 40px;
+  margin-bottom: -10px;
+  margin-left: -8%;
+  margin-right: -8%;
+  gap: 40px;
+}
+
+.redesign-img-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 42%;
+  /* or adjust as needed */
+}
+
+.redesign-img-title {
+  text-align: center;
+  font-size: .95rem;
+  font-weight: 250;
+  margin-bottom: 12px;
+  color: #878787;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.redesign-imgfinal {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0px 0px 6px #d7d7d7);
+  margin-bottom: 30px;
+}
+
+.redesign-imgpaper {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0px 0px 6px #d7d7d7);
+  margin-bottom: 30px;
+}
+
 .casestudy__findingbox {
   grid-column: 1 / -1;
   display: flex;
@@ -1497,14 +1617,38 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__mediumtextheaderw {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: rgb(255, 255, 255);
   line-height: 130%;
   margin-bottom: 10px;
-  font-weight: 280;
+  font-weight: 200;
   text-align: left;
   font-style: italic;
-  margin-top: 30px;
+  margin-top: 50px;
+  z-index: 1001;
+}
+
+.casestudy__mediumtextheaderw2 {
+  font-size: 1.6rem;
+  color: rgb(255, 255, 255);
+  line-height: 130%;
+  margin-bottom: 10px;
+  font-weight: 200;
+  text-align: left;
+  font-style: italic;
+  margin-top: 40px;
+  z-index: 1001;
+}
+
+.casestudy__mediumtextheader {
+  font-size: 1.6rem;
+  color: rgb(0, 0, 0);
+  line-height: 130%;
+  margin-bottom: 10px;
+  font-weight: 200;
+  text-align: left;
+  font-style: italic;
+  margin-top: 50px;
   z-index: 1001;
 }
 
@@ -1541,18 +1685,43 @@ nav.scrolled .logo.hamburger-open {
   z-index: 1001;
 }
 
+.casestudy__smalltextw4 {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 170%;
+  margin-bottom: 25px;
+  z-index: 1001;
+}
+
 .asteriskw {
   position: absolute;
-  font-size: 22rem;
+  font-size: 18rem;
   rotate: 20deg;
   color: white;
   padding: 0;
   line-height: 0%;
   z-index: 1;
-  translate: -105px 80px;
+  translate: -105px 60px;
   opacity: 0.035;
+  font-weight: 600;
   font-family: "Lexend", italic;
 }
+
+.asteriskw2 {
+  position: absolute;
+  font-size: 18rem;
+  rotate: 20deg;
+  color: white;
+  padding: 0;
+  line-height: 0%;
+  z-index: 1;
+  translate: -105px 70px;
+  opacity: 0.035;
+  font-weight: 600;
+  font-family: "Lexend", italic;
+}
+
 
 .casestudy_section1 {
   margin-top: 75px;
@@ -1923,7 +2092,8 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .casestudy__topnav {
-  position: absolute;   /* or 'fixed' if you want it to stay on scroll */
+  position: absolute;
+  /* or 'fixed' if you want it to stay on scroll */
   top: 0;
   left: 0;
   width: 100%;
@@ -1931,11 +2101,110 @@ nav.scrolled .logo.hamburger-open {
   background: #fff;
   display: block;
   z-index: 10;
-  transition: opacity ease-in-out 0.1s;
+  transition: opacity 0.1s ease-in-out, height 0.4s ease-in-out;
+
 
 }
 
 .casestudy__topnav.faded {
   opacity: 0;
-  pointer-events: none; /* Optional: disables interaction when hidden */
+  pointer-events: none;
+  /* Optional: disables interaction when hidden */
+}
+
+
+
+
+.casestudy__middleboxcarousel {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  margin-top: -50px;
+}
+
+.researchcarousel {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: opacity ease 0.2s;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  /* Remove background color */
+  font-size: 1.2rem;
+  /* Make arrows smaller */
+  cursor: pointer;
+  padding: 0;
+  /* Remove padding */
+  z-index: 2;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  /* or your preferred width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel-dots {
+  text-align: center;
+  position: static;
+  width: 100%;
+  margin-bottom: -30px;
+}
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 3px;
+  background: #bbb;
+  border-radius: 50%;
+  transition: background 0.3s;
+  vertical-align: middle;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+.researchcarousel.fade-out {
+  opacity: 0;
+}
+
+.researchcarousel.fade-in {
+  opacity: 1;
+}
+
+.carousel-btn:hover {
+  opacity: .6;
+  /* Increase opacity on hover */
+}
+
+#prev-btn {
+  left: -40px;
+  /* Move to the left of the image */
+}
+
+#next-btn {
+  right: -40px;
+  /* Move to the right of the image */
 }

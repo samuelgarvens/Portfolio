@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const ids = ["riot-logo", "riot-logo2", "bluesky-logo", "bluesky-logo2"];
+  const ids = ["riot-logo", "riot-logo2"];
 
   ids.forEach(id => {
     const el = document.getElementById(id);
@@ -298,3 +298,101 @@ window.addEventListener('scroll', function() {
     topnav.classList.remove('faded');
   }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = [
+    "./assets/Case2research.png",
+    "./assets/Case2research2.png",
+    "./assets/Case2research3.png" // Replace with your second image path
+  ];
+  let current = 0;
+  const imgEl = document.getElementById("carousel-img");
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+
+  function showImage(index) {
+    imgEl.src = images[index];
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  document.getElementById("prev-btn").onclick = function() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  };
+  document.getElementById("next-btn").onclick = function() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  };
+
+  // Optional: allow clicking dots to jump to a slide
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      current = i;
+      showImage(current);
+    });
+  });
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  imgEl.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  imgEl.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX - 30) { // swipe left
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+    if (touchEndX > touchStartX + 30) { // swipe right
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+  });
+
+  showImage(current); // Initialize
+});
+
+function updateTopnavHeight() {
+  const topnav = document.querySelector('.casestudy__topnav');
+  const isMenuOpen = document.body.classList.contains('menu-open');
+  const isMobile = window.innerWidth < 900; // Adjust breakpoint as needed
+
+  // Height is 130px ONLY when hamburger menu is open AND on mobile/tablet
+  if (isMenuOpen && isMobile && !topnav.classList.contains('faded')) {
+    topnav.style.height = '130px';
+  } else {
+    topnav.style.height = '80px';
+  }
+}
+
+// Hamburger icon toggles menu and updates nav height
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+if (hamburgerIcon) {
+  hamburgerIcon.addEventListener('click', function() {
+    document.body.classList.toggle('menu-open');
+    updateTopnavHeight();
+  });
+}
+
+// Also reset height when a menu link is clicked (menu closes)
+document.querySelectorAll('.menu-links a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.body.classList.remove('menu-open');
+    updateTopnavHeight();
+  });
+});
+
+// Remove menu-open on desktop resize to prevent stale state
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= 900) {
+    document.body.classList.remove('menu-open');
+  }
+  updateTopnavHeight();
+});
+
+window.addEventListener('scroll', updateTopnavHeight);
+updateTopnavHeight();
