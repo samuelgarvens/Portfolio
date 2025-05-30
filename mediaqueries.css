@@ -184,4 +184,16 @@
   #next-btn {
     display: none;
   }
+
+  .bigtitleright,
+  .bigtitlebluesky,
+  .bigtitlebluesky2,
+  .bigtitleright2 {
+    margin-right: 30px;
+  }
+
+  .bigtitleleft {
+    margin-left: 30px;
+  }
+
 }
