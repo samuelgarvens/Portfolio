@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("illustration.html")) {
+  if (window.location.pathname.endsWith("illustration")) {
     let modal = document.getElementById("imageModal");
     let modalImg = document.getElementById("modalImage");
     let captionText = document.getElementById("caption");
