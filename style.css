@@ -1054,7 +1054,15 @@ nav.scrolled .logo.hamburger-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(35%);
+  filter: brightness(45%);
+  animation: hero-zoom 20s ease-in-out infinite alternate;
+}
+
+.hero-image2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(55%);
   animation: hero-zoom 20s ease-in-out infinite alternate;
 }
 
