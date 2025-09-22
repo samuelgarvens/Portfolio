@@ -1043,6 +1043,11 @@ nav.scrolled .logo.hamburger-open {
   background-color: transparent;
 }
 
+.brushieslink {
+  color: rgb(54, 88, 198);
+  font-weight: 300;
+}
+
 .hero {
   position: relative;
   width: 100%;
