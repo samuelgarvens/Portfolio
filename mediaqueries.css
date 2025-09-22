@@ -34,6 +34,10 @@
       align-items: center;
     }
 
+    .cases2-title-text {
+      padding: 40px;
+    }
+
   
     .cases__text {
       position: absolute;
@@ -54,12 +58,17 @@
       width: 115%;
     }
 
+    #cases2-title-container {
+      margin-top: 20px;
+    }
     #cases2 {
       display: flex;
       justify-content: center;
       background-color: rgb(246, 246, 246);
       height: auto;
     }
+
+
   }
 
 
