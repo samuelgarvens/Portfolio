@@ -246,12 +246,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   containers.forEach((container) => observer.observe(container));
 });
+// Observer 1: Update "active" state for navigation links
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all sections with an id
   const sections = Array.from(document.querySelectorAll("section[id]"));
   const navLinks = document.querySelectorAll(".vertical-nav a");
 
-  const observer = new IntersectionObserver(
+  const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio >= 0.08) {
@@ -268,28 +268,36 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.08 }
   );
 
-  sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => sectionObserver.observe(section));
 });
 
+// Observer 2: Toggle visibility of the vertical navigation
 document.addEventListener("DOMContentLoaded", function () {
   const verticalNav = document.querySelector(".vertical-nav");
-  const triggerSection = document.querySelector(".casestudy__backgroundheader"); // Adjust this to the section where the nav should appear
+  const overviewSection = document.querySelector("#overview"); // The first case section
 
+  // Ensure the vertical navigation starts hidden
+  verticalNav.classList.remove("visible");
+
+  // IntersectionObserver to show the vertical navigation when the #overview section is visible
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          verticalNav.classList.remove("visible"); // Hide the nav when the trigger section is visible
+          verticalNav.classList.add("visible"); // Show the nav when the #overview section is visible
         } else {
-          verticalNav.classList.add("visible"); // Show the nav when the trigger section is not visible
+          verticalNav.classList.remove("visible"); // Hide the nav when the #overview section is not visible
         }
       });
     },
-    { threshold: 0.2 } // Trigger when 10% of the section is visible
+    { threshold: 0.22 } // Trigger when 20% of the #overview section is visible
   );
 
-  if (triggerSection) {
-    observer.observe(triggerSection);
+  // Observe the #overview section
+  if (overviewSection) {
+    observer.observe(overviewSection);
+  } else {
+    console.error("Overview section (#overview) not found. Check the selector.");
   }
 });
 
