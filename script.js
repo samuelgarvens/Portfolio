@@ -279,18 +279,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ensure the vertical navigation starts hidden
   verticalNav.classList.remove("visible");
 
-  // IntersectionObserver to show the vertical navigation when the #overview section is visible
+  // IntersectionObserver to show the vertical navigation when the user is in the #overview section or below
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          verticalNav.classList.add("visible"); // Show the nav when the #overview section is visible
+        if (entry.boundingClientRect.top < 0 || entry.isIntersecting) {
+          // Show the nav when the user is in the #overview section or below
+          verticalNav.classList.add("visible");
         } else {
-          verticalNav.classList.remove("visible"); // Hide the nav when the #overview section is not visible
+          // Hide the nav when the user scrolls above the #overview section
+          verticalNav.classList.remove("visible");
         }
       });
     },
-    { threshold: 0.22 } // Trigger when 20% of the #overview section is visible
+    { threshold: 0.22 } // Trigger as soon as any part of the #overview section enters or exits the viewport
   );
 
   // Observe the #overview section
