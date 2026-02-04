@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio >= 0.1) {
+        if (entry.intersectionRatio >= 0.08) {
           // Remove 'active' from all nav links
           navLinks.forEach((link) => link.classList.remove("active"));
           // Add 'active' to the nav link matching this section's id
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.08 }
   );
 
   sections.forEach((section) => observer.observe(section));
