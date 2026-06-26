@@ -1,3 +1,12 @@
+// Lightbox variables lifted to module scope so changeSlide() and
+// the visibilitychange listener can reference them from outside the
+// DOMContentLoaded closure.
+let modal = null;
+let modalImg = null;
+let captionText = null;
+let images = null;
+let currentIndex = 0;
+
 function toggleMenu() {
   const nav = document.getElementById("hamburger-nav");
   const menuLinks = document.querySelector(".menu-links");
@@ -8,8 +17,8 @@ function toggleMenu() {
   nav.classList.toggle("hamburger-menu-open");
   menuLinks.classList.toggle("open");
   hamburgerIcon.classList.toggle("open");
-  aboutMeLink.classList.toggle("open");
-  profileSection.classList.toggle("menu-open");
+  if (aboutMeLink) aboutMeLink.classList.toggle("open");
+  if (profileSection) profileSection.classList.toggle("menu-open");
 }
 
 function resetMenuOnResize() {
@@ -23,8 +32,8 @@ function resetMenuOnResize() {
     nav.classList.remove("hamburger-menu-open");
     menuLinks.classList.remove("open");
     hamburgerIcon.classList.remove("open");
-    aboutMeLink.classList.remove("open");
-    profileSection.classList.remove("menu-open");
+    if (aboutMeLink) aboutMeLink.classList.remove("open");
+    if (profileSection) profileSection.classList.remove("menu-open");
   }
 }
 
@@ -32,6 +41,7 @@ window.addEventListener("resize", resetMenuOnResize);
 
 document.addEventListener("DOMContentLoaded", function () {
   const profilePic = document.querySelector(".section__pic-container img");
+  if (!profilePic) return;
 
   window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY;
@@ -39,9 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const multiplier = isMobile ? 0.08 : 0.28;
 
     if (scrollPosition > 0) {
-      profilePic.style.transform = `translateY(${
-        scrollPosition * multiplier
-      }px)`;
+      profilePic.style.transform = `translateY(${scrollPosition * multiplier}px)`;
     } else {
       profilePic.style.transform = "translateY(0)";
     }
@@ -49,12 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.endsWith("illustration")) {
-    let modal = document.getElementById("imageModal");
-    let modalImg = document.getElementById("modalImage");
-    let captionText = document.getElementById("caption");
-    let images = document.querySelectorAll(".grid-item img");
-    let currentIndex = 0;
+  if (window.location.pathname.includes("illustration")) {
+    modal = document.getElementById("imageModal");
+    modalImg = document.getElementById("modalImage");
+    captionText = document.getElementById("caption");
+    images = document.querySelectorAll(".grid-item img");
+    currentIndex = 0;
 
     images.forEach((img, index) => {
       img.onclick = function () {
@@ -66,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     });
 
-    let span = document.getElementsByClassName("close")[0];
+    const span = document.getElementsByClassName("close")[0];
     if (span) {
       span.onclick = function () {
         modal.style.display = "none";
@@ -81,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
-    let nextButton = document.getElementsByClassName("next")[0];
-    let prevButton = document.getElementsByClassName("prev")[0];
+    const nextButton = document.getElementsByClassName("next")[0];
+    const prevButton = document.getElementsByClassName("prev")[0];
 
     if (nextButton) {
       nextButton.onclick = function () {
@@ -103,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function changeSlide(n) {
+  if (!images) return;
   currentIndex += n;
   if (currentIndex >= images.length) {
     currentIndex = 0;
@@ -114,6 +123,7 @@ function changeSlide(n) {
 }
 
 document.addEventListener("visibilitychange", function () {
+  if (!modal) return;
   if (
     document.visibilityState === "hidden" ||
     document.visibilityState === "visible"
@@ -128,8 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ".aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container, .cases__titleembed, .hero, .casestudy_section, .casestudy_section1, .casestudy_section2, .casestudy_section2_1, .casestudy__steptitle, .casestudy__steptitlew, .casestudy__middletextbox, .bigtitleright, .bigtitleleft, .bigtitleright2, .bigtitlebluesky, .bigtitlebluesky2"
   );
 
-  console.log("Elements to animate:", elementsToAnimate);
-
   const observerOptions = {
     root: null,
     rootMargin: "0px",
@@ -139,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("Animating:", entry.target);
         entry.target.classList.add("animate");
         observer.unobserve(entry.target);
       }
@@ -166,21 +173,19 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         const index = Array.from(cases).indexOf(entry.target);
 
-        // Add the 'animate' class to the current element
         entry.target.classList.add("animate");
 
-        // If the current element is the second child, trigger the third and fourth children
         if (index === 1) {
           setTimeout(() => {
-            cases[2].classList.add("animate"); // Trigger the third child
-          }, 200); // Delay matches the animation duration of the second child
+            if (cases[2]) cases[2].classList.add("animate");
+          }, 200);
 
           setTimeout(() => {
-            cases[3].classList.add("animate"); // Trigger the fourth child
-          }, 400); // Delay for the fourth child (after the third)
+            if (cases[3]) cases[3].classList.add("animate");
+          }, 400);
         }
 
-        observer.unobserve(entry.target); // Stop observing once animated
+        observer.unobserve(entry.target);
       }
     });
   });
@@ -219,45 +224,37 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const leftBox = entry.target.querySelector(".casestudy__leftbox img");
-          const rightBox = entry.target.querySelector(
-            ".casestudy__rightbox img"
-          );
+          const rightBox = entry.target.querySelector(".casestudy__rightbox img");
 
           if (leftBox) {
-            // If an image is in the leftbox, animate from the left
             entry.target.classList.add("animate-left");
           } else if (rightBox) {
-            // If an image is in the rightbox, animate from the right
             entry.target.classList.add("animate-right");
           } else {
-            // If no image is found, animate from below
             entry.target.classList.add("animate-below");
           }
 
-          // Stop observing once the animation is applied
           observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.33, // Trigger when 30% of the element is visible
-    }
+    { threshold: 0.33 }
   );
 
   containers.forEach((container) => observer.observe(container));
 });
+
 // Observer 1: Update "active" state for navigation links
 document.addEventListener("DOMContentLoaded", function () {
   const sections = Array.from(document.querySelectorAll("section[id]"));
   const navLinks = document.querySelectorAll(".vertical-nav a");
+  if (!navLinks.length) return;
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio >= 0.08) {
-          // Remove 'active' from all nav links
           navLinks.forEach((link) => link.classList.remove("active"));
-          // Add 'active' to the nav link matching this section's id
           const activeLink = document.querySelector(
             `.vertical-nav a[href="#${entry.target.id}"]`
           );
@@ -274,37 +271,33 @@ document.addEventListener("DOMContentLoaded", function () {
 // Observer 2: Toggle visibility of the vertical navigation
 document.addEventListener("DOMContentLoaded", function () {
   const verticalNav = document.querySelector(".vertical-nav");
-  const overviewSection = document.querySelector("#overview"); // The first case section
+  if (!verticalNav) return;
 
-  // Ensure the vertical navigation starts hidden
+  const overviewSection = document.querySelector("#overview");
+
   verticalNav.classList.remove("visible");
 
-  // IntersectionObserver to show the vertical navigation when the user is in the #overview section or below
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.boundingClientRect.top < 0 || entry.isIntersecting) {
-          // Show the nav when the user is in the #overview section or below
           verticalNav.classList.add("visible");
         } else {
-          // Hide the nav when the user scrolls above the #overview section
           verticalNav.classList.remove("visible");
         }
       });
     },
-    { threshold: 0.22 } // Trigger as soon as any part of the #overview section enters or exits the viewport
+    { threshold: 0.22 }
   );
 
-  // Observe the #overview section
   if (overviewSection) {
     observer.observe(overviewSection);
-  } else {
-    console.error("Overview section (#overview) not found. Check the selector.");
   }
 });
 
 window.addEventListener("scroll", function () {
   const topnav = document.querySelector(".casestudy__topnav");
+  if (!topnav) return;
   if (window.scrollY > 0) {
     topnav.classList.add("faded");
   } else {
@@ -313,38 +306,47 @@ window.addEventListener("scroll", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = [
+  const imgEl = document.getElementById("carousel-img");
+  if (!imgEl) return;
+
+  const carouselImages = [
     "./assets/Case2research.png",
     "./assets/Case2research2.png",
-    "./assets/Case2research3.png", // Replace with your second image path
+    "./assets/Case2research3.png",
   ];
   let current = 0;
-  const imgEl = document.getElementById("carousel-img");
   const dots = document.querySelectorAll(".carousel-dots .dot");
 
   function showImage(index) {
-    imgEl.src = images[index];
+    imgEl.src = carouselImages[index];
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === index);
     });
   }
 
-  document.getElementById("prev-btn").onclick = function () {
-    current = (current - 1 + images.length) % images.length;
-    showImage(current);
-  };
-  document.getElementById("next-btn").onclick = function () {
-    current = (current + 1) % images.length;
-    showImage(current);
-  };
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
 
-  // Optional: allow clicking dots to jump to a slide
+  if (prevBtn) {
+    prevBtn.onclick = function () {
+      current = (current - 1 + carouselImages.length) % carouselImages.length;
+      showImage(current);
+    };
+  }
+  if (nextBtn) {
+    nextBtn.onclick = function () {
+      current = (current + 1) % carouselImages.length;
+      showImage(current);
+    };
+  }
+
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       current = i;
       showImage(current);
     });
   });
+
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -355,26 +357,25 @@ document.addEventListener("DOMContentLoaded", function () {
   imgEl.addEventListener("touchend", function (e) {
     touchEndX = e.changedTouches[0].screenX;
     if (touchEndX < touchStartX - 30) {
-      // swipe left
-      current = (current + 1) % images.length;
+      current = (current + 1) % carouselImages.length;
       showImage(current);
     }
     if (touchEndX > touchStartX + 30) {
-      // swipe right
-      current = (current - 1 + images.length) % images.length;
+      current = (current - 1 + carouselImages.length) % carouselImages.length;
       showImage(current);
     }
   });
 
-  showImage(current); // Initialize
+  showImage(current);
 });
 
 function updateTopnavHeight() {
   const topnav = document.querySelector(".casestudy__topnav");
-  const isMenuOpen = document.body.classList.contains("menu-open");
-  const isMobile = window.innerWidth < 900; // Adjust breakpoint as needed
+  if (!topnav) return;
 
-  // Height is 130px ONLY when hamburger menu is open AND on mobile/tablet
+  const isMenuOpen = document.body.classList.contains("menu-open");
+  const isMobile = window.innerWidth < 900;
+
   if (isMenuOpen && isMobile && !topnav.classList.contains("faded")) {
     topnav.style.height = "130px";
   } else {
@@ -391,7 +392,6 @@ if (hamburgerIcon) {
   });
 }
 
-// Also reset height when a menu link is clicked (menu closes)
 document.querySelectorAll(".menu-links a").forEach((link) => {
   link.addEventListener("click", function () {
     document.body.classList.remove("menu-open");
@@ -399,7 +399,6 @@ document.querySelectorAll(".menu-links a").forEach((link) => {
   });
 });
 
-// Remove menu-open on desktop resize to prevent stale state
 window.addEventListener("resize", function () {
   if (window.innerWidth >= 900) {
     document.body.classList.remove("menu-open");

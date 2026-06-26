@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 
 * {
   margin: 0;
@@ -889,7 +883,7 @@ nav.scrolled .logo.hamburger-open {
 .grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -1390,7 +1384,7 @@ nav.scrolled .logo.hamburger-open {
 .casestudy__imagel {
   height: auto;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   max-width: 350px;
   float: right;
 }
@@ -1399,7 +1393,7 @@ nav.scrolled .logo.hamburger-open {
 .casestudy__imagec {
   height: auto;
   max-width: 350px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 40px;
 }
 
@@ -1409,21 +1403,21 @@ nav.scrolled .logo.hamburger-open {
   height: auto;
   width: 110%;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .usability {
   height: auto;
   width: 110%;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .ideations {
   height: auto;
   width: 110%;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
   margin-top: -10px;
   margin-bottom: 20px;
 }
@@ -1433,14 +1427,14 @@ nav.scrolled .logo.hamburger-open {
   margin-top: -25px;
   width: 90%;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .finding {
   height: auto;
   width: 90%;
   max-width: 800px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 120px;
   margin-top: -15px;
 }
@@ -1450,7 +1444,7 @@ nav.scrolled .logo.hamburger-open {
   width: 100%;
   translate: 0px -80px;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: -105px;
 }
 
@@ -1458,14 +1452,14 @@ nav.scrolled .logo.hamburger-open {
   height: auto;
   width: 110%;
   max-width: 1200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .proto {
   height: auto;
   width: 110%;
   max-width: 1200px;
-  object-fit: cover;
+  object-fit: contain;
   margin-top: 10px;
   margin-bottom: -10px;
 }
@@ -1475,7 +1469,7 @@ nav.scrolled .logo.hamburger-open {
   width: 110%;
   max-width: 1000px;
   margin-top: 60px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: -35px;
 }
 
@@ -1484,7 +1478,7 @@ nav.scrolled .logo.hamburger-open {
   width: 110%;
   max-width: 1000px;
   margin-top: 80px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -1493,7 +1487,7 @@ nav.scrolled .logo.hamburger-open {
   width: 110%;
   translate: 0px -40px;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .steps {
@@ -1501,7 +1495,7 @@ nav.scrolled .logo.hamburger-open {
   width: 100%;
   translate: 0px -60px;
   max-width: 1000px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: -90px;
 }
 
