@@ -1,12 +1,17 @@
-// Lightbox variables lifted to module scope so changeSlide() and
-// the visibilitychange listener can reference them from outside the
-// DOMContentLoaded closure.
+// =============================================================================
+// LIGHTBOX STATE
+// Variables are module-scoped so changeSlide() and the visibilitychange
+// listener can reference them outside the DOMContentLoaded closure.
+// =============================================================================
 let modal = null;
 let modalImg = null;
 let captionText = null;
 let images = null;
 let currentIndex = 0;
 
+// =============================================================================
+// HAMBURGER MENU
+// =============================================================================
 function toggleMenu() {
   const nav = document.getElementById("hamburger-nav");
   const menuLinks = document.querySelector(".menu-links");
@@ -39,125 +44,153 @@ function resetMenuOnResize() {
 
 window.addEventListener("resize", resetMenuOnResize);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const profilePic = document.querySelector(".section__pic-container img");
-  if (!profilePic) return;
+// Hamburger icon click — toggles menu and updates case-study topnav height
+const hamburgerIcon = document.querySelector(".hamburger-icon");
+if (hamburgerIcon) {
+  hamburgerIcon.addEventListener("click", function () {
+    document.body.classList.toggle("menu-open");
+    updateTopnavHeight();
+  });
+}
 
-  window.addEventListener("scroll", function () {
-    const scrollPosition = window.scrollY;
-    const isMobile = window.innerWidth <= 768;
-    const multiplier = isMobile ? 0.08 : 0.28;
-
-    if (scrollPosition > 0) {
-      profilePic.style.transform = `translateY(${scrollPosition * multiplier}px)`;
-    } else {
-      profilePic.style.transform = "translateY(0)";
-    }
+// Close menu when a menu link is clicked
+document.querySelectorAll(".menu-links a").forEach((link) => {
+  link.addEventListener("click", function () {
+    document.body.classList.remove("menu-open");
+    updateTopnavHeight();
   });
 });
 
+// Reset menu state and topnav height on desktop resize
+window.addEventListener("resize", function () {
+  if (window.innerWidth >= 900) {
+    document.body.classList.remove("menu-open");
+  }
+  updateTopnavHeight();
+});
+
+// =============================================================================
+// LIGHTBOX — illustration page only
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.includes("illustration")) {
-    modal = document.getElementById("imageModal");
-    modalImg = document.getElementById("modalImage");
-    captionText = document.getElementById("caption");
-    images = document.querySelectorAll(".grid-item img");
-    currentIndex = 0;
+  if (!window.location.pathname.includes("illustration")) return;
 
-    images.forEach((img, index) => {
-      img.onclick = function () {
-        modal.style.display = "flex";
-        modal.classList.add("show");
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-        currentIndex = index;
-      };
-    });
+  modal = document.getElementById("imageModal");
+  modalImg = document.getElementById("modalImage");
+  captionText = document.getElementById("caption");
+  images = document.querySelectorAll(".grid-item img");
+  currentIndex = 0;
 
-    const span = document.getElementsByClassName("close")[0];
-    if (span) {
-      span.onclick = function () {
-        modal.style.display = "none";
-        modal.classList.remove("show");
-      };
-    }
-
-    modal.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-        modal.classList.remove("show");
-      }
+  // Open lightbox on image click
+  images.forEach((img, index) => {
+    img.onclick = function () {
+      modal.style.display = "flex";
+      modal.classList.add("show");
+      modalImg.src = this.dataset.full || this.src;
+      captionText.innerHTML = this.alt;
+      currentIndex = index;
     };
+  });
 
-    const nextButton = document.getElementsByClassName("next")[0];
-    const prevButton = document.getElementsByClassName("prev")[0];
+  // Close via × button
+  const span = document.getElementsByClassName("close")[0];
+  if (span) {
+    span.onclick = function () {
+      modal.style.display = "none";
+      modal.classList.remove("show");
+    };
+  }
 
-    if (nextButton) {
-      nextButton.onclick = function () {
-        currentIndex = (currentIndex + 1) % images.length;
-        modalImg.src = images[currentIndex].src;
-        captionText.innerHTML = images[currentIndex].alt;
-      };
+  // Close by clicking the backdrop
+  modal.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      modal.classList.remove("show");
     }
+  };
 
-    if (prevButton) {
-      prevButton.onclick = function () {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        modalImg.src = images[currentIndex].src;
-        captionText.innerHTML = images[currentIndex].alt;
-      };
+  // Swipe to navigate on mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  modal.addEventListener("touchstart", function (e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  modal.addEventListener("touchend", function (e) {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    // Only trigger if horizontal swipe dominates
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      changeSlide(dx < 0 ? 1 : -1);
     }
+  }, { passive: true });
+
+  // Next / prev buttons
+  const nextButton = document.getElementsByClassName("next")[0];
+  const prevButton = document.getElementsByClassName("prev")[0];
+
+  if (nextButton) {
+    nextButton.onclick = function () {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].dataset.full || images[currentIndex].src;
+      captionText.innerHTML = images[currentIndex].alt;
+    };
+  }
+
+  if (prevButton) {
+    prevButton.onclick = function () {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].dataset.full || images[currentIndex].src;
+      captionText.innerHTML = images[currentIndex].alt;
+    };
   }
 });
 
+// Called by inline onclick="changeSlide(±1)" on the prev/next arrows
 function changeSlide(n) {
   if (!images) return;
-  currentIndex += n;
-  if (currentIndex >= images.length) {
-    currentIndex = 0;
-  } else if (currentIndex < 0) {
-    currentIndex = images.length - 1;
-  }
-  modalImg.src = images[currentIndex].src;
+  currentIndex = (currentIndex + n + images.length) % images.length;
+  modalImg.src = images[currentIndex].dataset.full || images[currentIndex].src;
   captionText.innerHTML = images[currentIndex].alt;
 }
 
+// Close lightbox when the tab loses/regains visibility
 document.addEventListener("visibilitychange", function () {
   if (!modal) return;
-  if (
-    document.visibilityState === "hidden" ||
-    document.visibilityState === "visible"
-  ) {
-    modal.style.display = "none";
-    modal.classList.remove("show");
-  }
+  modal.style.display = "none";
+  modal.classList.remove("show");
 });
 
+// =============================================================================
+// SCROLL ANIMATIONS — fade-in / slide-up on scroll entry
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
   const elementsToAnimate = document.querySelectorAll(
-    ".aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, .illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, .illustration__text_sub, .cases__image-container, .cases__titleembed, .hero, .casestudy_section, .casestudy_section1, .casestudy_section2, .casestudy_section2_1, .casestudy__steptitle, .casestudy__steptitlew, .casestudy__middletextbox, .bigtitleright, .bigtitleleft, .bigtitleright2, .bigtitlebluesky, .bigtitlebluesky2"
+    ".aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, " +
+    ".illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, " +
+    ".illustration__text_sub, .cases__image-container, .cases__titleembed, .hero, " +
+    ".casestudy_section, .casestudy_section1, .casestudy_section2, .casestudy_section2_1, " +
+    ".casestudy__steptitle, .casestudy__steptitlew, .casestudy__middletextbox, " +
+    ".bigtitleright, .bigtitleleft, .bigtitleright2, .bigtitlebluesky, .bigtitlebluesky2"
   );
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.05,
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.05 }
+  );
 
   elementsToAnimate.forEach((element) => {
     observer.observe(element);
-  });
-
-  elementsToAnimate.forEach((element) => {
+    // Animate immediately if already in viewport on load
     const rect = element.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       element.classList.add("animate");
@@ -165,6 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// =============================================================================
+// CASE CARD STAGGER — cards 3 & 4 animate shortly after card 2 (index only)
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
   const cases = document.querySelectorAll(".cases__image-container");
 
@@ -172,17 +208,11 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const index = Array.from(cases).indexOf(entry.target);
-
         entry.target.classList.add("animate");
 
         if (index === 1) {
-          setTimeout(() => {
-            if (cases[2]) cases[2].classList.add("animate");
-          }, 200);
-
-          setTimeout(() => {
-            if (cases[3]) cases[3].classList.add("animate");
-          }, 400);
+          setTimeout(() => { if (cases[2]) cases[2].classList.add("animate"); }, 200);
+          setTimeout(() => { if (cases[3]) cases[3].classList.add("animate"); }, 400);
         }
 
         observer.unobserve(entry.target);
@@ -190,52 +220,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  cases.forEach((caseItem) => {
-    observer.observe(caseItem);
-  });
+  cases.forEach((caseItem) => observer.observe(caseItem));
 });
 
+// =============================================================================
+// RIOT GAMES PASSWORD GATE
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
-  const ids = ["riot-logo", "riot-logo2"];
-
-  ids.forEach((id) => {
+  ["riot-logo"].forEach((id) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("click", function () {
-        const password = prompt(
-          "Please enter the password to access this content:"
-        );
-        if (password === "tunafish5") {
-          alert("Access granted!");
-          window.location.href = "./riotgames.html";
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
-      });
-    }
+    if (!el) return;
+
+    el.addEventListener("click", function () {
+      const password = prompt("Please enter the password to access this content:");
+      if (password === "tunafish5") {
+        alert("Access granted!");
+        window.location.href = "./riotgames.html";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    });
   });
 });
 
+// =============================================================================
+// CASE STUDY CONTAINER ANIMATIONS — slide in from left, right, or below
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
   const containers = document.querySelectorAll(".casestudy__container");
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const leftBox = entry.target.querySelector(".casestudy__leftbox img");
-          const rightBox = entry.target.querySelector(".casestudy__rightbox img");
+        if (!entry.isIntersecting) return;
 
-          if (leftBox) {
-            entry.target.classList.add("animate-left");
-          } else if (rightBox) {
-            entry.target.classList.add("animate-right");
-          } else {
-            entry.target.classList.add("animate-below");
-          }
+        const leftBox = entry.target.querySelector(".casestudy__leftbox img");
+        const rightBox = entry.target.querySelector(".casestudy__rightbox img");
 
-          observer.unobserve(entry.target);
+        if (leftBox) {
+          entry.target.classList.add("animate-left");
+        } else if (rightBox) {
+          entry.target.classList.add("animate-right");
+        } else {
+          entry.target.classList.add("animate-below");
         }
+
+        observer.unobserve(entry.target);
       });
     },
     { threshold: 0.33 }
@@ -244,11 +274,16 @@ document.addEventListener("DOMContentLoaded", function () {
   containers.forEach((container) => observer.observe(container));
 });
 
-// Observer 1: Update "active" state for navigation links
+// =============================================================================
+// VERTICAL NAV — case study pages (brushies, bluesky)
+// =============================================================================
+
+// Highlight the nav link matching the section currently in view
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = Array.from(document.querySelectorAll("section[id]"));
   const navLinks = document.querySelectorAll(".vertical-nav a");
   if (!navLinks.length) return;
+
+  const sections = Array.from(document.querySelectorAll("section[id]"));
 
   const sectionObserver = new IntersectionObserver(
     (entries) => {
@@ -268,14 +303,15 @@ document.addEventListener("DOMContentLoaded", function () {
   sections.forEach((section) => sectionObserver.observe(section));
 });
 
-// Observer 2: Toggle visibility of the vertical navigation
+// Show the vertical nav once the user reaches the #overview section
 document.addEventListener("DOMContentLoaded", function () {
   const verticalNav = document.querySelector(".vertical-nav");
   if (!verticalNav) return;
 
-  const overviewSection = document.querySelector("#overview");
-
   verticalNav.classList.remove("visible");
+
+  const overviewSection = document.querySelector("#overview");
+  if (!overviewSection) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -290,21 +326,37 @@ document.addEventListener("DOMContentLoaded", function () {
     { threshold: 0.22 }
   );
 
-  if (overviewSection) {
-    observer.observe(overviewSection);
-  }
+  observer.observe(overviewSection);
 });
+
+// =============================================================================
+// CASE STUDY TOPNAV — fades on scroll, adjusts height when mobile menu is open
+// =============================================================================
+function updateTopnavHeight() {
+  const topnav = document.querySelector(".casestudy__topnav");
+  if (!topnav) return;
+
+  const isMenuOpen = document.body.classList.contains("menu-open");
+  const isMobile = window.innerWidth < 900;
+
+  topnav.style.height =
+    isMenuOpen && isMobile && !topnav.classList.contains("faded")
+      ? "130px"
+      : "80px";
+}
 
 window.addEventListener("scroll", function () {
   const topnav = document.querySelector(".casestudy__topnav");
   if (!topnav) return;
-  if (window.scrollY > 0) {
-    topnav.classList.add("faded");
-  } else {
-    topnav.classList.remove("faded");
-  }
+  topnav.classList.toggle("faded", window.scrollY > 0);
 });
 
+window.addEventListener("scroll", updateTopnavHeight);
+updateTopnavHeight();
+
+// =============================================================================
+// IMAGE CAROUSEL — bluesky research section
+// =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
   const imgEl = document.getElementById("carousel-img");
   if (!imgEl) return;
@@ -319,92 +371,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showImage(index) {
     imgEl.src = carouselImages[index];
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   }
 
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
 
   if (prevBtn) {
-    prevBtn.onclick = function () {
+    prevBtn.onclick = () => {
       current = (current - 1 + carouselImages.length) % carouselImages.length;
       showImage(current);
     };
   }
   if (nextBtn) {
-    nextBtn.onclick = function () {
+    nextBtn.onclick = () => {
       current = (current + 1) % carouselImages.length;
       showImage(current);
     };
   }
 
+  // Dot navigation
   dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      current = i;
-      showImage(current);
-    });
+    dot.addEventListener("click", () => { current = i; showImage(current); });
   });
 
+  // Swipe support
   let touchStartX = 0;
-  let touchEndX = 0;
-
-  imgEl.addEventListener("touchstart", function (e) {
+  imgEl.addEventListener("touchstart", (e) => {
     touchStartX = e.changedTouches[0].screenX;
   });
-
-  imgEl.addEventListener("touchend", function (e) {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchEndX < touchStartX - 30) {
-      current = (current + 1) % carouselImages.length;
-      showImage(current);
-    }
-    if (touchEndX > touchStartX + 30) {
-      current = (current - 1 + carouselImages.length) % carouselImages.length;
-      showImage(current);
-    }
+  imgEl.addEventListener("touchend", (e) => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (diff < -30) { current = (current + 1) % carouselImages.length; showImage(current); }
+    if (diff > 30)  { current = (current - 1 + carouselImages.length) % carouselImages.length; showImage(current); }
   });
 
   showImage(current);
 });
 
-function updateTopnavHeight() {
-  const topnav = document.querySelector(".casestudy__topnav");
-  if (!topnav) return;
+// =============================================================================
+// SECTION ITEM STAGGER — education, experience, projects
+// =============================================================================
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
 
-  const isMenuOpen = document.body.classList.contains("menu-open");
-  const isMobile = window.innerWidth < 900;
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section--visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
 
-  if (isMenuOpen && isMobile && !topnav.classList.contains("faded")) {
-    topnav.style.height = "130px";
-  } else {
-    topnav.style.height = "80px";
-  }
-}
-
-// Hamburger icon toggles menu and updates nav height
-const hamburgerIcon = document.querySelector(".hamburger-icon");
-if (hamburgerIcon) {
-  hamburgerIcon.addEventListener("click", function () {
-    document.body.classList.toggle("menu-open");
-    updateTopnavHeight();
-  });
-}
-
-document.querySelectorAll(".menu-links a").forEach((link) => {
-  link.addEventListener("click", function () {
-    document.body.classList.remove("menu-open");
-    updateTopnavHeight();
+  document.querySelectorAll('#education, #experience, #cases').forEach(function (s) {
+    observer.observe(s);
   });
 });
-
-window.addEventListener("resize", function () {
-  if (window.innerWidth >= 900) {
-    document.body.classList.remove("menu-open");
-  }
-  updateTopnavHeight();
-});
-
-window.addEventListener("scroll", updateTopnavHeight);
-updateTopnavHeight();

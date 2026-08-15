@@ -6,24 +6,25 @@
         <title>Portfolio</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=PT+Serif&family=Hedvig+Letters+Serif:opsz@12..24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=block">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&display=block">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="mediaqueries.css">
-        <link rel="icon" href="./assets/favi.png" type="image/png">
+        <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
     </head>
 <body>
     <nav id="desktop-nav">
-        <a href="./" class="logo">Samuel Garvens</a>
-        <div>
+        <div class="nav-inner">
+            <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
             <ul class="nav-links">
-                <li><a href="./">Projects</a></li>
-                <li><a href="./aboutme">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#cases">Projects</a></li>
+                <li><a href="mailto:samuelgarvens@gmail.com" class="nav-email">samuelgarvens@gmail.com</a></li>
             </ul>
         </div>
     </nav>
     
     <nav id="hamburger-nav">
-      <a href="./" class="logo">Samuel Garvens</a>
+      <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span>   
@@ -32,90 +33,145 @@
             </div>
             <div class="menu-links">
                 <li><a href="./" onclick="toggleMenu()">Home</a></li>
-                <li><a href="./aboutme" class="about-me-link" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="./aboutme.html" class="about-me-link" onclick="toggleMenu()">About</a></li>
             </div> 
         </div>
     </nav>
     <section id="profile" class="profile-section">
-        <div class="section__pic-container">
-            <img src="./assets/ME.png" alt="Samuel Garvens profile picture">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">I'm Samuel Garvens, a UX designer and illustrator. I enjoy crafting meaningful user-centric stories.</p>
-            <p class="section__text__p2">Brands I've worked with</p>
-            <div class="section__companies">
-                <a href="https://www.brushies.io" target="_blank">
-                    <img src="./assets/brushies.png" alt="Brushies.io logo" class="logo-tiny">
-                </a>
-                <a href="https://www.wondersandworries.org" target="_blank">
-                    <img src="./assets/ww.png" alt="Wonders & Worries logo" class="logo-small">
-                </a>
-                <a href="https://www.riotgames.com" target="_blank">
-                    <img src="./assets/riot.png" alt="Riot Games logo" class="logo-large">
-                </a>
-                <a href="https://www.instagram.com/txvisualartscollective" target="_blank">
-                    <img src="./assets/tvac.png" alt="TVAC logo" class="logo-tiny">
-                </a>
-            </div>
+        <div class="hero__text">
+            <h1 class="hero__name">
+              <span class="hero__line"><span class="hero__word">Samuel</span></span>
+              <span class="hero__line"><span class="hero__word">Garvens</span></span>
+            </h1>
+            <p class="hero__tagline"><span class="tagline__design-wrap"><span class="tagline__selection"></span><svg class="tagline__cursor" viewBox="0 0 14 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L1 19L5.5 14.5L8.5 21L11 20L8 13.5L14 13.5Z" fill="currentColor"/></svg><span class="tagline__design-text">Designing experiences.</span></span><span class="tagline__draw-text"> Drawing everything else.</span></p>
         </div>
     </section>
-    <section id="projects">
-        <div class="projects-content">
-        </div>
-    </section>
-    <section id="cases">
-        <div class="cases__container">
-          <div class="cases__image-container">
-            <a href="./brushies">
-            <img src="./assets/mags.jpg" alt="Brushies" class="cases__image">
-          </a>
-            <div class="cases__text">
-              <img src="./assets/brushiespng.png" alt="Brushies logo" class="cases__logo">
-              <p class="cases__text-position">UX Research, Responsive Design</p>
-              <a href="./brushies">
-              <p class="cases__text-title">Streamlining Brushies' User Experience</p>
-              </a>
+    <section id="education">
+        <div class="work-list">
+          <p class="section-label">Education</p>
+
+          <div class="exp-item">
+            <div class="exp-item__header">
+              <span class="exp-item__company">The University of Texas at Austin</span>
+              <span class="exp-item__dates">May 2024</span>
             </div>
+            <span class="exp-item__role">Bachelor of Business Administration – Marketing &amp; Information Systems · GPA 3.8 · University Honors</span>
           </div>
-          <div class="cases__image-container">
-            <a href="./bluesky">
-            <img src="./assets/bluesky.jpg" alt="Bluesky" class="cases__image" id="bluesky-logo">
-          </a>
-            <div class="cases__text">
-              <img src="./assets/blueskypng.png" alt="Bluesky logo" class="cases__logo-BS">
-              <p class="cases__text-position">UX Research, Accessibility</p>
-              <a href="./bluesky">
-              <p class="cases__text-title" id="bluesky-logo2">Incentivizing the Move To Bluesky with UX</p>
-              </a>
+
+          <div class="cert-item">
+            <div class="cert-item__header">
+              <span class="cert-item__name">UX Design Professional Certificate</span>
+              <span class="cert-item__date">May 2025</span>
             </div>
+            <span class="cert-item__institution">Google</span>
           </div>
-          <div class="cases__image-container">
-            <img src="./assets/arcane.png" alt="placeholder" class="cases__image" id="riot-logo">
-            <div class="cases__text">
-              <img src="./assets/riotlogowhite.png" alt="Riot Games logo" class="cases__logo">
-              <p class="cases__text-position">UX Research, Illustration</p>
-              <p class="cases__text-title" id="riot-logo2">Riot Games x Netflix Arcane Campaign</p>
+
+          <div class="cert-item">
+            <div class="cert-item__header">
+              <span class="cert-item__name">Technical Fundamentals of Generative AI</span>
+              <span class="cert-item__date">November 2024</span>
             </div>
+            <span class="cert-item__institution">Stanford University</span>
           </div>
-          <div class="cases__image-container">
-            <a href="./illustration">
-              <img src="./assets/miki.png" alt="illustration" class="cases__image">      
-            </a>
-              <div class="cases__text">
-              <!--img src="./assets/blueskypng.png" alt="Bluesky logo" class="cases__logo-BS"-->
-              <!--p class="cases__text-position">UX Research, Design, Accessibility</p>-->
-              <a href="./illustration">
-              <p class="cases__text-title2">Illustration and Figure Drawing</p>
-            </a>  
-            </div>
-            </div>
-          </div>
+
         </div>
       </section>
-      <section id="cases2-title-container">
+
+    <section id="experience">
+        <div class="work-list">
+          <p class="section-label">Experience</p>
+
+          <div class="exp-item">
+            <div class="exp-item__header">
+              <span class="exp-item__company">FamFile</span>
+              <span class="exp-item__dates">June 2025 – Present</span>
+            </div>
+            <span class="exp-item__role">UX/UI Designer</span>
+            <p class="exp-item__desc">Iterated across 30+ screens, refining features and design system components based on user research insights. Distilled findings from 30+ sessions to map critical friction points and architect end-to-end UX flows.</p>
+            <p class="exp-item__tags">Design Systems / User Research / Interaction Design</p>
+          </div>
+
+          <a href="https://brushies.io" target="_blank" class="exp-item exp-item--link">
+            <div class="exp-item__header">
+              <span class="exp-item__company">Brushies</span>
+              <span class="exp-item__dates">November 2024 – Present</span>
+            </div>
+            <span class="exp-item__role">Founder, UX/UI Designer</span>
+            <p class="exp-item__desc">Launched and scaled an art-focused SaaS to 300+ subscribers through organic, user-driven growth. Refined subscription content strategy using insights from 20+ user interviews and 3 usability studies, resulting in a 25% reduction in churn. Deployed A/B user flows and IA leveraging GA4 insights to improve completion rates and accessibility.</p>
+            <p class="exp-item__tags">Usability Testing / A/B Testing / Responsive Design / User Retention</p>
+          </a>
+
+          <div class="exp-item">
+            <div class="exp-item__header">
+              <span class="exp-item__company">Casey AI</span>
+              <span class="exp-item__dates">June 2025 – November 2025</span>
+            </div>
+            <span class="exp-item__role">UX/UI Designer</span>
+            <p class="exp-item__desc">Spearheaded a mobile-first design initiative, delivering a responsive prototype within 1 month and launching on the App Store within 2 months. Closed the design-to-dev gap by embedding in sprint reviews and QA cycles, achieving pixel-accurate Figma-to-TestFlight handoff across all screen breakpoints with fewer than 5 revision rounds.</p>
+            <p class="exp-item__tags">Mobile-First Design / Dev Handoff</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-item__header">
+              <span class="exp-item__company">Wonders &amp; Worries</span>
+              <span class="exp-item__dates">May 2023 – May 2024</span>
+            </div>
+            <span class="exp-item__role">UX Designer, Marketing Specialist</span>
+            <p class="exp-item__desc">Redesigned program discovery flow for families navigating medical hardship, cutting average time-to-access from 5 steps to 2 within the first month of rollout. Drove 50% growth in cross-platform following by overhauling content strategy and aligning UX with brand voice across web and social. Partnered with program directors and key stakeholders to ship a unified design language used across cross-functional teams and donor-facing materials.</p>
+            <p class="exp-item__tags">Information Architecture / User Research / Content Strategy</p>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-item__header">
+              <span class="exp-item__company">Grumnaile</span>
+              <span class="exp-item__dates">June 2022 – June 2025</span>
+            </div>
+            <span class="exp-item__role">Founder</span>
+            <p class="exp-item__desc">Grew Grumnaile to 2,500+ orders fulfilled by optimizing conversion through iterative product page design and purchase analytics. Designed end-to-end storefront UX from product photography to checkout flow, driving consistent organic growth.</p>
+            <p class="exp-item__tags">Conversion Optimization / Analytics</p>
+          </div>
+
+        </div>
+      </section>
+
+    <section id="cases">
+        <div class="work-list">
+          <p class="section-label">Selected Projects</p>
+
+          <a href="./illustration.html" class="work-item">
+            <span class="work-item__title">Illustration and Figure Drawing</span>
+            <span class="work-item__type">Digital Art, Traditional Art</span>
+            <span class="work-item__year">2021 – 2025</span>
+            <img src="./assets/arrow-forward.svg" class="work-item__arrow" alt="">
+          </a>
+
+          <div class="work-item work-item--locked">
+            <span class="work-item__title">Streamlining Brushies' User Experience</span>
+            <span class="work-item__type">UX Research, Responsive Design</span>
+            <span class="work-item__year">2024</span>
+            <img src="./assets/lock.svg" class="work-item__lock" alt="Coming soon">
+          </div>
+
+          <div class="work-item work-item--locked">
+            <span class="work-item__title">Incentivizing the Move to Bluesky with UX</span>
+            <span class="work-item__type">UX Research, Accessibility</span>
+            <span class="work-item__year">2024</span>
+            <img src="./assets/lock.svg" class="work-item__lock" alt="Coming soon">
+          </div>
+
+          <div class="work-item work-item--locked" id="riot-logo">
+            <span class="work-item__title">Riot Games × Netflix Arcane Campaign</span>
+            <span class="work-item__type">UX Research, Illustration</span>
+            <span class="work-item__year">2024</span>
+            <img src="./assets/lock.svg" class="work-item__lock" alt="NDA">
+          </div>
+
+        </div>
+      </section>
+      <section id="cases2-title-container" style="display:none;">
         <p class="cases2-title-text">Other works</p>
       </section>
-      <section id="cases2">
+      <section id="cases2" style="display:none;">
         <div class="cases__container">
           <div class="cases__image-container">
             <a href="./marketing/fetiiplan.pdf" target="_blank">
@@ -143,27 +199,47 @@
           </div>
          </div>
        </section>
-        <!--Footer-->   
-        <section style="height: 26px;">
-        </section>
+    <section id="about">
+        <div class="work-list">
+          <p class="section-label">About</p>
+          <div class="about__body">
+            <p class="about__bio">I'm Samuel, a UX designer focused on better user experiences through intuitive layout and storytelling. I've always been interested in the psychology of design, and love coordinating both research-backed and creative direction.</p>
+            <p class="about__bio">I graduated from UT Austin with a BBA in Marketing and Information Systems, then pursued my passion project <a href="https://brushies.io" class="about__link" target="_blank">Brushies</a> while teaching myself UX through courses and a few good books. Now I work to polish my craft daily — whether that's through research, design systems, or code.</p>
+            <p class="about__bio">When I'm not working, you can find me doodling, listening to Madonna's '90s hits, or walking my two pups, Tink and Tilly.</p>
+          </div>
+        </div>
+      </section>
+
         <footer>
-            <p class="footer__letsconnect">Let's Connect</p>
-            <a href="mailto:samuelgarvens@gmail.com" target="_blank">
-                <p class="footer__email">samuelgarvens@gmail.com</p>
-              </a>
-            <div class="footer__logos">
-              <a href="SamuelGarvensResume.pdf" target="_blank">
-                <img src="./assets/resume.png" alt="Resume logo" class="footer__logo2">
-            </a>
-              <a href="https://www.instagram.com/samuelgarvens/" target="_blank">
-                <img src="./assets/ig.png" alt="Instagram logo" class="footer__logo">
-              </a>
-              <a href="https://www.linkedin.com/in/samuelgarvens" target="_blank">
-                <img src="./assets/linkedin.png" alt="LinkedIn logo" class="footer__logo">
-              </a>
+        <div class="footer__inner">
+            <div class="footer__row">
+                <a href="mailto:samuelgarvens@gmail.com" class="footer__email">samuelgarvens@gmail.com</a>
+                <div class="footer__links">
+                    <a href="https://x.com/grumnaile" target="_blank" class="footer__link">X <img src="./assets/arrow-diagonal.svg" class="footer__arrow" alt=""></a>
+                    <a href="https://www.linkedin.com/in/samuelgarvens" target="_blank" class="footer__link">LinkedIn <img src="./assets/arrow-diagonal.svg" class="footer__arrow" alt=""></a>
+                </div>
             </div>
             <p class="rights">©2026 Samuel Garvens. All Rights Reserved.</p>
-          </footer> 
+        </div>
+    </footer> 
     <script src="script.js"></script>
+
+  <!-- Boiling line filter -->
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <filter id="heat-turb" x="-10%" y="-30%" width="120%" height="160%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
+          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6;1" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="boil" x="-10%" y="-50%" width="120%" height="200%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
+          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6;1" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
 </body>
 </html>

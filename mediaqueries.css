@@ -1,12 +1,6 @@
-@media screen and (max-width: 900px) {
-    #desktop-nav {
+@media screen and (max-width: 700px) {
+    .nav-links li:has(.nav-email) {
         display: none;
-    }
-    #hamburger-nav {
-        display: flex; 
-    }
-    #hamburger-nav .menu-links li a {
-        white-space: nowrap; 
     }
 }
 
@@ -75,26 +69,7 @@
 
   /*ILLUSTRATION PAGE*/
 
-@media (min-width: 1224px) {
-  .illustration-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 350px;
-  }
-}
 
-@media (max-width: 660px) {
-  .illustration-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    grid-auto-rows: 120px;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .illustrations__text-container {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-}
 
 
 

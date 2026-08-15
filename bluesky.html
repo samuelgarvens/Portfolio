@@ -7,26 +7,26 @@
     <title>Illustration</title>
             <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=PT+Serif&family=Hedvig+Letters+Serif:opsz@12..24&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=block">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Lexend:wght@100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&display=block">
         <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="preload" as="image" href="./assets/Case2hero.webp">
-        <link rel="icon" href="./assets/favi.png" type="image/png">
+        <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
 </head>
 
 <body>
     <nav id="desktop-nav" class="gray-header brushies-header">
-        <a href="./" class="logo">Samuel Garvens</a>
-        <div>
+        <div class="nav-inner">
+            <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
             <ul class="nav-links">
-                <li><a href="./">Projects</a></li>
-                <li><a href="./aboutme">About Me</a></li>
+                <li><a href="./">Work</a></li>
+                <li><a href="mailto:samuelgarvens@gmail.com" class="nav-email">samuelgarvens@gmail.com</a></li>
             </ul>
         </div>
     </nav>
 
     <nav id="hamburger-nav" class="gray-header brushies-header">
-        <a href="./" class="logo">Samuel Garvens</a>
+        <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span>
@@ -35,7 +35,7 @@
             </div>
             <div class="menu-links">
                 <li><a href="./" onclick="toggleMenu()">Home</a></li>
-                <li><a href="./aboutme" class="about-me-link" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="./aboutme.html" class="about-me-link" onclick="toggleMenu()">About</a></li>
             </div>
         </div>
     </nav>
@@ -54,7 +54,7 @@
     <section class="hero">
         <img src="./assets/Case2hero.webp" alt="Hero Image" class="hero-image2" loading="eager" fetchpriority="high">
     </section>
-    <!--section-->
+    <!-- Intro / About -->
     <section class="casestudy_section">
         <div class="casestudy__top">
             <img src="./assets/blueskypngblack.png" alt="Instagram logo" class="caseblack__logo2">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
     </section>
-    <!--section1-->
+    <!-- Case Study Sections -->
     <section id="overview">
         <section class="casestudy_section1">
             <div class="casestudy__step1">
@@ -762,13 +762,13 @@
             <div class="cases__container2">
                 <p class="cases__titleembed">Next up:</p>
                 <div class="cases__image-container">
-                    <a href="./brushies">
+                    <a href="./brushies.html">
                         <img src="./assets/mags.jpg" alt="Brushies" class="cases__image">
                     </a>
                     <div class="cases__text">
                         <img src="./assets/brushiespng.png" alt="Brushies logo" class="cases__logo">
                         <p class="cases__text-position">UX Research, Responsive Design</p>
-                        <a href="./brushies">
+                        <a href="./brushies.html">
                             <p class="cases__text-title">Streamlining Brushies' User Experience</p>
                         </a>
                     </div>
@@ -777,26 +777,17 @@
         </div>
     </section>
     </section>
-    <!--Footer-->
     <footer>
-        <p class="footer__letsconnect">Let's Connect</p>
-        <a href="mailto:samuelgarvens@gmail.com" target="_blank">
-            <p class="footer__email">samuelgarvens@gmail.com</p>
-        </a>
-        <div class="footer__logos">
-            <a href="SamuelGarvensResume.pdf" target="_blank">
-                <img src="./assets/resume.png" alt="Resume logo" class="footer__logo2">
-            </a>
-            <a href="https://www.instagram.com/samuelgarvens/" target="_blank">
-                <img src="./assets/ig.png" alt="Instagram logo" class="footer__logo">
-            </a>
-            <a href="https://www.linkedin.com/in/samuelgarvens" target="_blank">
-                <img src="./assets/linkedin.png" alt="LinkedIn logo" class="footer__logo">
-            </a>
-
-
+        <div class="footer__inner">
+            <div class="footer__row">
+                <a href="mailto:samuelgarvens@gmail.com" class="footer__email">samuelgarvens@gmail.com</a>
+                <div class="footer__links">
+                    <a href="https://x.com/grumnaile" target="_blank" class="footer__link">X <img src="./assets/arrow-diagonal.svg" class="footer__arrow" alt=""></a>
+                    <a href="https://www.linkedin.com/in/samuelgarvens" target="_blank" class="footer__link">LinkedIn <img src="./assets/arrow-diagonal.svg" class="footer__arrow" alt=""></a>
+                </div>
+            </div>
+            <p class="rights">©2026 Samuel Garvens. All Rights Reserved.</p>
         </div>
-        <p class="rights">©2026 Samuel Garvens. All Rights Reserved.</p>
     </footer>
     <section style="height: 1px;"></section>
     <script src="script.js"></script>
