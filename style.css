@@ -258,6 +258,7 @@ nav.scrolled .logo.hamburger-open {
 
 .hero__word {
   display: block;
+  transform: translateY(130%);
 }
 
 .hero__name {
@@ -318,6 +319,12 @@ nav.scrolled .logo.hamburger-open {
 }
 
 /* Wipe-in + tagline animations — respects reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__word {
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero__line:nth-child(1) .hero__word {
     animation: wipeIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
@@ -344,7 +351,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 @keyframes wipeIn {
-  from { transform: translateY(110%); }
+  from { transform: translateY(130%); }
   to   { transform: translateY(0); }
 }
 
