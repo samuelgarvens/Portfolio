@@ -859,11 +859,11 @@ footer {
 .aboutme__container {
   display: flex;
   align-items: flex-start;
+  gap: 25px;
   margin-top: 30px;
-  padding-left: 0;
-  padding-right: 0;
-  max-width: 800px;
-  padding-bottom: 40px;
+  padding: 0 8vw 40px;
+  max-width: 1400px;
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
@@ -873,22 +873,27 @@ footer {
   font-size: 1rem;
   width: auto;
   line-height: 140%;
-  padding-right: 80px;
+  padding-right: 40px;
 }
 
 .aboutme__text_header {
-  font-size: 2.5rem;
+  font-family: "Cormorant", serif;
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 400;
   color: black;
-  line-height: 100%;
+  line-height: 1.1;
+  margin: 0;
   margin-bottom: 37px;
 }
 
 .aboutme__text_bio {
-  font-size: 0.95rem;
-  color: rgb(94, 94, 94);
+  font-size: 0.875rem;
+  color: rgb(95, 95, 95);
   margin: 0;
-  margin-top: 25px;
+  margin-top: 26px;
   font-weight: 300;
+  line-height: 1.7;
 }
 
 .about__pic-container {
@@ -958,27 +963,30 @@ footer {
   z-index: 1004;
 }
 
-.aboutme__text_header,
-.aboutme__text_bio,
-.about__pic-container {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+/* About me stagger */
+@media (prefers-reduced-motion: no-preference) {
+  .aboutme__text > *,
+  .aboutme__right-col,
+  .aboutme__photos {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-.aboutme__text_bio.animate {
-  transition-delay: 0.2s;
-}
+  .about--visible .aboutme__text > *,
+  .about--visible .aboutme__right-col,
+  .about--visible + .aboutme__photos {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.about__pic-container {
-  transition-delay: 0.35s;
-}
-
-.aboutme__text_header.animate,
-.aboutme__text_bio.animate,
-.about__pic-container.animate {
-  opacity: 1;
-  transform: translateY(0);
+  .about--visible .aboutme__text > *:nth-child(1) { transition-delay: 0.00s; }
+  .about--visible .aboutme__text > *:nth-child(2) { transition-delay: 0.07s; }
+  .about--visible .aboutme__text > *:nth-child(3) { transition-delay: 0.12s; }
+  .about--visible .aboutme__text > *:nth-child(4) { transition-delay: 0.19s; }
+  .about--visible .aboutme__right-col              { transition-delay: 0.26s; }
+  .about--visible + .aboutme__photos               { transition-delay: 0.33s; }
 }
 
 /* ILLUSTRATION PAGE */
@@ -1902,7 +1910,7 @@ footer {
 .casestudy__middletextbox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  gap: 32px;
   max-width: 100%;
   align-items: top;
 }
@@ -2788,12 +2796,14 @@ a.exp-item--link {
   #experience.section--visible .work-list > *:nth-child(3) { transition-delay: 0.12s; }
   #experience.section--visible .work-list > *:nth-child(4) { transition-delay: 0.19s; }
   #experience.section--visible .work-list > *:nth-child(5) { transition-delay: 0.26s; }
+  #experience.section--visible .work-list > *:nth-child(6) { transition-delay: 0.33s; }
 
   /* Projects stagger */
   #cases.section--visible .work-list > *:nth-child(1) { transition-delay: 0.00s; }
   #cases.section--visible .work-list > *:nth-child(2) { transition-delay: 0.07s; }
   #cases.section--visible .work-list > *:nth-child(3) { transition-delay: 0.12s; }
   #cases.section--visible .work-list > *:nth-child(4) { transition-delay: 0.19s; }
+  #cases.section--visible .work-list > *:nth-child(5) { transition-delay: 0.26s; }
 }
 
 /* Hero name turbulence — always on */
@@ -2850,4 +2860,137 @@ a.exp-item--link {
 .back-to-top:hover .back-to-top__arrow {
   transform: rotate(-90deg) translateX(4px);
   opacity: 1;
+}
+
+
+@media (max-width: 700px) {
+  .footer__github { display: none; }
+}
+
+/* ============================================================
+   LAST.FM TOP ALBUMS
+   ============================================================ */
+.aboutme__right-col {
+  flex-shrink: 0;
+  width: 480px;
+  max-width: 480px;
+}
+
+.aboutme__photos {
+  padding: 40px 8vw 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.lastfm-period {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: rgb(175, 175, 175);
+  margin: 6px 0 32px;
+}
+
+.lastfm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.lastfm-album {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.lastfm-album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.lastfm-album__info {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.lastfm-album:hover img {
+  transform: scale(1.04);
+}
+
+.lastfm-album:hover .lastfm-album__info {
+  opacity: 1;
+}
+
+.lastfm-album__name {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lastfm-album__artist {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lastfm-album__plays {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* About nudge */
+.about-nudge {
+  padding: 0 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-nudge__inner {
+  padding: 20px 0 40px;
+}
+
+.about-nudge__text {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgb(150, 150, 150);
+}
+
+.about-nudge__link {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: black;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  filter: url(#boil);
+}
+
+.about-nudge__link:hover {
+  opacity: 0.4;
 }

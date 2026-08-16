@@ -168,7 +168,7 @@ document.addEventListener("visibilitychange", function () {
 // =============================================================================
 document.addEventListener("DOMContentLoaded", function () {
   const elementsToAnimate = document.querySelectorAll(
-    ".aboutme__text_header, .aboutme__text_bio, .aboutme__text, .about__pic-container, " +
+    "" +
     ".illustration-grid, .illustration__text_title, .illustration__art, .illustration__tools, " +
     ".illustration__text_sub, .cases__image-container, .cases__titleembed, .hero, " +
     ".casestudy_section, .casestudy_section1, .casestudy_section2, .casestudy_section2_1, " +
@@ -427,4 +427,67 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('#education, #experience, #cases').forEach(function (s) {
     observer.observe(s);
   });
+});
+
+// =============================================================================
+// LAST.FM TOP ALBUMS — about me page
+// =============================================================================
+(function () {
+  const grid = document.getElementById('lastfm-grid');
+  if (!grid) return;
+
+  const API_KEY = '81bc1abbca95c1e9ab91b580f3e42457';
+  const USER    = 'samuelgarvens';
+  const URL     = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${USER}&period=1month&limit=9&api_key=${API_KEY}&format=json`;
+
+  fetch(URL)
+    .then(r => r.json())
+    .then(data => {
+      const albums = data.topalbums && data.topalbums.album;
+      if (!albums || !albums.length) return;
+
+      grid.innerHTML = '';
+      albums.slice(0, 9).forEach(album => {
+        const img = album.image.find(i => i.size === 'extralarge') || album.image[album.image.length - 1];
+        const src = img && img['#text'] ? img['#text'] : '';
+
+        const el = document.createElement('div');
+        el.className = 'lastfm-album';
+        el.innerHTML = `
+          <img src="${src}" alt="${album.name}" loading="lazy">
+          <div class="lastfm-album__info">
+            <span class="lastfm-album__name">${album.name}</span>
+            <span class="lastfm-album__artist">${album.artist.name}</span>
+            <span class="lastfm-album__plays">${Number(album.playcount).toLocaleString()} plays</span>
+          </div>`;
+        grid.appendChild(el);
+      });
+    })
+    .catch(() => { grid.style.display = 'none'; });
+})();
+
+// =============================================================================
+// ABOUT ME PAGE STAGGER
+// =============================================================================
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+
+  const container = document.querySelector('.aboutme__container');
+  if (!container) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        container.classList.add('about--visible');
+        observer.unobserve(container);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  const rect = container.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    container.classList.add('about--visible');
+  } else {
+    observer.observe(container);
+  }
 });
