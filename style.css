@@ -495,7 +495,7 @@ nav.scrolled .logo.hamburger-open {
 
 /* CASES */
 
-#cases {
+#projects {
   background-color: white;
   margin-top: 20px;
 }
@@ -733,6 +733,7 @@ nav.scrolled .logo.hamburger-open {
   font-style: italic;
   color: black;
   text-wrap: balance;
+  transition: color 200ms ease;
 }
 
 .work-item__type {
@@ -774,10 +775,23 @@ nav.scrolled .logo.hamburger-open {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .work-item:hover {
-    opacity: 0.45;
+  .work-item:not(.work-item--locked):hover .work-item__title,
+  #projects.section--visible .work-item:not(.work-item--locked):hover .work-item__title {
+    color: rgb(150, 150, 150);
+    transition-delay: 0s !important;
   }
-  .work-item:hover .work-item__arrow {
+
+  .work-item--locked {
+    cursor: default;
+  }
+
+  .section--done .work-item,
+  .section--done .exp-item,
+  .section--done .cert-item {
+    transition-delay: 0s !important;
+  }
+  .work-item:hover .work-item__arrow,
+  #projects.section--visible .work-item:hover .work-item__arrow {
     transform: translateX(5px);
   }
 }
@@ -2564,7 +2578,7 @@ footer {
 
 #education,
 #experience,
-#cases,
+#projects,
 #about {
   scroll-margin-top: 80px;
 }
@@ -2645,6 +2659,7 @@ footer {
   font-family: "Cormorant", serif;
   font-style: italic;
   color: black;
+  transition: color 200ms ease;
 }
 
 .exp-item__dates {
@@ -2687,27 +2702,30 @@ a.exp-item--link {
   a.exp-item--link:hover {
     opacity: 0.45;
   }
+  a.exp-item--link:hover .exp-item__company {
+    color: rgb(150, 150, 150);
+  }
 }
 
 /* SECTION SPACING */
 
 #education .work-list {
   margin-top: 20px;
-  margin-bottom: 0;
+  margin-bottom: 60px;
 }
 
 #experience .work-list {
-  margin-top: 64px;
+  margin-top: 50px;
   margin-bottom: 0;
 }
 
-#cases {
+#projects {
   margin-top: 0;
 }
 
-#cases .work-list {
-  margin-top: 64px;
-  margin-bottom: 80px;
+#projects .work-list {
+  margin-top: 76px;
+  margin-bottom: 50px;
 }
 
 /* CERTIFICATE ITEMS */
@@ -2765,8 +2783,8 @@ a.exp-item--link {
   #education .cert-item,
   #experience .section-label,
   #experience .exp-item,
-  #cases .section-label,
-  #cases .work-item {
+  #projects .section-label,
+  #projects .work-item {
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),

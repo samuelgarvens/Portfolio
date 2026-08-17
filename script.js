@@ -420,11 +420,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (entry.isIntersecting) {
         entry.target.classList.add('section--visible');
         observer.unobserve(entry.target);
+        setTimeout(function() { entry.target.classList.add('section--done'); }, 900);
       }
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('#education, #experience, #cases').forEach(function (s) {
+  document.querySelectorAll('#education, #experience, #projects').forEach(function (s) {
     observer.observe(s);
   });
 });
