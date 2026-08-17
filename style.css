@@ -2778,8 +2778,8 @@ a.exp-item--link {
   #education.section--visible .cert-item,
   #experience.section--visible .section-label,
   #experience.section--visible .exp-item,
-  #cases.section--visible .section-label,
-  #cases.section--visible .work-item {
+  #projects.section--visible .section-label,
+  #projects.section--visible .work-item {
     opacity: 1;
     transform: translateY(0);
   }
@@ -2799,11 +2799,11 @@ a.exp-item--link {
   #experience.section--visible .work-list > *:nth-child(6) { transition-delay: 0.33s; }
 
   /* Projects stagger */
-  #cases.section--visible .work-list > *:nth-child(1) { transition-delay: 0.00s; }
-  #cases.section--visible .work-list > *:nth-child(2) { transition-delay: 0.07s; }
-  #cases.section--visible .work-list > *:nth-child(3) { transition-delay: 0.12s; }
-  #cases.section--visible .work-list > *:nth-child(4) { transition-delay: 0.19s; }
-  #cases.section--visible .work-list > *:nth-child(5) { transition-delay: 0.26s; }
+  #projects.section--visible .work-list > *:nth-child(1) { transition-delay: 0.00s; }
+  #projects.section--visible .work-list > *:nth-child(2) { transition-delay: 0.07s; }
+  #projects.section--visible .work-list > *:nth-child(3) { transition-delay: 0.12s; }
+  #projects.section--visible .work-list > *:nth-child(4) { transition-delay: 0.19s; }
+  #projects.section--visible .work-list > *:nth-child(5) { transition-delay: 0.26s; }
 }
 
 /* Hero name turbulence — always on */
