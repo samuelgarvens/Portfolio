@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { root: null, rootMargin: "0px", threshold: 0.05 }
+    { root: null, rootMargin: "0px", threshold: 0.1 }
   );
 
   elementsToAnimate.forEach((element) => {
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.33 }
+    { threshold: 0.1 }
   );
 
   containers.forEach((container) => observer.observe(container));
@@ -279,28 +279,30 @@ document.addEventListener("DOMContentLoaded", function () {
 // =============================================================================
 
 // Highlight the nav link matching the section currently in view
+// Scroll-based: always picks the last section whose top is above 40% of viewport
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".vertical-nav a");
   if (!navLinks.length) return;
 
   const sections = Array.from(document.querySelectorAll("section[id]"));
 
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio >= 0.08) {
-          navLinks.forEach((link) => link.classList.remove("active"));
-          const activeLink = document.querySelector(
-            `.vertical-nav a[href="#${entry.target.id}"]`
-          );
-          if (activeLink) activeLink.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.08 }
-  );
+  function updateActiveLink() {
+    const trigger = window.innerHeight * 0.4;
+    let active = null;
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= trigger) {
+        active = section;
+      }
+    }
+    navLinks.forEach((link) => link.classList.remove("active"));
+    if (active) {
+      const activeLink = document.querySelector(`.vertical-nav a[href="#${active.id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    }
+  }
 
-  sections.forEach((section) => sectionObserver.observe(section));
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+  updateActiveLink();
 });
 
 // Show the vertical nav once the user reaches the #overview section
