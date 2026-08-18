@@ -14,8 +14,8 @@
         <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
 </head>
 
-<body>
-    <nav id="desktop-nav" class="gray-header brushies-header">
+<body class="bluesky-page">
+    <nav id="desktop-nav" class="brushies-header white-header">
         <div class="nav-inner">
             <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
             <ul class="nav-links">
@@ -25,7 +25,7 @@
         </div>
     </nav>
 
-    <nav id="hamburger-nav" class="gray-header brushies-header">
+    <nav id="hamburger-nav" class="brushies-header white-header">
         <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
@@ -41,16 +41,16 @@
     </nav>
 
     <!-- Add vertical navigation -->
-    <nav class="vertical-nav">
+    <nav class="vertical-nav" id="vertical-nav">
+        <div class="vertical-nav__handle"></div>
         <ul>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#ideation">Ideation</a></li>
             <li><a href="#design">Design</a></li>
-            <li><a href="#release">Reflection</a></li>
+            <li><a href="#reflection">Reflection</a></li>
         </ul>
     </nav>
-    <div class="casestudy__topnav"></div>
     <section class="hero">
         <img src="./assets/Case2hero.webp" alt="Hero Image" class="hero-image2" loading="eager" fetchpriority="high">
     </section>
@@ -59,7 +59,7 @@
         <div class="casestudy__top">
             <img src="./assets/blueskypngblack.png" alt="Instagram logo" class="caseblack__logo2">
             <p class="casestudy__title1"></p>
-            <p class="casestudy__title2">Social that puts people first.</p>
+            <p class="casestudy__title2" style="filter: url(#boil);">Incentivizing the Move to Bluesky Through Accessibility</p>
             <div class="casestudy__background">
                 <p class="casestudy__backgroundheader">About Bluesky</p>
                 <p class="casestudy__backgroundtext">Designed for users who value autonomy and transparency, <a
@@ -151,7 +151,7 @@
                             keywords, users can further fine-tune their feeds to match their preferences.</p>
                     </div>
                 </div>
-                <div class="casestudy__container">
+                <div class="casestudy__container accessible-row">
                     <div class="casestudy__leftbox">
                         <p class="casestudy__smalltitle2">Accessible</p>
                         <p class="casestudy__mediumtext">Additional features for visually impaired users</p>
@@ -185,13 +185,6 @@
                             identify areas for improvement.</p>
                         <section style="height: 25px;">
                         </section>
-                        <p class="casestudy__smalltext">In lieu of user interviews, I gathered insights by scanning
-                            various online forums and discussion boards, identifying common UX themes, trends, and
-                            frustrations. This approach was meant to <span class="highlight"> simulate real-world time
-                                constraints</span>, where conducting and synthesizing primary research may not always be
-                            practical. </p>
-                        <section style="height: 25px;">
-                        </section>
                         <p class="casestudy__smalltext">To avoid any potential self-serving biases, I gathered findings
                             from multiple independent sources, ensuring the discussions weren’t skewed toward any
                             particular viewpoint or user demographic. Additionally, I ensured that my <span
@@ -199,11 +192,11 @@
                                 confirmation bias or reflect preexisting judgments. </span></p>
                     </div>
                     <div class="casestudy__middleboxcarousel">
-                        <button class="carousel-btn" id="prev-btn">&#10094;</button>
+                        <button class="carousel-btn" id="prev-btn"><img src="./assets/icon-next.svg" class="carousel-icon carousel-icon--prev" alt="Previous"></button>
                         <img src="./assets/Case2research.png" alt="Bluesky research" class="researchcarousel"
                             id="carousel-img">
 
-                        <button class="carousel-btn" id="next-btn">&#10095;</button>
+                        <button class="carousel-btn" id="next-btn"><img src="./assets/icon-next.svg" class="carousel-icon" alt="Next"></button>
                     </div>
                     <div class="casestudy__middlebox3">
                         <div class="carousel-dots">
@@ -211,6 +204,7 @@
                             <span class="dot"></span>
                             <span class="dot"></span>
                         </div>
+                        <p class="carousel-swipe-hint">Swipe to navigate</p>
                     </div>
 
                 </div>
@@ -223,9 +217,7 @@
                                 href="https://www.theatlantic.com/magazine/archive/2024/03/facebook-meta-silicon-valley-politics/677168/"
                                 class="casestudylink3" target="_blank"> digital tyranny</a>. <em>Perfect—so Bluesky must
                                 be
-                                capitalizing on its own architecture to draw in the crowds? </em>Not exactly. After
-                            scanning online threads and articles, I noticed that the
-                            most frequent complaint with Bluesky is its <span class="highlight"> inability to convey its
+                                capitalizing on its own architecture to draw in the crowds? </em>Not exactly. The most frequent complaint with Bluesky is its <span class="highlight"> inability to convey its
                                 own value</span>—that is, to inform users of its decentralized AT Protocol and how it
                             works. According to users,
                             the app and website <span class="highlight">fail to clearly communicate that Bluesky is, by
@@ -256,7 +248,6 @@
                     </div>
                     <div class="casestudy__middletextbox">
                         <div class="casestudy__columnbox">
-                            <p class="asteriskw2">1</p>
                             <p class="casestudy__littletextheaderw">Users are seeing Twitter/X in another font.
                             </p>
                             <p class="casestudy__smalltextw"><em>Why switch to a copycat of your more popular
@@ -265,7 +256,6 @@
                                 making it difficult for them to distinguish Bluesky from Twitter/X.</p>
                         </div>
                         <div class="casestudy__columnbox">
-                            <p class="asteriskw">2</p>
                             <p class="casestudy__littletextheaderw">The site lacks important key features. </p>
                             <p class="casestudy__smalltextw">For a company that champions user freedom, Bluesky falls
                                 short on basic features that would improve accessibility and usability. From poor tablet
@@ -273,7 +263,6 @@
                                 fundamental user needs.</p>
                         </div>
                         <div class="casestudy__columnbox">
-                            <p class="asteriskw">3</p>
                             <p class="casestudy__littletextheaderw">Accessibility support is lacking for people with
                                 (primarily) visual impairments.</p>
                             <p class="casestudy__smalltextw">Bluesky lacks built-in alt text display, forcing impaired
@@ -286,7 +275,7 @@
             </section>
         </section>
         <section style="height: 40px; background-color: rgb(249, 249, 249);"></section>
-        <section class="casestudy_section2">
+        <section class="casestudy_section2 empathizing-section">
             <div class="casestudysection">
                 <div class="casestudy__container">
                     <div class="casestudy__leftbox2">
@@ -299,7 +288,7 @@
                             diversity of their user bases.
                         </p>
                         <section style="height: 25px;"> </section>
-                        <p class="casestudy__smalltext">To stress the importance of accessible design, I created a
+                        <p class="casestudy__smalltext persona-intro">To stress the importance of accessible design, I created a
                             Bluesky persona to visualize what daily life might look like for a user with a disability.
                         </p>
                     </div>
@@ -313,7 +302,7 @@
                 </div>
                 <section style="height: 25px;">
                 </section>
-                <div class="casestudy__container">
+                <div class="casestudy__container accessibility-notes">
                     <div class="casestudy__leftbox">
                     </div>
                     <div class="casestudy__rightbox">
@@ -360,7 +349,7 @@
                             differently on mobile devices with app-based operating systems. For example, mobile versions
                             of Threads and Twitter/X offer <span class="highlightw"> in-app accessibility options, since
                                 users typically can't install extensions on these devices.</span></p>
-                        <p class="casestudy__smalltextw2">My review of accessibility practices across competing social
+                        <p class="casestudy__smalltextw2 insights-intro">My review of accessibility practices across competing social
                             platforms led to the following insights:</span></p>
 
                         <p class="casestudy__mediumtextw2">1. Automated alt text generation makes more content
@@ -390,11 +379,6 @@
                     <div class="casestudy__rightbox">
                         <p class="casestudy__smalltitle">Brainstorming</p>
                         <p class="casestudy__mediumtext">Exploring various UI and accessibility-improving features</p>
-                        <p class="casestudy__smalltext">Now, with a strong understanding of what deters interested users
-                            from migrating to Bluesky, I began exploring UX-driven strategies to incentivize adoption.
-                        </p>
-                        <section style="height: 25px;">
-                        </section>
                         <p class="casestudy__smalltext">To address the <u>first UX issue</u> identified—Bluesky’s
                             resemblance to
                             Twitter/X—I brainstormed a two-part UX initiative: first, <span class="highlight">
@@ -421,11 +405,7 @@
                                 supported by Bluesky’s unique architecture </span>and unavailable on competing
                             platforms.</p>
                         <section style="height: 20px;"></section>
-                        <p class="casestudy__smalltext">While I aimed to explore a wide range of ideas, I also made sure
-                            that my brainstorming was grounded in research and real user needs. Staying concise was
-                            especially important here—<span class="highlight">too many unnecessary features could lead
-                                to feature fatigue</span> and overwhelm users (see the Design section for the finalized
-                            features). </p>
+                        <p class="casestudy__smalltext feature-fatigue">Staying focused was especially important here—<span class="highlight">too many unnecessary features could lead to feature fatigue</span> and overwhelm users.</p>
                     </div>
                 </div>
                 <section style="height: 20px;"></section>
@@ -443,10 +423,7 @@
                             support for select users—I conducted a competitive feature audit and organized my findings
                             in Figma. During this phase of ideation, I focused on the five key accessibility insights
                             identified earlier, exploring ways to improve visual customization and implement more
-                            adaptable alt text support. This chart helped me <span class="highlight">identify
-                                where competing social platforms excel in accessibility, as well as where they fall
-                                short</span>, highlighting opportunities for Bluesky to stand out and lead in this
-                            space.</p>
+                            adaptable alt text support. This chart helped me identify where competing social platforms excel in accessibility, as well as where they fall short—highlighting opportunities for Bluesky to stand out and lead.</p>
 
                     </div>
                 </div>
@@ -459,7 +436,7 @@
                 <section style="height: 15px;"></section>
                 <div class="casestudy__container">
                     <div class="casestudy__leftboxl2">
-                        <p class="casestudy__smalltext">Expanding accessibility is essential for a company like
+                        <p class="casestudy__smalltext expanding-a11y">Expanding accessibility is essential for a company like
                             Bluesky—a platform dedicated to user privacy and autonomy—though some features are
                             considerably more challenging to implement than others. For example, automating text
                             captions for videos may require advanced external services such as speech-to-text APIs or
@@ -545,31 +522,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="casestudy__container">
+                <div class="casestudy__container approach-part1">
                     <div class="casestudy__leftbox">
                     </div>
                     <div class="casestudy__rightbox">
                         <p class="casestudy__smalltitle3">Approach</p>
-                        <p class="casestudy__smalltext">To help Bluesky stand apart from Twitter/X—something users felt
-                            was
-                            lacking—I added <span class="highlight">AT Protocol educational tools alongside a new media
-                                grid
-                                view option</span>. Many Reddit users said they deleted the app because they didn’t
-                            ‘feel’—or rather—‘understand’ how it was different from Twitter. This redesign <span
-                                class="highlight">aims to briefly onboard new users with AT Protocol concepts while also
-                                providing inline tooltips for those who want to learn more</span>. Additionally, many
-                            users
-                            noted that the media browsing experience felt too similar to Twitter’s timeline. The grid
-                            view
-                            <span class="highlight">offers a fresh way to explore content, while still giving users the
-                                choice to view it in a familiar timeline format</span>.
-                        </p>
+                        <p class="casestudy__smalltext">To help Bluesky stand apart from Twitter/X, I added <span class="highlight">AT Protocol educational tools</span> alongside a new media grid view option. Users frequently cited not understanding what made Bluesky different—this redesign briefly onboards new users with <span class="highlight">AT Protocol concepts</span>, with inline tooltips for those who want to go deeper. The grid view offers a fresh way to explore content, while still preserving the familiar timeline format.</p>
                     </div>
                     <section style="height: 0px;"></section>
                 </div>
             </div>
         </section>
-        <section class="casestudy_section">
+        <section class="casestudy_section design-part2">
             <section style="height: 25px;"></section>
             <div class="casestudysection">
                 <p class="bigtitlebluesky2">02</p>
@@ -600,7 +564,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="casestudy__container">
+                <div class="casestudy__container approach-part2">
                     <div class="casestudy__leftbox">
                     </div>
                     <div class="casestudy__rightbox">
@@ -656,7 +620,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="casestudy__container">
+                <div class="casestudy__container approach-part3">
                     <div class="casestudy__leftbox">
                     </div>
                     <div class="casestudy__rightbox">
@@ -679,9 +643,7 @@
                             the ability to correct or add alt text <span class="highlight">significantly broadens access
                                 to
                                 media content.</span>
-                            Meanwhile, customizable sliders for contrast and text size allow users to <span
-                                class="highlight">fine-tune their
-                                viewing experience to their needs</span>, eliminating the limitations of preset options.
+                            Meanwhile, customizable sliders for contrast and text size allow users to fine-tune their viewing experience, eliminating the limitations of preset options.
                         </p>
                     </div>
                     <section style="height: 0px;"></section>
@@ -690,7 +652,7 @@
             </div>
         </section>
     </section>
-    <section id="release">
+    <section id="reflection">
         <section class="casestudy_section2_2">
             <div class="casestudy__step1">
                 <p class="casestudy__steptitlew">5. Reflection</p>
@@ -722,14 +684,7 @@
                         <p class="casestudy__smalltitle2w">Reflection and Takeaways</p>
                         <p class="casestudy__mediumtextw">1. Designing to improve, not to fatigue
                         </p>
-                        <p class="casestudy__smalltextw">During my competitive audit, I encountered a wide array of
-                            accessibility features
-                            offered by competing platforms. While in an ideal world, every feature could be included
-                            seamlessly and in a timely
-                            manner, I recognized the risk of overwhelming users with complex settings. User research
-                            played a crucial role in
-                            helping me prioritize, ultimately guiding me to focus on a select few essential features for
-                            Bluesky.
+                        <p class="casestudy__smalltextw reflection-section-body">Competing platforms offer a wide array of accessibility features, and it's tempting to include them all. But one thing user research made clear: too many options overwhelm. I let research drive prioritization, keeping the feature set focused and purposeful.</p>
                     </div>
                     <div class="casestudy__rightbox"> </div>
                 </div>
@@ -740,8 +695,7 @@
                         <p class="casestudy__mediumtextw">2. Accessibility and the status quo</p>
                         <p class="casestudy__smalltextw"><em>Huge platforms like Reddit and Twitter/X don’t offer alt
                                 text editing, so why
-                                should I?</em>. This idea first came to mind as I was brainstorming accessibility
-                            solutions. How can these
+                                should I?</em> How can these
                             platforms overlook such a simple feature that would vastly expand media access for many? The
                             reality is, today’s
                             accessibility standards are far behind where they should be. Despite hundreds—if not
@@ -752,28 +706,16 @@
                     </div>
                 </div>
                 <div class="casestudy__rightbox"> </div>
-                <div class="casestudy__middlebox2">
-                    <p class="casestudy__thankyou">Huge shoutout to Sarah Mei for inspiring this case study layout!
-                    </p>
-                </div>
             </div>
         </section>
-        <div class="cases__containerembed">
-            <div class="cases__container2">
-                <p class="cases__titleembed">Next up:</p>
-                <div class="cases__image-container">
-                    <a href="./brushies.html">
-                        <img src="./assets/mags.jpg" alt="Brushies" class="cases__image">
-                    </a>
-                    <div class="cases__text">
-                        <img src="./assets/brushiespng.png" alt="Brushies logo" class="cases__logo">
-                        <p class="cases__text-position">UX Research, Responsive Design</p>
-                        <a href="./brushies.html">
-                            <p class="cases__text-title">Streamlining Brushies' User Experience</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="work-list casestudy__nextup">
+          <p class="section-label">Next up</p>
+          <div class="work-item work-item--locked">
+            <span class="work-item__title">Streamlining Brushies' User Experience</span>
+            <span class="work-item__type">UX Research, Responsive Design</span>
+            <span class="work-item__year">2024</span>
+            <img src="./assets/lock.svg" class="work-item__lock" alt="Coming soon">
+          </div>
         </div>
     </section>
     </section>
@@ -791,7 +733,76 @@
         </div>
     </footer>
     <section style="height: 1px;"></section>
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <filter id="boil" x="-10%" y="-50%" width="120%" height="200%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
+          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+    <script>
+      (function() {
+        var nav = document.getElementById('vertical-nav');
+        var handle = nav.querySelector('.vertical-nav__handle');
+        var dragging = false;
+        var startX, startY, startLeft, startTop;
+
+        handle.addEventListener('pointerdown', function(e) {
+          dragging = true;
+          startX = e.clientX;
+          startY = e.clientY;
+          var rect = nav.getBoundingClientRect();
+          startLeft = rect.left;
+          startTop = rect.top;
+          nav.classList.add('dragging');
+          handle.setPointerCapture(e.pointerId);
+          e.preventDefault();
+        });
+
+        handle.addEventListener('pointermove', function(e) {
+          if (!dragging) return;
+          var dx = e.clientX - startX;
+          var dy = e.clientY - startY;
+          nav.style.left = Math.max(0, startLeft + dx) + 'px';
+          nav.style.top = Math.max(0, startTop + dy) + 'px';
+          nav.style.transform = 'none';
+        });
+
+        handle.addEventListener('pointerup', function() {
+          dragging = false;
+          nav.classList.remove('dragging');
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        var bgSections = document.querySelectorAll('.casestudy_section2, .casestudy_section2_1, .casestudy_section2_2, .casestudy_section3, .casestudy_section4, .casestudy_section5');
+        var bgObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('bg-visible');
+              bgObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        bgSections.forEach(function(s) { bgObserver.observe(s); });
+      })();
+    </script>
     <script src="script.js"></script>
+    <script>
+      (function() {
+        var navs = document.querySelectorAll('.white-header');
+        window.addEventListener('scroll', function() {
+          var scrolled = window.scrollY > 0;
+          navs.forEach(function(nav) {
+            nav.classList.toggle('scrolled', scrolled);
+          });
+        }, { passive: true });
+      })();
+    </script>
 </body>
 
 </html>

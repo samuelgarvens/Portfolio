@@ -127,6 +127,8 @@ a:hover {
 
 .casestudy__columnbox {
   margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hamburger-menu {
@@ -276,7 +278,7 @@ nav.scrolled .logo.hamburger-open {
 .hero__tagline {
   font-family: "Cormorant", serif;
   font-style: italic;
-  font-size: clamp(18px, 1.8vw, 28px);
+  font-size: clamp(22px, 1.8vw, 28px);
   font-weight: 400;
   color: rgb(130, 130, 130);
 }
@@ -737,7 +739,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .work-item__type {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(155, 155, 155);
   font-weight: 300;
   min-width: 220px;
@@ -746,7 +748,7 @@ nav.scrolled .logo.hamburger-open {
 }
 
 .work-item__year {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(155, 155, 155);
   font-weight: 300;
   min-width: 56px;
@@ -921,30 +923,30 @@ footer {
 }
 
 .casestudylink {
-  color: rgb(57, 71, 174);
+  color: rgb(66, 110, 185);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
+  text-decoration: none;
+  transition: opacity 200ms ease;
 }
 
 .casestudylink2 {
-  color: rgb(86, 98, 192);
+  color: rgb(66, 110, 185);
   font-weight: 400;
   font-style: italic;
 }
 
 .casestudylink3 {
-  color: rgb(57, 71, 174);
+  color: rgb(66, 110, 185);
   font-weight: 300;
   font-style: italic;
 }
 
 .casestudylink:hover,
-.casetudylink2:hover,
+.casestudylink2:hover,
 .casestudylink3:hover {
-  color: rgb(135, 152, 201);
-  font-weight: 400;
-  font-style: italic;
-  text-decoration: underline;
+  opacity: 0.5;
+  text-decoration: none;
 }
 
 .about__pic-container img {
@@ -1034,7 +1036,7 @@ footer {
 }
 
 .illustration__art {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1045,7 +1047,7 @@ footer {
 }
 
 .illustration__tools {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(175, 175, 175);
   margin: 0;
   margin-top: 6px;
@@ -1301,6 +1303,19 @@ footer {
   background-color: transparent;
 }
 
+.white-header {
+  background-color: white;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.white-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .brushieslink {
   color: rgb(54, 88, 198);
   font-weight: 300;
@@ -1344,10 +1359,12 @@ footer {
 }
 
 .casestudy__top {
-  display: inline-block;
-  margin-left: 100px;
-  margin-right: 50px;
+  display: block;
+  padding: 0 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
   margin-bottom: -10px;
+  box-sizing: border-box;
 }
 
 .caseblack__logo {
@@ -1370,8 +1387,10 @@ footer {
 
 .casestudy__title2 {
   color: black;
+  font-family: "Cormorant", serif;
+  font-style: italic;
   font-size: 2.1rem;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 25px;
   display: inline-block;
 }
@@ -1440,37 +1459,43 @@ footer {
 
 /* STEP INDICATORS */
 .casestudysection {
-  margin-left: 20vw;
-  margin-right: 20vw;
+  padding: 0 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .casestudy__step1 {
-  margin-left: 10vw;
+  padding: 0 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
   translate: 0 85px;
 }
 
 .casestudy__steptitle {
   font-size: 2.8rem;
   color: black;
-  font-weight: 350;
-  letter-spacing: 2px;
+  font-weight: 400;
+  letter-spacing: 0;
   font-style: italic;
-  font-family: "Source Serif 4";
+  font-family: "Cormorant", serif;
 }
 
 .casestudy__steptitlew {
   font-size: 2.8rem;
   color: rgb(255, 255, 255);
-  font-weight: 350;
-  letter-spacing: 2px;
+  font-weight: 400;
+  letter-spacing: 0;
   font-style: italic;
-  font-family: "Source Serif 4";
+  font-family: "Cormorant", serif;
   width: 35%;
   line-height: 100%;
 }
 
 .casestudy__smalltitle {
-  color: rgb(61, 110, 177);
+  color: rgb(66, 110, 185);
   font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
@@ -1485,7 +1510,7 @@ footer {
 
 
 .casestudy__smalltitle4 {
-  color: rgb(61, 110, 177);
+  color: rgb(66, 110, 185);
   font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
@@ -1527,7 +1552,7 @@ footer {
   color: black;
   line-height: 130%;
   margin-bottom: 25px;
-  font-weight: 230;
+  font-weight: 300;
 }
 
 .casestudy__mediumtextdesign {
@@ -1721,7 +1746,7 @@ footer {
 
 .proto {
   height: auto;
-  width: 110%;
+  width: 100%;
   max-width: 1200px;
   object-fit: cover;
   margin-top: 10px;
@@ -1858,12 +1883,10 @@ footer {
   justify-content: center;
   align-items: flex-start;
   background: #ededed;
-  width: 110%;
+  width: 100%;
   padding: 24px 0;
   margin-top: 40px;
   margin-bottom: -10px;
-  margin-left: -8%;
-  margin-right: -8%;
   gap: 80px;
 }
 
@@ -2009,30 +2032,32 @@ footer {
 
 .asteriskw {
   position: absolute;
-  font-size: 18rem;
-  rotate: 20deg;
+  font-size: 6rem;
+  rotate: 0deg;
   color: white;
   padding: 0;
-  line-height: 0%;
+  line-height: 1;
   z-index: 1;
-  translate: -105px 60px;
-  opacity: 0.035;
+  bottom: -10px;
+  right: -5px;
+  opacity: 0.07;
   font-weight: 600;
-  font-family: "Lexend", italic;
+  font-family: "Lexend", sans-serif;
 }
 
 .asteriskw2 {
   position: absolute;
-  font-size: 18rem;
-  rotate: 20deg;
+  font-size: 6rem;
+  rotate: 0deg;
   color: white;
   padding: 0;
-  line-height: 0%;
+  line-height: 1;
   z-index: 1;
-  translate: -105px 70px;
-  opacity: 0.035;
+  bottom: -10px;
+  right: -5px;
+  opacity: 0.07;
   font-weight: 600;
-  font-family: "Lexend", italic;
+  font-family: "Lexend", sans-serif;
 }
 
 
@@ -2042,32 +2067,111 @@ footer {
 }
 
 .casestudy_section2 {
+  position: relative;
+  isolation: isolate;
+}
+.casestudy_section2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgb(249, 249, 249);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section2.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy_section2_1 {
+  position: relative;
+  isolation: isolate;
+}
+.casestudy_section2_1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgb(27, 27, 27);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section2_1.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy_section2_2 {
-  background-color: rgb(27, 27, 27);
+  position: relative;
+  isolation: isolate;
   margin-bottom: -15px;
+  padding-bottom: 80px;
+}
+.casestudy_section2_2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(27, 27, 27);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section2_2.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy_section3 {
+  position: relative;
+  isolation: isolate;
+}
+.casestudy_section3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgb(245, 249, 253);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section3.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy_section4 {
+  position: relative;
+  isolation: isolate;
+}
+.casestudy_section4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgb(236, 244, 251);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section4.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy_section5 {
+  position: relative;
+  isolation: isolate;
+}
+.casestudy_section5::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgb(223, 237, 249);
+  z-index: -1;
+  transform: translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.casestudy_section5.bg-visible::before {
+  transform: translateY(0);
 }
 
 .casestudy__smalltitle2b {
-  color: rgb(96, 138, 160);
+  color: rgb(66, 110, 185);
   font-weight: 550;
   margin-bottom: 25px;
   font-size: 1.03rem;
@@ -2177,8 +2281,8 @@ footer {
   font-weight: 400;
   position: absolute;
   color: #f0f0f0;
-  right: 0;
-  margin-right: 55px;
+  right: 8vw;
+  margin-right: 0;
   margin-top: -30px;
 }
 
@@ -2187,8 +2291,8 @@ footer {
   font-weight: 400;
   position: absolute;
   color: #f5f5f5;
-  right: 0;
-  margin-right: 55px;
+  right: 8vw;
+  margin-right: 0;
   margin-top: -30px;
 }
 
@@ -2228,8 +2332,8 @@ footer {
 .casestudy_section1,
 .casestudy__middletextbox {
   opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero.animate,
@@ -2246,7 +2350,8 @@ footer {
 .bigtitlebluesky,
 .bigtitlebluesky2 {
   opacity: 0;
-  transition: opacity 5s ease-out;
+  transform: translateY(12px);
+  transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .bigtitleright.animate,
@@ -2255,24 +2360,20 @@ footer {
 .bigtitlebluesky.animate,
 .bigtitlebluesky2.animate {
   opacity: 1;
-}
-
-.casestudy_section.animate {
-  transition-delay: 0.3s;
+  transform: translateY(0);
 }
 
 .casestudy__steptitle,
 .casestudy__steptitlew {
   opacity: 0;
-  transform: translateX(-120px);
-  transition: opacity 0.5s ease-out, transform 1s ease-out;
+  transform: translateX(-80px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .casestudy__steptitle.animate,
 .casestudy__steptitlew.animate {
   opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
+  transform: translateX(0);
 }
 
 .highlight {
@@ -2315,8 +2416,8 @@ footer {
 
 .casestudy__container {
   opacity: 0;
-  transform: translateX(0);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .casestudy__container.animate-left {
@@ -2330,44 +2431,18 @@ footer {
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .casestudy__container.animate-below {
   opacity: 1;
-  animation: slideInBelow 0.5s ease-out forwards;
-}
-
-@keyframes slideInBelow {
-  from {
-    opacity: 0;
-    transform: translateY(80px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateY(0);
 }
 
 /* BLACK HEADING VARIANT */
@@ -2410,11 +2485,10 @@ footer {
   position: fixed;
   top: 40%;
   left: 20px;
-  width: auto;
+  width: fit-content;
   border-radius: 8px;
-  padding: 10px;
+  padding: 18px 14px 10px;
   z-index: 1000;
-  width: 80px;
   line-height: 100%;
 }
 
@@ -2429,11 +2503,15 @@ footer {
   margin-bottom: 15px;
 }
 
+.vertical-nav li:last-child {
+  margin-bottom: 0;
+}
+
 .vertical-nav a {
   text-decoration: none;
   color: #8e8e8e;
-  font-size: 0.95rem;
-  font-weight: 250;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .vertical-nav a:hover {
@@ -2488,6 +2566,7 @@ footer {
   text-align: left;
   position: relative;
   margin-top: -50px;
+  padding: 0 64px;
 }
 
 .researchcarousel {
@@ -2504,16 +2583,13 @@ footer {
   transform: translateY(-50%);
   border: none;
   background: none;
-  /* Remove background color */
-  font-size: 1.2rem;
-  /* Make arrows smaller */
   cursor: pointer;
-  padding: 0;
-  /* Remove padding */
+  padding: 8px;
   z-index: 2;
-  opacity: 0.3;
-  transition: opacity 0.3s ease;
-
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
 .carousel {
@@ -2565,13 +2641,11 @@ footer {
 }
 
 #prev-btn {
-  left: -40px;
-  /* Move to the left of the image */
+  left: 8px;
 }
 
 #next-btn {
-  right: -40px;
-  /* Move to the right of the image */
+  right: 8px;
 }
 
 /* SCROLL OFFSET FOR FIXED NAV */
@@ -2623,7 +2697,7 @@ footer {
 /* SECTION LABELS */
 
 .section-label {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 300;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2663,14 +2737,14 @@ footer {
 }
 
 .exp-item__dates {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(170, 170, 170);
   font-weight: 300;
   white-space: nowrap;
 }
 
 .exp-item__role {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(155, 155, 155);
   font-weight: 300;
   margin-top: 3px;
@@ -2686,7 +2760,7 @@ footer {
 }
 
 .exp-item__tags {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(175, 175, 175);
   font-weight: 300;
   margin-top: 10px;
@@ -2759,14 +2833,14 @@ a.exp-item--link {
 }
 
 .cert-item__institution {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(155, 155, 155);
   font-weight: 300;
   white-space: nowrap;
 }
 
 .cert-item__date {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgb(170, 170, 170);
   font-weight: 300;
   white-space: nowrap;
@@ -2903,7 +2977,7 @@ a.exp-item--link {
 
 .lastfm-period {
   font-family: "Lexend", sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 300;
   color: rgb(175, 175, 175);
   margin: 6px 0 32px;
@@ -2952,7 +3026,7 @@ a.exp-item--link {
 
 .lastfm-album__name {
   font-family: "Lexend", sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: #fff;
   line-height: 1.3;
@@ -2978,6 +3052,20 @@ a.exp-item--link {
   font-weight: 300;
   color: rgba(255,255,255,0.5);
   margin-top: 4px;
+}
+
+.lastfm-album__initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cormorant", serif;
+  font-style: italic;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
 }
 
 /* About nudge */
@@ -3011,4 +3099,373 @@ a.exp-item--link {
 
 .about-nudge__link:hover {
   opacity: 0.4;
+}
+
+.casestudy__nextup {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.carousel-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.carousel-icon--prev {
+  transform: scaleX(-1);
+}
+
+.carousel-swipe-hint {
+  display: none;
+  font-size: 0.8rem;
+  color: rgb(170, 170, 170);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  #prev-btn, #next-btn {
+    display: none;
+  }
+  .carousel-swipe-hint {
+    display: block;
+  }
+}
+
+.vertical-nav__handle {
+  position: absolute;
+  top: 7px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.18);
+  border-radius: 2px;
+  cursor: grab;
+  transition: background-color 0.2s ease;
+}
+
+.vertical-nav__handle:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.vertical-nav__handle:active {
+  cursor: grabbing;
+}
+
+.vertical-nav.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* ============================================================
+   CASE STUDY — MOBILE LAYOUT (max-width: 700px)
+   Structural rules only — no spacing here.
+   All spacing lives in BLUESKY — MOBILE SPACING SYSTEM below.
+   ============================================================ */
+@media screen and (max-width: 700px) {
+
+  /* --- Tagline: bigger + two lines --- */
+  .hero__tagline { font-size: clamp(20px, 4.5vw, 24px); }
+  .tagline__design-wrap { display: inline-block; }
+  .tagline__draw-text { display: block; margin-left: 0; margin-top: 0.1em; }
+
+  /* --- Vertical nav: hide --- */
+  .vertical-nav { display: none; }
+
+  /* --- Hero / top section --- */
+  .casestudy__top { padding: 0 8vw; }
+  .casestudy__title2 { font-size: 1.5rem; }
+  .casestudy__backgroundtext { width: 100%; }
+  .caseblack__logo, .caseblack__logo2 { margin-top: 48px; }
+
+  /* --- mediaqueries.css overrides (scoped to bluesky page only) --- */
+  .bluesky-page .casestudysection { margin-left: 0 !important; margin-right: 0 !important; }
+  .bluesky-page .casestudy__top   { margin-left: 0 !important; margin-right: 0 !important; }
+  .bluesky-page .casestudy__step1 { margin-left: 0 !important; opacity: 1 !important; z-index: auto !important; }
+
+  /* --- Section wrappers --- */
+  .casestudysection { padding: 0 8vw; }
+  .casestudy__step1 { padding: 0 8vw; }  /* translate reset + padding-top/bottom in spacing block */
+  .casestudy__steptitle,
+  .casestudy__steptitlew { font-size: 2rem; }
+
+  /* --- Core container: single column --- */
+  .casestudy__container {
+    grid-template-columns: 1fr;
+    translate: 0 0;
+    row-gap: 16px;
+  }
+
+  /* --- Hide empty spacer boxes --- */
+  .casestudy__leftbox:empty,
+  .casestudy__rightbox:empty { display: none; }
+
+  /* --- Reset box alignment for single column --- */
+  .casestudy__leftbox,
+  .casestudy__leftboxl,
+  .casestudy__leftboxl2,
+  .casestudy__leftboxl3,
+  .casestudy__leftbox2 {
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  /* --- Full-width images --- */
+  .usability,
+  .usabilitynotes,
+  .usabilitynotes2,
+  .persona,
+  .ideations,
+  .socials,
+  .proto,
+  .mockup { width: 100%; }
+
+  /* --- Remove desktop translates + margin tricks --- */
+  .casestudy__usabilitybox   { translate: 0 0; }
+  .casestudy__userjourneybox { translate: 0 0; }
+  .casestudy__personabox     { translate: 0 0; }
+  .casestudy__protobox2      { translate: 0 0; }
+  .casestudy__protobox       { translate: 0 0; }
+  .finding2                  { translate: 0 0; width: 100%; }
+  .affinity                  { translate: 0 0; width: 100%; }
+  .steps                     { translate: 0 0; width: 100%; }
+  /* Reset desktop image margins not caught above */
+  .proto              { margin-top: 0; margin-bottom: 0; }
+  .redesign-imgfinal  { margin-top: 0; margin-bottom: 0; }
+  .redesign-imgpaper  { margin-top: 0; margin-bottom: 0; }
+
+  /* --- Three-column dark section: stack vertically --- */
+  .casestudy__middletextbox { grid-template-columns: 1fr !important; }
+
+  /* --- Redesign wireframe→prototype boxes --- */
+  .redesignbox {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+  .redesign-img-col { width: 80%; }
+  .redesign-arrow {
+    position: static;
+    transform: rotate(90deg);
+    margin: 0;
+  }
+
+  /* --- Decorative big numbers: hide on mobile --- */
+  .bigtitlebluesky,
+  .bigtitlebluesky2 { display: none; }
+}
+
+
+/* ============================================================
+   BLUESKY — MOBILE SPACING SYSTEM  (max-width: 700px)
+   ============================================================
+
+   Space scale (all values below map to these tokens):
+     S1  8px  — tight: image → caption
+     S2  12px — default: body text bottom, subtitle → body
+     S3  16px — images: below full-width assets
+     S4  20px — containers: between stacked content blocks
+     S5  28px — section-end: body text before next subtitle
+     S6  40px — subsection: before Approach blocks, redesign parts
+     S7  52px — section-top: above numbered section headers
+     S8  60px — page: Next Up gap
+
+   To adjust global spacing, change the values in the groups below.
+   ============================================================ */
+
+@media screen and (max-width: 700px) {
+
+  /* ── DESKTOP-SPECIFIC RESETS ── */
+  .casestudy__leftboxl3  { margin-top: 0; margin-bottom: 0; }
+  .casestudy__leftboxl2  { margin-top: 0; margin-bottom: 0; }
+  .casestudy__smalltextw3 { translate: none; }
+
+  /* ── HIDE DESKTOP INLINE-HEIGHT SPACERS ── */
+  #ideation section[style*="height"]  { display: none !important; }
+  #research section[style*="height"]  { display: none !important; }
+  #reflection section[style*="height"] { display: none !important; }
+
+  /* ── SECTION TOP PADDING ── (space above numbered headers) */
+  /* S7: 52px — numbered section headers */
+  .casestudy_section1 { padding-top: 36px; }   /* 1. Overview */
+  #ideation           { padding-top: 30px; }   /* 3. Ideation */
+  #design             { padding-top: 30px; }   /* 4. Design   */
+
+  /* Default section block padding (light/colored sections) */
+  .casestudy_section2,
+  .casestudy_section3,
+  .casestudy_section4,
+  .casestudy_section5 {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Competitive Analysis dark block — extra internal breathing room */
+  #research > .casestudy_section2_1 { padding-top: 56px; padding-bottom: 36px; }
+
+  /* Redesign Part 2 section — S6 breathing room */
+  .design-part2 { padding-top: 40px; }
+
+  /* Reflection section bottom */
+  .casestudy_section2_2 { padding-bottom: 48px; }
+
+  /* ── STEP TITLE (1. Overview / 2. Research / etc.) ── */
+  .casestudy__step1 {
+    translate: none !important;
+    padding-top: 48px;      /* S7-ish: generous top, pushes # away from nav */
+    padding-bottom: 20px;   /* S4: space below before first content */
+  }
+  /* Below the step title text itself */
+  .casestudy__steptitle,
+  .casestudy__steptitlew { margin-bottom: 24px; } /* S4 */
+
+  /* ── CONTAINER RHYTHM ── */
+  .casestudy__container        { margin-bottom: 24px; } /* S4 between stacked containers */
+  .casestudy__rightbox         { margin-bottom: 16px; } /* S2 */
+  .casestudy__rightbox2        { margin-top: 0; margin-bottom: 16px; } /* S2 */
+  .casestudy__middlebox        { margin-bottom: 32px; }
+  .casestudy__middlebox3 {
+    margin-bottom: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+  .carousel-dots { margin-bottom: 0; }
+
+  /* Ideation images: tighten container gap after usability images */
+  #ideation .casestudy__container:has(.casestudy__usabilitybox) { margin-bottom: 16px; }
+
+  /* Three-issues dark block: extra space below last column */
+  .casestudy__middletextbox .casestudy__columnbox { margin-bottom: 0; }
+  .casestudy__middletextbox .casestudy__columnbox:last-child { margin-bottom: 28px; } /* S5 */
+
+  /* ── IMAGE / ASSET SPACING ── (S3: 16px below images) */
+  .casestudy__usabilitybox  { margin-bottom: 20px; }
+  .casestudy__userjourneybox { margin-top: 0; margin-bottom: 32px; }
+  .casestudy__protobox      { margin-bottom: 20px; }
+  .casestudy__protobox2     { margin-bottom: 20px; }
+  .finding2       { margin-bottom: 20px; }
+  .steps          { margin-bottom: 20px; }
+  .usabilitynotes,
+  .usabilitynotes2 { margin-top: 0; margin-bottom: 0; } /* box handles spacing */
+  .socials        { margin-top: 0; }
+  .ideations      { margin-top: 0; margin-bottom: 0; }
+
+  /* Caption below image */
+  .casestudy__photodescription { margin-top: 10px; margin-bottom: 40px; } /* S1 above, S5-ish below */
+
+  /* Middleboxcarousel */
+  .casestudy__middleboxcarousel { padding: 0; margin-top: 0; }
+
+  /* Positions block */
+  .casestudy__positions-container { gap: 16px !important; flex-direction: column !important; }
+  .casestudy__positions           { margin-top: 0; }
+
+  /* ── TYPOGRAPHY SPACING ── */
+  /* Subtitle → body: S2 (12px) */
+  .casestudy__smalltitle,
+  .casestudy__smalltitle2,
+  .casestudy__smalltitle4 { margin-bottom: 16px; }
+  .casestudy__smalltitle4 { margin-top: 0; }
+  .casestudy__smalltitle3 { margin-bottom: 16px; }  /* "Approach", "Redesign, Part X" labels */
+
+  /* Medium subtitles */
+  .casestudy__mediumtext,
+  .casestudy__mediumtextw { font-size: 1.2rem; margin-bottom: 16px; }
+
+  /* Dark-section subtitles — reset large desktop top margins */
+  .casestudy__smalltitle2w       { margin-top: 0; margin-bottom: 16px; } /* was: mt 10px, mb 25px */
+  .casestudy__mediumtextheaderw  { margin-top: 52px; margin-bottom: 16px; } /* was: mt 50px */
+  .casestudy__mediumtextheaderw2 { margin-top: 52px; margin-bottom: 16px; } /* was: mt 40px */
+  .casestudy__littletextheaderw  { margin-bottom: 16px; }                /* was: mb 20px */
+  .casestudy__mediumtextw2       { margin-bottom: 16px; }                /* was: mb 25px — 5 numbered insights */
+  .casestudy__smalltextw4        { margin-bottom: 16px; }                /* was: mb 25px */
+
+  /* Hero role/tool labels */
+  .casestudy__regular { margin-top: 0; }                                 /* was: mt 5px */
+  .casestudy__backgroundheader { margin-top: 28px; }                      /* was: mt 18px */
+
+  /* Redesign box image captions — tight spacing within box */
+  .redesign-img-title { margin-top: 8px; margin-bottom: 8px; }           /* was: mt 20px, mb 12/20px */
+
+  /* Body text default: S2 */
+  .casestudy__smalltext   { margin-bottom: 16px; }
+  .casestudy__smalltextw2 { margin-bottom: 20px; } /* dark-section body, slightly more room */
+  .casestudy__smalltextw  { margin-bottom: 32px; } /* dark-section body, white text — S5+ */
+  .casestudy__smalltextw3 { margin-bottom: 32px; } /* reflection white body */
+
+  /* ── SECTION-SPECIFIC OVERRIDES ── */
+  /* Research: last pain-point para before dark block */
+  #research .casestudy__leftboxl .casestudy__smalltext:last-of-type { margin-bottom: 28px; } /* S5 */
+
+  /* Research: space above "While research indicates..." block */
+  .accessibility-notes { margin-top: 44px; }
+
+  /* Research: persona intro */
+  .persona-intro { margin-bottom: 26px; }
+
+  /* Research: insights intro before numbered list */
+  .insights-intro { margin-bottom: 48px !important; }
+
+  /* Ideation: feature fatigue paragraph */
+  .feature-fatigue { margin-bottom: 28px; }
+
+  /* Ideation: expanding accessibility paragraph */
+  .expanding-a11y { margin-bottom: 28px; } /* S5 */
+
+  /* Design: Approach blocks — S6 above each */
+  .approach-part1 { margin-top: 48px; }
+  .approach-part2 { margin-top: 52px; }
+  .approach-part3 { margin-top: 52px; }
+
+  /* Reflection: prototype caption spacing */
+  /* (photodescription rule above handles this globally) */
+
+  /* Reflection: "Overall, users responded..." body */
+  /* (smalltextw3 rule above handles this globally) */
+
+  /* Reflection: "Huge platforms..." body */
+  /* (smalltextw rule above handles this globally) */
+
+  /* Reflection: tighten gap between numbered sections */
+  .reflection-section-body { margin-bottom: 0; }
+
+  /* ── OVERVIEW SECTION: GIF boxes — centered ── */
+  .image-bg-squarer2_2,
+  .image-bg-squarel3_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+  }
+
+  /* ── OVERVIEW GIF ROWS — consistent text→GIF gap across all three rows ──
+     All three rows (Transparent, Customizable, Accessible) use the same 56px gap:
+     leftbox/rightbox margin-bottom(12) + row-gap(12) + gif margin-top(32) = 56px  */
+
+  /* Reorder Customizable so text appears above GIF on mobile */
+  .casestudy__container:has(.image-bg-squarel3_2) .casestudy__leftbox { order: 1; }
+
+  /* 12px below text leftbox before a GIF rightbox — matches rightbox margin-bottom(12) + row-gap(12) = 24px total */
+  .casestudy__container:has(.casestudy__rightbox .image-bg-squarer2_2) .casestudy__leftbox { margin-bottom: 12px; }
+
+  /* Space above Customizable text (separate from text→GIF gap) */
+  .casestudy__container:has(.image-bg-squarel3_2) .casestudy__rightbox { margin-top: 32px; }
+
+  /* Space above entire Accessible section (separate from text→GIF gap) */
+  .accessible-row .casestudy__leftbox { margin-top: 40px; }
+
+  /* ── PAGE-LEVEL ── */
+  .casestudy__nextup { margin-top: 76px; } /* S8 */
 }
