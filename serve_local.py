@@ -20,6 +20,7 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 OVERRIDES = {
     "illustration": "illustration.html",
     "bluesky": "bluesky.html",
+    "about": "about.html",
 }
 
 class CleanURLHandler(http.server.SimpleHTTPRequestHandler):

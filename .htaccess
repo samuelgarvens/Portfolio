@@ -1,10 +1,11 @@
 RewriteEngine On
 
 # Explicit clean-URL routes for pages that share a name with an
-# asset directory (e.g. illustration/ holds images, but /illustration
-# should still load illustration.html, not illustration/index.html)
+# asset directory (e.g. illustration/ and about/ hold images, but
+# /illustration, /about, and /bluesky should load the matching page)
 RewriteRule ^illustration/?$ illustration.html [L]
 RewriteRule ^bluesky/?$ bluesky.html [L]
+RewriteRule ^about/?$ about.html [L]
 
 # General clean-URL fallback: /page -> page.html, but only if
 # "page" isn't already a real file or directory on disk
