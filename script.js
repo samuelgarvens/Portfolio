@@ -166,6 +166,12 @@ document.addEventListener("visibilitychange", function () {
 // =============================================================================
 // SCROLL ANIMATIONS — fade-in / slide-up on scroll entry
 // =============================================================================
+// Standard scroll-reveal trigger, used across every fade-in on the site.
+// Viewport-relative (not a % of each element's own height) so small text
+// blocks and huge image grids all trigger at the same point on screen:
+// once an element is ~15% up from the bottom of the viewport.
+const REVEAL_OPTIONS = { root: null, rootMargin: "0px 0px -15% 0px", threshold: 0 };
+
 document.addEventListener("DOMContentLoaded", function () {
   const elementsToAnimate = document.querySelectorAll(
     "" +
@@ -185,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { root: null, rootMargin: "0px", threshold: 0.1 }
+    REVEAL_OPTIONS
   );
 
   elementsToAnimate.forEach((element) => {
@@ -218,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.unobserve(entry.target);
       }
     });
-  });
+  }, REVEAL_OPTIONS);
 
   cases.forEach((caseItem) => observer.observe(caseItem));
 });
@@ -268,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.1 }
+    REVEAL_OPTIONS
   );
 
   containers.forEach((container) => observer.observe(container));
@@ -425,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function() { entry.target.classList.add('section--done'); }, 900);
       }
     });
-  }, { threshold: 0.08 });
+  }, REVEAL_OPTIONS);
 
   document.querySelectorAll('#education, #experience, #projects').forEach(function (s) {
     observer.observe(s);
@@ -485,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.unobserve(container);
       }
     });
-  }, { threshold: 0.08 });
+  }, REVEAL_OPTIONS);
 
   const rect = container.getBoundingClientRect();
   if (rect.top < window.innerHeight && rect.bottom > 0) {
