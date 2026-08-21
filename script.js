@@ -500,3 +500,16 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(container);
   }
 });
+
+// =============================================================================
+// LAST.FM ALBUM TAP — mobile overlay toggle
+// =============================================================================
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', function (e) {
+    const album = e.target.closest('.lastfm-album');
+    document.querySelectorAll('.lastfm-album.tapped').forEach(function (el) {
+      if (el !== album) el.classList.remove('tapped');
+    });
+    if (album) album.classList.toggle('tapped');
+  });
+});

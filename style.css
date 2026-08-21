@@ -3018,7 +3018,8 @@ a.exp-item--link {
   transform: scale(1.04);
 }
 
-.lastfm-album:hover .lastfm-album__info {
+.lastfm-album:hover .lastfm-album__info,
+.lastfm-album.tapped .lastfm-album__info {
   opacity: 1;
 }
 
