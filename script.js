@@ -513,3 +513,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (album) album.classList.toggle('tapped');
   });
 });
+
+// =============================================================================
+// ANIMATION FALLBACK — force-animate grids missed by IntersectionObserver
+// (Safari + lazy-load height-0 bug)
+// =============================================================================
+setTimeout(function () {
+  document.querySelectorAll(
+    '.illustration-grid, .illustration__text_title, .illustration__text_sub, .illustration__art, .illustration__tools'
+  ).forEach(function (el) {
+    el.classList.add('animate');
+  });
+}, 800);
