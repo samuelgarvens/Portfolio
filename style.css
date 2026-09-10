@@ -1292,6 +1292,13 @@ footer {
   .illustration-grid.animate        { transition-delay: 0.07s; }
 }
 
+/* Traditional grid: always visible — Safari lazy-load animation bug */
+#traditional ~ .illustration-grid {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* BRUSHIES CASE STUDY */
 
 .brushies-header {
