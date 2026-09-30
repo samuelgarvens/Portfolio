@@ -15,6 +15,16 @@
 </head>
 
 <body class="bluesky-page">
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <filter id="boil" x="-10%" y="-50%" width="120%" height="200%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
+          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
     <nav id="desktop-nav" class="brushies-header white-header">
         <div class="nav-inner">
             <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
@@ -733,16 +743,6 @@
         </div>
     </footer>
     <section style="height: 1px;"></section>
-  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
-    <defs>
-      <filter id="boil" x="-10%" y="-50%" width="120%" height="200%">
-        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
-          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
-        </feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
-    </defs>
-  </svg>
     <script>
       (function() {
         var nav = document.getElementById('vertical-nav');
