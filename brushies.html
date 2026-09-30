@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illustration</title>
+    <title>Brushies</title>
             <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Lexend:wght@100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&display=block">
@@ -14,8 +14,8 @@
         <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
 </head>
 
-<body>
-    <nav id="desktop-nav" class="gray-header brushies-header">
+<body class="brushies-page">
+    <nav id="desktop-nav" class="brushies-header white-header">
         <div class="nav-inner">
             <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
             <ul class="nav-links">
@@ -25,7 +25,7 @@
         </div>
     </nav>
 
-    <nav id="hamburger-nav" class="gray-header brushies-header">
+    <nav id="hamburger-nav" class="brushies-header white-header">
         <a href="./" class="logo"><img src="./assets/logo.svg" alt="Samuel Garvens" class="logo__img"></a>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
@@ -41,25 +41,25 @@
     </nav>
 
     <!-- Add vertical navigation -->
-    <nav class="vertical-nav">
+    <nav class="vertical-nav" id="vertical-nav">
+        <div class="vertical-nav__handle"></div>
         <ul>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#design">Design</a></li>
             <li><a href="#iterate">Iterate</a></li>
-            <li><a href="#release">Rollout & Reflection</a></li>
+            <li><a href="#release">Rollout &<br>Reflection</a></li>
         </ul>
     </nav>
-    <div class="casestudy__topnav"></div>
         <section class="hero">
             <img src="./assets/Case1hero.webp" alt="Hero Image" class="hero-image" loading="eager" fetchpriority="high">
         </section>
         <!-- Intro / About -->
         <section class="casestudy_section">
             <div class="casestudy__top">
-                <img src="./assets/brushiespngblack.png" alt="Instagram logo" class="caseblack__logo">
+                <img src="./assets/brushiespngblack.png" alt="Brushies logo" class="caseblack__logo">
                 <p class="casestudy__title1"></p>
-                <p class="casestudy__title2">Kiss art block goodbye.</p>
+                <p class="casestudy__title2" style="filter: url(#boil);">Kiss art block goodbye.</p>
                 <div class="casestudy__background">
                     <p class="casestudy__backgroundheader">About Brushies</p>
                     <p class="casestudy__backgroundtext">Designed for digital artists, <a
@@ -96,7 +96,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltitle">Problem</p>
                             <p class="casestudy__mediumtext">Since its November 2024 launch, Brushies has experienced
@@ -116,7 +116,7 @@
                             <p class="casestudy__smalltext">Brushies’ new landing page serves as a centralized hub,
                                 guiding users to: A) explore its services and FAQs, B) view examples of work created
                                 using its services, and C) seamlessly begin the subscription process. Additionally, the
-                                new site features a dedicated user portal, providing subscribers with consilidated access
+                                new site features a dedicated user portal, providing subscribers with consolidated access
                                 to their personalized tools and benefits.</p>
                         </div>
                     </div>
@@ -147,11 +147,11 @@
                             </p>
                             <p class="casestudy__smalltext">With prominent calls-to-action linking landing and interior
                                 pages, users can move through the site more fluidly than ever before. By eliminating
-                                site frictions, we can project an improvement to the conversation and bounce rate, all
+                                site frictions, we can project an improvement to the conversion and bounce rate, all
                                 while enhancing the overall user experience.</p>
                         </div>
                     </div>
-                    <div class="casestudy__container">
+                    <div class="casestudy__container accessible-row">
                         <div class="casestudy__leftbox">
                             <p class="casestudy__smalltitle2">Organized</p>
                             <p class="casestudy__mediumtext">Your personal hub—everything you need, all in one place</p>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltitle">User Research</p>
                             <p class="casestudy__mediumtext">Identifying current pain points and improvement
@@ -208,19 +208,16 @@
                         </div>
                         <div class="casestudy__middletextbox">
                             <div class="casestudy__columnbox">
-                                <p class="asteriskw">*</p>
                                 <p class="casestudy__littletextheaderw">People need supporting graphics to visualize ideas.</p>
                                 <p class="casestudy__smalltextw">For a visually driven audience like digital artists, images and illustrations help clarify and reinforce the content they’re reading.</p>
                             </div>
                             <div class="casestudy__columnbox">
-                                <p class="asteriskw">*</p>
                                 <p class="casestudy__littletextheaderw">Artists are looking for more than just a
                                     one-and-done transaction. </p>
                                 <p class="casestudy__smalltextw">Beyond tools, digital artists are seeking connection,
                                     community, and continued engagement with the seller.</p>
                             </div>
                             <div class="casestudy__columnbox">
-                                <p class="asteriskw">*</p>
                                 <p class="casestudy__littletextheaderw">Most people like having everything they need all
                                     in one place.</p>
                                 <p class="casestudy__smalltextw">People who use digital subscription services like being
@@ -252,8 +249,7 @@
                     <section style="height: 25px;">
                     </section>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox">
-                        </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltext">After reviewing my personas—user's goals, behaviors, and
                                 pain points—I initiated user testing on the site’s existing structure to identify <span
@@ -283,7 +279,7 @@
                             <p class="casestudy__smalltextw">In this study, I walked participants through a set of
                                 navigation tasks, closely observing user flow and site responsiveness.</p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                     </div>
                     <div class="casestudy__container">
                         <div class="casestudy__usabilitybox">
@@ -291,8 +287,7 @@
                         </div>
                     </div>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox">
-                        </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltextw2">Observed users accessed the site from a variety of
                                 different devices, including smartphones and tablets. Additionally, each participant was
@@ -323,7 +318,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltitle">Ideation</p>
                             <p class="casestudy__mediumtext">Research-informed design explorations </p>
@@ -399,8 +394,7 @@
                                     class="highlight"> recommendations beyond just navigation</span> this time
                                 around—comments regarding Brushies' digital subscription content and offerings.</p>
                         </div>
-                        <div class="casestudy__rightbox">
-                        </div>
+                        <div class="casestudy__rightbox"></div>
                     </div>
                     <div class="casestudy__container">
                         <div class="casestudy__findingbox">
@@ -418,26 +412,25 @@
                             <p class="casestudy__smalltitle2w">High-Fidelity Mockups and Prototyping</p>
                             <p class="casestudy__mediumtextw">Revising the design based on mockup user feedback </p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                         <div class="casestudy__protobox">
                             <img src="./assets/Case1proto1.png" alt="Brushies_proto" class="proto">
                             <img src="./assets/Case1proto2.png" alt="Brushies_proto" class="proto">
                         </div>
                     </div>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftboxl">
-                        </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__leftboxl"></div>
+                        <div class="casestudy__rightbox"></div>
                     </div>
                     <div class="casestudy__container">
                         <div class="casestudy__leftboxl">
                             <p class="casestudy__mediumtextw">Improved pages and navigation</p>
                             <p class="casestudy__smalltextw">The high-fidelity mockups and prototype support smooth
                                 navigation through high-contrast calls-to-action and a clearer visual hierarchy.
-                                Animated GIFs (screens 1 and 4 below) are now integreated to enhance interactivity—an
+                                Animated GIFs (screens 1 and 4 below) are now integrated to enhance interactivity—an
                                 improvement directly informed by my usability study findings.</p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                         <div class="casestudy__protobox2">
                             <img src="./assets/Case1protonavi.png" alt="Brushies_proto" class="proto">
                         </div>
@@ -445,7 +438,7 @@
                     <section style="height: 25px;">
                     </section>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__mediumtextw">Built-in subscriber portal</p>
                             <p class="casestudy__smalltextw">In line with user research findings, Brushies now includes
@@ -465,7 +458,7 @@
                                 purchase, archived brush sets have been extended to non-subscribers. To incentivize the
                                 subscription, Brushies maintains promotions on these sets within the member portal.</p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                         <div class="casestudy__protobox2">
                             <img src="./assets/Case1protosets.png" alt="Brushies_proto" class="proto">
                         </div>
@@ -477,8 +470,7 @@
                                 The left figure depicts site design, while the right depicts layout of downloadable
                                 visual content.</p>
                         </div>
-                        <div class="casestudy__rightbox">
-                        </div>
+                        <div class="casestudy__rightbox"></div>
                         <div class="casestudy__protobox2">
                             <img src="./assets/Case1protodesignsystem.png" alt="Brushies_proto" class="proto">
                         </div>
@@ -496,7 +488,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltitle">Usability Study, Pt. 2 </p>
                             <p class="casestudy__mediumtext">Conducting a second moderated usability study to see how
@@ -519,7 +511,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltext">I organized the five design problem statements from earlier
                                 and paired each with questions to assess the progress made so far. Participant responses
@@ -550,8 +542,7 @@
                         </div>
                     </div>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox">
-                        </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltext">From observing participants, I found that significant
                                 progress had been made in improving the overall user experience of the Brushies website.
@@ -658,7 +649,7 @@
                 </div>
                 <div class="casestudysection">
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox">
                             <p class="casestudy__smalltitle2w">Revised Prototype </p>
                             <p class="casestudy__mediumtextw">Iterating until a design is approved by users</p>
@@ -691,7 +682,7 @@
                                 unique atmosphere, distance, and speed. Designing for just one leaves the rest in
                                 darkness—cold, disconnected, and uninhabitable.</p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                     </div>
                     <div class="casestudy__container">
                         <div class="casestudy__leftboxl3">
@@ -703,10 +694,10 @@
                                 know the floor is theirs. Ensuring a comfortable environment and building a rapport will
                                 encourage them to say what's really on their mind.</p>
                         </div>
-                        <div class="casestudy__rightbox"> </div>
+                        <div class="casestudy__rightbox"></div>
                     </div>
                     <div class="casestudy__container">
-                        <div class="casestudy__leftbox"> </div>
+                        <div class="casestudy__leftbox"></div>
                         <div class="casestudy__rightbox2">
                             <p class="casestudy__mediumtextw">3. Beginning with an existing system</p>
                             <p class="casestudy__smalltextw">Since Brushies already had a lightly tested, live version
@@ -718,33 +709,18 @@
                                 even if that means skipping the shortcut.</p>
                         </div>
                     </div>
-                    <div class="casestudy__rightbox"> </div>
-                    <div class="casestudy__middlebox2">
-                        <p class="casestudy__thankyou">Huge shoutout to Sarah Mei for inspiring this case study layout!
-                        </p>
-                    </div>
                 </div>
             </section>
         </section>
-        <section>
-        <div class="cases__containerembed">
-            <div class="cases__container2">
-                <p class="cases__titleembed">Next up:</p>
-                <div class="cases__image-container">
-                    <a href="./bluesky">
-                    <img src="./assets/bluesky.jpg" alt="Bluesky" class="cases__image" id="bluesky-logo">
-                  </a>
-                    <div class="cases__text">
-                      <img src="./assets/blueskypng.png" alt="Bluesky logo" class="cases__logo-BS">
-                      <p class="cases__text-position">UX Research, Accessibility</p>
-                      <a href="./bluesky">
-                      <p class="cases__text-title" id="bluesky-logo2">Incentivizing the Move To Bluesky with UX</p>
-                      </a>
-                    </div>
-                  </div>
-            </div>
+        <div class="work-list casestudy__nextup">
+          <p class="section-label">Next up</p>
+          <a href="./bluesky" class="work-item">
+            <span class="work-item__title">Incentivizing the Move to Bluesky Through Accessibility</span>
+            <span class="work-item__type">UX Research, Accessibility</span>
+            <span class="work-item__year">2024</span>
+            <img src="./assets/arrow-forward.svg" class="work-item__arrow" alt="">
+          </a>
         </div>
-    </section>
         <footer>
         <div class="footer__inner">
             <div class="footer__row">
@@ -760,6 +736,93 @@
     </footer>
         <section style="height: 1px;"></section>
         <script src="script.js"></script>
+
+  <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <filter id="boil" x="-10%" y="-50%" width="120%" height="200%">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise">
+          <animate attributeName="seed" values="1;5;2;8;3;7;4;9;6" dur="1.8s" calcMode="discrete" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+    <script>
+      (function() {
+        var nav = document.getElementById('vertical-nav');
+        var handle = nav.querySelector('.vertical-nav__handle');
+        var dragging = false;
+        var startX, startY, startLeft, startTop;
+        var intendedLeft = null, intendedTop = null;
+        var rightPad = 12;
+
+        function clampNav() {
+          if (intendedLeft === null) return;
+          var navW = nav.offsetWidth;
+          var navH = nav.offsetHeight;
+          nav.style.left = Math.min(Math.max(0, intendedLeft), window.innerWidth  - navW - rightPad) + 'px';
+          nav.style.top  = Math.min(Math.max(0, intendedTop),  window.innerHeight - navH - rightPad) + 'px';
+          nav.style.transform = 'none';
+        }
+
+        handle.addEventListener('pointerdown', function(e) {
+          dragging = true;
+          startX = e.clientX;
+          startY = e.clientY;
+          var rect = nav.getBoundingClientRect();
+          startLeft = rect.left;
+          startTop = rect.top;
+          nav.classList.add('dragging');
+          handle.setPointerCapture(e.pointerId);
+          e.preventDefault();
+        });
+
+        handle.addEventListener('pointermove', function(e) {
+          if (!dragging) return;
+          var dx = e.clientX - startX;
+          var dy = e.clientY - startY;
+          var navW = nav.offsetWidth;
+          var navH = nav.offsetHeight;
+          intendedLeft = startLeft + dx;
+          intendedTop  = startTop  + dy;
+          nav.style.left = Math.min(Math.max(0, intendedLeft), window.innerWidth  - navW - rightPad) + 'px';
+          nav.style.top  = Math.min(Math.max(0, intendedTop),  window.innerHeight - navH - rightPad) + 'px';
+          nav.style.transform = 'none';
+        });
+
+        handle.addEventListener('pointerup', function() {
+          dragging = false;
+          nav.classList.remove('dragging');
+        });
+
+        window.addEventListener('resize', clampNav);
+      })();
+    </script>
+    <script>
+      (function() {
+        var bgSections = document.querySelectorAll('.casestudy_section2, .casestudy_section2_1, .casestudy_section2_2, .casestudy_section3, .casestudy_section4, .casestudy_section5');
+        var bgObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('bg-visible');
+              bgObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        bgSections.forEach(function(s) { bgObserver.observe(s); });
+      })();
+    </script>
+    <script>
+      (function() {
+        var navs = document.querySelectorAll('.white-header');
+        window.addEventListener('scroll', function() {
+          var scrolled = window.scrollY > 0;
+          navs.forEach(function(nav) {
+            nav.classList.toggle('scrolled', scrolled);
+          });
+        }, { passive: true });
+      })();
+    </script>
 </body>
 
 </html>
