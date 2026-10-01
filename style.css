@@ -1377,11 +1377,16 @@ footer {
 
 .casestudy_section {
   padding-top: 0px;
+}
+/* Case-study section wrappers get a static white backing (never animated) so the
+   12px overlap of colored section backgrounds is always covered by a real color. */
+.bluesky-page section[id],
+.brushies-page section[id] {
   position: relative;
   isolation: isolate;
 }
-.casestudy_section::before,
-.casestudy_section1::before {
+.bluesky-page section[id]::before,
+.brushies-page section[id]::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1643,6 +1648,7 @@ footer {
   margin-top: -120px;
   text-align: left;
 }
+.brushies-page .casestudy__rightbox2 { margin-bottom: 90px; }
 
 .casestudy__leftbox {
   margin-bottom: 90px;
@@ -2095,8 +2101,6 @@ footer {
 .casestudy_section1 {
   margin-top: 75px;
   margin-bottom: 70px;
-  position: relative;
-  isolation: isolate;
 }
 
 .casestudy_section2 {
@@ -2106,7 +2110,8 @@ footer {
 .casestudy_section2::before {
   content: "";
   position: absolute;
-  inset: 0 0 -12px 0;
+  inset: -12px 0 -12px 0;
+  will-change: transform;
   background-color: rgb(249, 249, 249);
   z-index: -1;
   transform: translateY(12px);
@@ -2123,7 +2128,8 @@ footer {
 .casestudy_section2_1::before {
   content: "";
   position: absolute;
-  inset: 0 0 -12px 0;
+  inset: -12px 0 -12px 0;
+  will-change: transform;
   background-color: rgb(27, 27, 27);
   z-index: -1;
   transform: translateY(12px);
@@ -2142,7 +2148,8 @@ footer {
 .casestudy_section2_2::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -12px 0 0 0;
+  will-change: transform;
   background-color: rgb(27, 27, 27);
   z-index: -1;
   transform: translateY(12px);
@@ -2159,7 +2166,8 @@ footer {
 .casestudy_section3::before {
   content: "";
   position: absolute;
-  inset: 0 0 -12px 0;
+  inset: -12px 0 -12px 0;
+  will-change: transform;
   background-color: rgb(245, 249, 253);
   z-index: -1;
   transform: translateY(12px);
@@ -2176,7 +2184,8 @@ footer {
 .casestudy_section4::before {
   content: "";
   position: absolute;
-  inset: 0 0 -12px 0;
+  inset: -12px 0 -12px 0;
+  will-change: transform;
   background-color: rgb(236, 244, 251);
   z-index: -1;
   transform: translateY(12px);
@@ -2193,7 +2202,8 @@ footer {
 .casestudy_section5::before {
   content: "";
   position: absolute;
-  inset: 0 0 -12px 0;
+  inset: -12px 0 -12px 0;
+  will-change: transform;
   background-color: rgb(223, 237, 249);
   z-index: -1;
   transform: translateY(12px);
@@ -2521,6 +2531,9 @@ footer {
   padding: 18px 14px 10px;
   z-index: 1000;
   line-height: 100%;
+  background: rgb(232, 232, 232);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 
