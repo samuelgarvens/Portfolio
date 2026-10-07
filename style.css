@@ -1377,6 +1377,8 @@ footer {
 
 .casestudy_section {
   padding-top: 0px;
+  position: relative;
+  z-index: 1; /* intro content overhangs its box by 10px (.casestudy__top); keep it above the next wrapper's white backing */
 }
 /* Case-study section wrappers get a static white backing (never animated) so the
    12px overlap of colored section backgrounds is always covered by a real color. */
@@ -2531,7 +2533,8 @@ footer {
   padding: 18px 14px 10px;
   z-index: 1000;
   line-height: 100%;
-  background: rgb(232, 232, 232);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.06);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -3587,7 +3590,7 @@ a.exp-item--link {
 
   /* ── Numeric parity with Bluesky (measured at 400px) ── */
   /* Step title → first subtitle: 60px (Bluesky) */
-  .brushies-page section[id]:not(#overview) .casestudy__step1 + .casestudysection { padding-top: 16px; }
+  .brushies-page section[id] .casestudy__step1 + .casestudysection { padding-top: 16px; }
   /* Research: personas */
   .brushies-page .casestudy__container:has(.casestudy__personabox) { margin-top: 34px; margin-bottom: 60px; }
   .brushies-page .casestudy__personabox { margin-bottom: 0; }
@@ -3617,4 +3620,148 @@ a.exp-item--link {
   .brushies-page #release .casestudy__leftboxl3,
   .brushies-page #release .casestudy__rightbox2 { margin-top: 0; margin-bottom: 0; }
   .brushies-page .casestudy_section2_2 { padding-bottom: 48px; margin-bottom: 0; }
+}
+
+
+/* ============================================================
+   BRUSHIES v2 CASE STUDY — cost comparison + full-width figures
+   ============================================================ */
+.casestudy__cs3-compare {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+.cs3-compare__col {
+  background: #f3f3f3;
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+}
+.cs3-compare__col--after {
+  background: #1b1b1b;
+}
+.cs3-compare__col--after .cs3-compare__label,
+.cs3-compare__col--after .cs3-compare__big,
+.cs3-compare__col--after .cs3-compare__sub { color: #fff; }
+.cs3-compare__label {
+  font-size: 0.78rem;
+  font-weight: 450;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(110, 110, 110);
+  margin-bottom: 10px;
+}
+.cs3-compare__big {
+  font-family: "Cormorant", serif;
+  font-style: italic;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 14px;
+}
+.cs3-compare__big span {
+  font-family: "Lexend", sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-left: 4px;
+}
+.cs3-compare__sub {
+  font-size: 0.86rem;
+  font-weight: 300;
+  color: rgb(85, 85, 85);
+  line-height: 160%;
+}
+.cs3-compare__note {
+  grid-column: 1 / -1;
+  text-align: center;
+  max-width: 860px;
+  margin: 14px auto 60px;
+}
+.casestudy__middlebox.cs3-figure {
+  margin-bottom: 90px;
+}
+.cs3-figure__img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+@media screen and (max-width: 700px) {
+  .casestudy__cs3-compare { grid-template-columns: 1fr; gap: 12px; }
+  .cs3-compare__col { padding: 20px 20px 18px; }
+  .cs3-compare__big { font-size: 2.6rem; }
+  .cs3-compare__note { margin: 4px auto 32px; }
+  .brushies-page #research > .casestudy_section2_1 { padding-top: 0; }
+  .brushies-page .casestudy__mediumtextheaderw { margin-bottom: 28px; }
+  .brushies-page #decision { padding-top: 22px; }
+  .brushies-page #release .casestudy__container:first-of-type .casestudy__smalltextw { margin-bottom: 32px; }
+  .brushies-page #release .casestudy_section2_2 { padding-top: 32px; }
+  .brushies-page .casestudy__middlebox.cs3-figure { margin-top: 8px; }
+  .brushies-page .casestudy__middlebox.cs3-figure { margin-bottom: 36px; }
+  .cs3-figure__img { border-radius: 6px; }
+}
+.cs3-note {
+  font-size: 0.8rem !important;
+  font-style: italic;
+  color: rgb(140, 140, 140) !important;
+  margin-top: 4px;
+}
+.cs3-compare__note {
+  font-weight: 200;
+  font-size: 0.8rem;
+  color: rgb(113, 113, 113);
+}
+/* Flow blocks in Design: consistent gap between a text block and the next one */
+.brushies-page #design .casestudy__container:has(.casestudy__leftboxl) + .casestudy__container:has(.casestudy__leftboxl) { margin-top: 40px; }
+@media screen and (max-width: 700px) {
+  .brushies-page #design .casestudy__container:has(.casestudy__leftboxl) + .casestudy__container:has(.casestudy__leftboxl) { margin-top: 44px; }
+}
+/* Wide screenshots in the overview rows: fill the box instead of the 300px phone width */
+.brushies-page .image-bg-squarer2_2,
+.brushies-page .image-bg-squarel3_2 { padding: 18px; }
+.brushies-page .image-bg-squarer2_2 img,
+.brushies-page .image-bg-squarel3_2 img {
+  max-width: 100% !important;
+  width: 100%;
+  border-radius: 6px;
+  filter: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Brushies v2 — desktop parity with Bluesky section rhythm */
+@media screen and (min-width: 701px) {
+  .brushies-page #decision > .casestudy_section { padding-top: 42px; }
+  .brushies-page #design > .casestudy_section2 { padding-top: 24px; }
+  .brushies-page #research > .casestudy_section2 { padding-bottom: 40px; }
+  .brushies-page #research > .casestudy_section2_1 { padding-top: 0; }
+  .brushies-page #research .casestudy__mediumtextheaderw { margin-top: 48px; margin-bottom: 20px; }
+  .brushies-page #release > .casestudy_section2_2 { padding-top: 40px; }
+  .brushies-page #release .casestudy__leftboxl3 { margin-top: -98px; }
+  .brushies-page #release .casestudy__rightbox2 { margin-top: -100px; }
+  .brushies-page #release .casestudy__container:last-child .casestudy__rightbox2 { margin-top: -90px; margin-bottom: -25px; }
+  .brushies-page .cs3-note { margin-top: 6px !important; }
+  /* consecutive body paragraphs get the same 25px breathing room Bluesky uses via spacers */
+  .brushies-page .casestudy__smalltext + .casestudy__smalltext,
+  .brushies-page .casestudy__smalltextw + .casestudy__smalltextw { margin-top: 25px; }
+  /* flow blocks: Bluesky-style ~100px between subsections (leftboxl already carries 90) */
+  .brushies-page #design .casestudy__container:has(.casestudy__leftboxl) + .casestudy__container:has(.casestudy__leftboxl) { margin-top: 0; }
+}
+
+/* Brushies v2 hero + logo */
+.brushies-page .hero-image { filter: brightness(70%); }
+.brushies-page .caseblack__logo { width: 150px; }
+@media screen and (min-width: 701px) {
+  .brushies-page #decision > .casestudy_section { padding-bottom: 16px; }
+  .brushies-page #design > .casestudy_section2 { padding-bottom: 40px; }
+}
+@media screen and (min-width: 701px) {
+  /* takeaways: tighter between points, more room under the last one */
+  .brushies-page #release .casestudy__rightbox2 { margin-top: -120px; }
+  .brushies-page #release .casestudy__container:last-child .casestudy__rightbox2 { margin-top: -110px; margin-bottom: 10px; }
 }
